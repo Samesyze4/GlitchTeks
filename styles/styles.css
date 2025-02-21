@@ -1,0 +1,51 @@
+body {
+    background-color: black;
+    color: limegreen;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.terminal {
+    padding: 20px;
+    border: 2px solid limegreen;
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    text-shadow: 0 0 5px limegreen;
+}
+
+.glitch-text {
+    animation: glitch 1s infinite alternate;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px 5px limegreen; }
+    100% { text-shadow: -2px -2px 5px limegreen; }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: limegreen;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 12px;
+}
