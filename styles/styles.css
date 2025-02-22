@@ -49,3 +49,9 @@ footer {
     margin-top: 20px;
     font-size: 12px;
 }
+body {
+    display: block !important;
+    visibility: visible !important;
+    background: black !important;
+    color: lime !important;
+}
