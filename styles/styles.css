@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
 body {
-    background: radial-gradient(circle, #000000, #050505);
+    background: #000;
     color: #0ff;
     font-family: 'Orbitron', sans-serif;
     margin: 0;
@@ -26,10 +26,13 @@ body {
 
 /* Sections */
 section {
-    padding: 80px 20px;
+    padding: 50px 20px;
     border-bottom: 2px solid #0ff;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     box-shadow: 0px 0px 20px #0ff;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
 }
 
 h2 {
@@ -74,4 +77,3 @@ footer {
     box-shadow: 0px -5px 15px #ff00ff;
     font-size: 1.2em;
 }
- 
