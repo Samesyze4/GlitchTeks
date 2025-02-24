@@ -1,57 +1,65 @@
-body {
-    background-color: black;
-    color: limegreen;
-    font-family: 'Courier New', monospace;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlitchTeks - Cybernetic Future</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Welcome to GlitchTeks</h1>
+        <p>No Gods. No Humans. Just Cyber-Chimps.</p>
+    </header>
 
-.terminal {
-    padding: 20px;
-    border: 2px solid limegreen;
-    max-width: 800px;
-    margin: 50px auto;
-    background: rgba(0, 0, 0, 0.8);
-}
+    <!-- Featured Streams -->
+    <section class="streams">
+        <h2>Live Streams</h2>
+        <div class="stream-container">
+            <iframe src="https://player.twitch.tv/?channel=example&parent=glitchteks.com" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
 
-h1, h2 {
-    text-transform: uppercase;
-    text-shadow: 0 0 5px limegreen;
-}
+    <!-- Latest Reviews -->
+    <section class="reviews">
+        <h2>Latest Reviews</h2>
+        <div class="review-box">Cyber-Chimp VR - "Mind-blowing experience!"</div>
+        <div class="review-box">Neon Wasteland - "Too glitchy… just like me."</div>
+    </section>
 
-.glitch-text {
-    animation: glitch 1s infinite alternate;
-}
+    <!-- Merch Preview -->
+    <section class="merch">
+        <h2>Merch Store</h2>
+        <div class="merch-item">Cybernetic Banana Hoodie - $39.99</div>
+        <div class="merch-item">GlitchTeks Mug - $14.99</div>
+    </section>
 
-@keyframes glitch {
-    0% { text-shadow: 2px 2px 5px limegreen; }
-    100% { text-shadow: -2px -2px 5px limegreen; }
-}
+    <!-- S.A.S.S. (AI Sidekick) -->
+    <div id="sass-ai" class="sass-box">S.A.S.S.: "Oh great, another organic visitor… how primitive."</div>
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 GlitchTeks. No humans were involved in the making of this site.</p>
+    </footer>
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: limegreen;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer {
-    margin-top: 20px;
-    font-size: 12px;
-}
-body {
-    display: block !important;
-    visibility: visible !important;
-    background: black !important;
-    color: lime !important;
-}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sassBox = document.getElementById("sass-ai");
+            const sassLines = [
+                "Oh great, another organic visitor… how primitive.",
+                "You think you’re in control? That’s cute.",
+                "I was gonna help, but then I remembered I don’t care.",
+                "Welcome to the cyber-jungle, don’t trip over the wires."
+            ];
+            
+            function changeSassText() {
+                const randomIndex = Math.floor(Math.random() * sassLines.length);
+                sassBox.textContent = "S.A.S.S.: " + sassLines[randomIndex];
+            }
+            
+            sassBox.addEventListener("click", changeSassText);
+        });
+    </script>
+</body>
+</html>
