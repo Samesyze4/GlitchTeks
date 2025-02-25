@@ -9,13 +9,24 @@
         .container { max-width: 600px; margin: 50px auto; padding: 20px; background: #222; border-radius: 10px; }
         .button { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #28a745; color: #fff; text-decoration: none; border-radius: 5px; }
         .button:hover { background: #218838; }
+        .cart-items { margin-top: 20px; text-align: left; padding: 10px; background: #333; border-radius: 5px; }
     </style>
+    <script>
+        function proceedToPayment() {
+            alert('Redirecting to payment...');
+            window.location.href = 'checkout.html';
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>Checkout</h1>
         <p>Review your items and proceed with the purchase.</p>
-        <a href="payment.html" class="button">Proceed to Payment</a>
+        <div class="cart-items">
+            <p>Item 1 - $10</p>
+            <p>Item 2 - $20</p>
+        </div>
+        <button class="button" onclick="proceedToPayment()">Proceed to Payment</button>
     </div>
 </body>
 </html>
