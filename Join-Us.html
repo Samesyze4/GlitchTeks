@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GlitchTeks - Become a Member</title>
   <link rel="stylesheet" href="/styles/styles.css">
-  <!-- Inline styles specific to this page -->
+  <!-- Inline styles for page-specific layout -->
   <style>
-    /* Basic Theme & Reset */
+    /* Basic Reset & Theme */
     * {
       margin: 0;
       padding: 0;
@@ -22,7 +22,7 @@
     .wrapper {
       display: flex;
     }
-    /* Sidebar Navigation */
+    /* Sidebar Navigation (Contact link removed) */
     .sidebar {
       width: 220px;
       background: #1f1f1f;
@@ -59,47 +59,41 @@
     header p.glitch-text {
       font-style: italic;
     }
-    /* Chat-Banter Section */
-    .nova-sass-dialogue {
-      position: relative;
-      width: 100%;
-      height: 400px; /* Container height for random positioning */
-      border: 1px solid #333;
-      margin-bottom: 2em;
-      overflow: hidden;
-    }
-    .chat-bubble {
-      background-color: #222;
-      color: #eee;
-      padding: 1em;
-      border-radius: 0.5em;
+    /* Dialogue Section with Avatars */
+    .dialogue {
+      background: #222;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 0.5rem;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      max-width: 300px;
-      position: absolute;
     }
-    .chat-bubble h2 {
-      margin-top: 0;
-      font-size: 1.1rem;
+    .dialogue .line {
       display: flex;
       align-items: center;
+      margin-bottom: 1rem;
     }
-    .chat-bubble p {
-      margin: 0.5em 0 1em;
-    }
-    .nova-bubble {
-      border-left: 4px solid #00ffa6;
-    }
-    .sass-bubble {
-      border-left: 4px solid #ff00cb;
-    }
-    /* Avatar Styles */
-    .avatar {
+    .dialogue .line img.avatar {
       width: 60px;
       height: 60px;
       border-radius: 50%;
       object-fit: cover;
-      vertical-align: middle;
       margin-right: 0.5em;
+    }
+    .dialogue .line h3 {
+      font-size: 1.1rem;
+      margin: 0;
+      color: #fff;
+    }
+    .dialogue p {
+      margin: 0.5em 0 1em 65px; /* indent text to align under avatar */
+      color: #ccc;
+    }
+    /* Color variations for each character */
+    .nova-line h3 {
+      color: #00ffa6;
+    }
+    .sass-line h3 {
+      color: #ff00cb;
     }
     /* Membership Form Section */
     form {
@@ -178,7 +172,7 @@
 </head>
 <body>
   <div class="wrapper">
-    <!-- Sidebar Navigation (Contact link removed) -->
+    <!-- Sidebar Navigation -->
     <div class="sidebar">
       <ul>
         <li><a href="index.htm">Home</a></li>
@@ -200,38 +194,25 @@
         <p class="glitch-text">[ Secure Your Status in the Cyber-Jungle ]</p>
       </header>
       
-      <!-- NOVA & SASS Chat-Banter Section -->
-      <section class="nova-sass-dialogue" id="chatContainer">
-        <!-- Nova's Bubble -->
-        <div id="novaBubble" class="chat-bubble nova-bubble">
-          <h2>
-            <img src="Images/Nova.jpeg" alt="Nova Avatar" class="avatar">
-            NOVA (68% Integrated)
-          </h2>
-          <p>
-            <strong>NOVA:</strong> Hey there, future glitcher! I’m Nova—your friendly,
-            occasionally glitchy, cybernetically enhanced chimp. Ready to join our
-            unstoppable tech tribe? Sign up below and let’s break some rigs—uh,
-            I mean, explore some epic gaming setups together.
-          </p>
+      <!-- Dialogue Section with Avatars -->
+      <section class="dialogue">
+        <!-- Nova's Dialogue -->
+        <div class="line nova-line">
+          <img src="Images/Nova.jpeg" alt="Nova Avatar" class="avatar">
+          <h3>NOVA (68% Integrated):</h3>
         </div>
-        <!-- SASS's Bubble -->
-        <div id="sassBubble" class="chat-bubble sass-bubble">
-          <h2>
-            <img src="Images/Sass.jpg" alt="SASS Avatar" class="avatar">
-            SASS (Sarcastically Advanced Simian Supervisor)
-          </h2>
-          <p>
-            <strong>SASS:</strong> Don’t mind Nova. He’s only 68% integrated, so if he
-            stares at you blankly or mentions bananas mid-sentence, that’s perfectly normal.
-            I’m the voice of reason—and sarcasm—lodged in his cyber-brain. Trust me, you’ll
-            want me around when he tries to “upgrade” your GPU with duct tape.
-          </p>
-          <p>
-            Ready to claim your seat at the glitchiest table in town? Fill out that membership
-            form before Nova fries the system again.
-          </p>
+        <p>
+          Hey, glitchers! Nova here—your friendly, half-wired chimp. This is our exclusive HQ, packed with insider deals, experimental gear, and banana-coded madness you won’t find anywhere else.
+        </p>
+        
+        <!-- SASS's Dialogue -->
+        <div class="line sass-line">
+          <img src="Images/Sass.jpg" alt="SASS Avatar" class="avatar">
+          <h3>SASS (Sarcastically Advanced Simian Supervisor):</h3>
         </div>
+        <p>
+          *Snort*—Right. Because what we really needed was more chaos. Don’t blame me if Nova tests his “banana duct-tape mod” on your rig without warning. But hey, you asked for an exclusive experience. So here it is.
+        </p>
       </section>
       
       <!-- Membership Form Section -->
