@@ -3,278 +3,286 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GlitchTeks - Become a Member</title>
+  <title>GlitchTeks - Members Only</title>
   <link rel="stylesheet" href="/styles/styles.css">
-  <!-- Inline styles specific to this page -->
+  <!-- Page-specific inline styles for a unique members-only design -->
   <style>
     /* Basic Reset & Theme */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Verdana, sans-serif;
     }
     body {
-      background-color: #151515;
-      color: #eee;
-      line-height: 1.5;
+      background: #0d0d0d;
+      color: #f0f0f0;
+      font-family: "Roboto", sans-serif;
+      padding-bottom: 2rem;
     }
-    .wrapper {
-      display: flex;
+    /* Top Navigation (distinct from index) */
+    nav.top-nav {
+      background: #1a1a1a;
+      padding: 0.8rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
     }
-    /* Sidebar Navigation (Contact link removed) */
-    .sidebar {
-      width: 220px;
-      background: #1f1f1f;
-      padding: 1rem;
-    }
-    .sidebar ul {
-      list-style: none;
-    }
-    .sidebar li {
-      margin-bottom: 1rem;
-    }
-    .sidebar a {
-      text-decoration: none;
+    nav.top-nav a {
       color: #ccc;
+      text-decoration: none;
+      margin: 0 1rem;
       font-weight: 600;
     }
-    .sidebar a.active {
+    nav.top-nav a.active {
       color: #fff;
+      text-shadow: 0 0 5px #e100ff;
     }
-    /* Main Content Area */
-    .main {
-      flex: 1;
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(90deg, #8000ff, #e100ff);
       padding: 2rem;
-      position: relative;
-    }
-    header {
+      text-align: center;
       margin-bottom: 2rem;
     }
-    header h1 {
-      font-size: 2rem;
+    .hero h1 {
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      color: #e100ff;
     }
-    header p.glitch-text {
+    .hero p {
+      font-size: 1.2rem;
       font-style: italic;
     }
-    /* Dialogue Section with Avatars */
-    .dialogue {
+    /* Main Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    /* Chat Dialogue Section */
+    .chat-section {
+      position: relative;
+      height: 350px;
+      margin-bottom: 2rem;
+      border: 2px dashed #444;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+    .chat-bubble {
+      position: absolute;
       background: #222;
       padding: 1rem;
-      margin-bottom: 2rem;
       border-radius: 0.5rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      box-shadow: 0 0 8px rgba(0,0,0,0.6);
+      max-width: 300px;
     }
-    .dialogue .line {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-    .dialogue .line img.avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 0.5em;
-    }
-    .dialogue .line h3 {
+    .chat-bubble h3 {
       font-size: 1.1rem;
       margin: 0;
-      color: #fff;
+      display: flex;
+      align-items: center;
     }
-    .dialogue p {
-      margin: 0.5em 0 1em 65px; /* Indent text to align under avatar */
-      color: #ccc;
+    .chat-bubble p {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
-    /* Color variations for each character */
-    .nova-line h3 {
-      color: #00ffa6;
+    .chat-bubble img.avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      object-fit: cover;
     }
-    .sass-line h3 {
-      color: #ff00cb;
+    .nova-bubble {
+      border-left: 4px solid #00ffa6;
+    }
+    .sass-bubble {
+      border-left: 4px solid #ff00cb;
     }
     /* Membership Form Section */
-    form {
-      margin-top: 2rem;
-      max-width: 500px;
+    .membership-form {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
     }
-    form label {
-      display: block;
-      margin: 0.8rem 0 0.2rem;
-    }
-    form input,
-    form select,
-    form button {
-      width: 100%;
-      padding: 0.7rem;
-      border-radius: 0.3rem;
-      border: none;
+    .membership-form h2 {
+      color: #e100ff;
       margin-bottom: 1rem;
     }
-    form button {
+    .membership-form form {
+      display: flex;
+      flex-direction: column;
+    }
+    .membership-form label {
+      margin: 0.8rem 0 0.2rem;
+    }
+    .membership-form input,
+    .membership-form select,
+    .membership-form button {
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 0.3rem;
+    }
+    .membership-form button {
       background: #e100ff;
       color: #fff;
       font-weight: bold;
       cursor: pointer;
-      transition: opacity 0.2s ease;
+      transition: background 0.2s;
     }
-    form button:hover {
-      opacity: 0.8;
+    .membership-form button:hover {
+      background: #bf00e1;
     }
-    /* Membership Pricing & Secure Checkout Section */
-    section.pricing {
-      margin-top: 3rem;
-      background: #1f1f1f;
+    /* Pricing Section */
+    .pricing-section {
+      background: #1a1a1a;
       padding: 1.5rem;
-      border-radius: 0.4rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
       border-left: 5px solid #e100ff;
     }
-    section.pricing h2 {
+    .pricing-section h2 {
       color: #e100ff;
       margin-bottom: 1rem;
     }
-    section.pricing table {
+    .pricing-section table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 1rem;
     }
-    section.pricing table, 
-    section.pricing th, 
-    section.pricing td {
+    .pricing-section th, .pricing-section td {
       border: 1px solid #333;
-    }
-    section.pricing th, 
-    section.pricing td {
-      padding: 0.7rem;
+      padding: 0.8rem;
       text-align: left;
     }
     .secure-checkout-btn {
       display: inline-block;
       background: #7fff7f;
       color: #333;
-      text-decoration: none;
       padding: 0.8rem 1.5rem;
       border-radius: 0.3rem;
       font-weight: bold;
-      transition: opacity 0.2s ease;
+      text-decoration: none;
+      transition: background 0.2s;
     }
     .secure-checkout-btn:hover {
-      opacity: 0.8;
+      background: #5fd95d;
     }
     /* Footer */
     footer {
-      margin-top: 2rem;
       text-align: center;
+      padding: 1rem;
+      background: #0a0a0a;
+      color: #777;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <!-- Sidebar Navigation -->
-    <div class="sidebar">
-      <ul>
-        <li><a href="index.htm">Home</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="Brain-Merge.html">Merger of Consciousness</a></li>
-        <li><a href="Guides.html">Guides</a></li>
-        <li><a href="Reviews.html">Reviews</a></li>
-        <li><a href="Merch.html">Merch</a></li>
-        <li><a href="Privacy-Policy.html">Privacy Policy</a></li>
-        <li><a href="Terms-Conditions.html">Terms</a></li>
-        <li><a href="Join-Us.html" class="active">Join Us</a></li>
-      </ul>
-    </div>
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <a href="index.htm">Home</a>
+    <a href="About.html">About</a>
+    <a href="Brain-Merge.html">Merger of Consciousness</a>
+    <a href="Guides.html">Guides</a>
+    <a href="Reviews.html">Reviews</a>
+    <a href="Merch.html">Merch</a>
+    <a href="Privacy-Policy.html">Privacy Policy</a>
+    <a href="Terms-Conditions.html">Terms</a>
+    <a href="Members.html" class="active">Members Only</a>
+  </nav>
 
-    <!-- Main Content Area -->
-    <div class="main">
-      <header>
-        <h1>> BECOME A GLITCHTEKS MEMBER_</h1>
-        <p class="glitch-text">[ Secure Your Status in the Cyber-Jungle ]</p>
-      </header>
-      
-      <!-- Dialogue Section with Avatars -->
-      <section class="dialogue">
-        <!-- Nova's Dialogue -->
-        <div class="line nova-line">
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Welcome to the Cyber Insiders' Den</h1>
+    <p>Unlock exclusive content, perks, and direct access to our team.</p>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Chat Dialogue Section -->
+    <section class="chat-section" id="chatContainer">
+      <!-- Nova Chat Bubble -->
+      <div id="novaBubble" class="chat-bubble nova-bubble">
+        <h3>
           <img src="Images/Nova.jpeg" alt="Nova Avatar" class="avatar">
-          <h3>NOVA (68% Integrated):</h3>
-        </div>
+          NOVA (68% Integrated)
+        </h3>
         <p>
-          Hey, glitchers! Nova here—your friendly, half-wired chimp. This is our exclusive HQ, packed with insider deals, experimental gear, and banana-coded madness you won’t find anywhere else.
+          Hey, glitchers! I’m Nova—your friendly, half-wired chimp. Ready to break some rigs and dive deep into epic gaming setups? Join our tribe and let's push the limits together.
         </p>
-        
-        <!-- SASS's Dialogue -->
-        <div class="line sass-line">
+      </div>
+      <!-- SASS Chat Bubble -->
+      <div id="sassBubble" class="chat-bubble sass-bubble">
+        <h3>
           <img src="Images/Sass.jpg" alt="SASS Avatar" class="avatar">
-          <h3>SASS (Sarcastically Advanced Simian Supervisor):</h3>
-        </div>
+          SASS (Sarcastically Advanced Simian Supervisor)
+        </h3>
         <p>
-          *Snort*—Right. Because what we really needed was more chaos. Don’t blame me if Nova tests his “banana duct-tape mod” on your rig without warning. But hey, you asked for an exclusive experience. So here it is.
+          *Snort*—If Nova starts talking bananas, don’t panic. I’m here to keep things in check. You’ll want me around when things get wild—so sign up before the chaos escalates!
         </p>
-      </section>
-      
-      <!-- Membership Form Section -->
-      <section>
-        <h2>> SIGN UP FOR MEMBERSHIP_</h2>
-        <form action="/submit-membership" method="POST">
-          <label for="username">Codename:</label>
-          <input type="text" id="username" name="username" required>
-          
-          <label for="email">Comm Link (Email):</label>
-          <input type="email" id="email" name="email" required>
-          
-          <label for="password">Secure Passcode:</label>
-          <input type="password" id="password" name="password" required>
-          
-          <label for="avatar">Choose Your Member Badge:</label>
-          <select id="avatar" name="avatar">
-            <option value="CyberInitiate">CyberInitiate</option>
-            <option value="Cybersentinel">Cybersentinel</option>
-            <option value="CyberLord">CyberLord</option>
-          </select>
-          
-          <button type="submit" class="cta">Join Now</button>
-        </form>
-        <p>Already in the system? <a href="/exclusive-members.html">Enter the Exclusive Members Area</a></p>
-      </section>
-      
-      <!-- Membership Pricing & Secure Checkout Section -->
-      <section class="pricing">
-        <h2>> MEMBERSHIP PRICING & SECURE CHECKOUT_</h2>
-        <p>Choose your membership level and proceed to a secure checkout.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Membership Level</th>
-              <th>Price (Monthly)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>CyberInitiate</td>
-              <td>$9.99</td>
-            </tr>
-            <tr>
-              <td>Cybersentinel</td>
-              <td>$19.99</td>
-            </tr>
-            <tr>
-              <td>CyberLord</td>
-              <td>$29.99</td>
-            </tr>
-          </tbody>
-        </table>
-        <p>By clicking the button below, you agree to our terms and proceed to a secure checkout.</p>
-        <a href="/checkout/" class="secure-checkout-btn">Proceed to Secure Checkout</a>
-      </section>
-      
-      <footer>
-        <p>&copy; 2025 GlitchTeks. Once a member, always a member.</p>
-        <p>Need help? Email us at <a href="mailto:samesyze@proton.me">samesyze@proton.me</a></p>
-      </footer>
-    </div>
+      </div>
+    </section>
+
+    <!-- Membership Form Section -->
+    <section class="membership-form">
+      <h2>Sign Up for Membership</h2>
+      <form action="/submit-membership" method="POST">
+        <label for="username">Codename:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="email">Comm Link (Email):</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="password">Secure Passcode:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <label for="badge">Choose Your Member Badge:</label>
+        <select id="badge" name="badge">
+          <option value="CyberInitiate">CyberInitiate</option>
+          <option value="Cybersentinel">Cybersentinel</option>
+          <option value="CyberLord">CyberLord</option>
+        </select>
+        
+        <button type="submit">Join Now</button>
+      </form>
+      <p>Already in the system? <a href="/exclusive-members.html">Enter the Exclusive Members Area</a></p>
+    </section>
+
+    <!-- Membership Pricing & Secure Checkout Section -->
+    <section class="pricing-section">
+      <h2>Membership Pricing & Secure Checkout</h2>
+      <p>Choose your membership level and proceed to a secure checkout.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Membership Level</th>
+            <th>Price (Monthly)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CyberInitiate</td>
+            <td>$9.99</td>
+          </tr>
+          <tr>
+            <td>Cybersentinel</td>
+            <td>$19.99</td>
+          </tr>
+          <tr>
+            <td>CyberLord</td>
+            <td>$29.99</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>By clicking the button below, you agree to our terms and proceed to a secure checkout.</p>
+      <a href="/checkout/" class="secure-checkout-btn">Proceed to Secure Checkout</a>
+    </section>
+    
+    <footer>
+      <p>&copy; 2025 GlitchTeks. Once a member, always a member.</p>
+      <p>Need help? Email us at <a href="mailto:samesyze@proton.me">samesyze@proton.me</a></p>
+    </footer>
   </div>
   
   <!-- External Script for Random Positioning -->
