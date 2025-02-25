@@ -3,195 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GlitchTeks - Members Area</title>
-
-  <!-- Inline CSS to ensure no visual overlap with home page -->
+  <title>GlitchTeks - Members Only</title>
   <style>
-    /* Reset/Basic Theme */
+    /* Basic Reset */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
-      font-family: "Arial", sans-serif;
+      font-family: Arial, sans-serif;
     }
     body {
-      background-color: #1b1b1b;
+      background-color: #131313;
       color: #eee;
       line-height: 1.5;
     }
 
-    /* Top Nav */
-    .top-nav {
+    /* Top Navigation: distinct from the sidebar in index.htm */
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: linear-gradient(90deg, #ff0000, #8500ff);
+      background: linear-gradient(135deg, #ff0040, #8000ff);
       padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
     }
-    .top-nav .brand {
+    nav .logo {
       font-size: 1.5rem;
-      font-weight: bold;
       color: #fff;
       text-decoration: none;
+      font-weight: bold;
     }
-    .top-nav ul {
+    nav ul {
       list-style: none;
       display: flex;
+      gap: 1rem;
     }
-    .top-nav li {
-      margin-left: 1rem;
-    }
-    .top-nav a {
-      text-decoration: none;
+    nav ul li a {
       color: #fff;
+      text-decoration: none;
       font-weight: 600;
-    }
-    .top-nav a:hover {
-      opacity: 0.8;
-    }
-
-    /* Main Container */
-    .container {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    /* Welcome Section */
-    .welcome {
-      margin-bottom: 2rem;
-      background: #2c2c2c;
-      border-left: 5px solid #ff0000;
-      padding: 1rem 1.5rem;
-      border-radius: 0.3rem;
-    }
-    .welcome h1 {
-      margin-bottom: 0.5rem;
-      color: #ff6060;
-    }
-    .welcome p {
-      margin-bottom: 1rem;
-    }
-
-    /* Direct Chat Link */
-    .chat-link {
-      display: inline-block;
-      margin: 1rem 0;
-      padding: 0.5rem 1rem;
-      background: #ff0000;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 0.3rem;
       transition: opacity 0.2s ease;
     }
-    .chat-link:hover {
-      opacity: 0.8;
+    nav ul li a:hover {
+      opacity: 0.7;
     }
 
-    /* Blog / Suggestions Section */
-    .blog {
-      background: #2c2c2c;
-      padding: 1rem;
-      border-radius: 0.3rem;
-      margin-bottom: 2rem;
-    }
-    .blog h2 {
-      color: #ff6060;
-      margin-bottom: 0.5rem;
-    }
-    .blog-post {
-      margin-bottom: 1rem;
-      padding: 0.5rem;
-      background: #3a3a3a;
-      border-radius: 0.3rem;
-    }
-    .blog-post h3 {
-      margin-bottom: 0.2rem;
-      color: #fff;
-    }
-    .blog-post p {
-      margin-bottom: 0.2rem;
-      color: #ccc;
-    }
-
-    /* New Post Form */
-    .new-post-form {
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-    }
-    .new-post-form label {
-      margin: 0.5rem 0 0.2rem;
-    }
-    .new-post-form input, .new-post-form textarea {
-      padding: 0.5rem;
-      border-radius: 0.3rem;
-      border: none;
-      margin-bottom: 0.5rem;
-    }
-    .new-post-form button {
-      align-self: flex-start;
-      background: #ff6060;
-      color: #fff;
-      border: none;
-      padding: 0.7rem 1rem;
-      border-radius: 0.3rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .new-post-form button:hover {
-      opacity: 0.8;
-    }
-
-    /* Exclusive Stream Times */
-    .streams {
-      margin-bottom: 2rem;
-      background: #2c2c2c;
-      padding: 1rem;
-      border-radius: 0.3rem;
-    }
-    .streams h2 {
-      color: #ff6060;
-      margin-bottom: 1rem;
-    }
-    .streams table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .streams table th, 
-    .streams table td {
-      padding: 0.7rem;
-      text-align: left;
-      border-bottom: 1px solid #444;
-    }
-    .streams table th {
-      color: #fff;
-    }
-    .streams table td {
-      color: #ccc;
-    }
-
-    /* Event Creator */
-    .event-creator {
-      background: #2c2c2c;
-      padding: 1rem;
-      border-radius: 0.3rem;
-      margin-bottom: 2rem;
-    }
-    .event-creator h2 {
-      color: #ff6060;
-      margin-bottom: 1rem;
-    }
-    .event-creator form {
-      display: flex;
-      flex-direction: column;
-    }
-    .event-creator label {
-      margin: 0.5rem 0 0.2rem;
-    }
-    .event-creator input, .event-creator textarea {
-      padding: 0.5rem;
-      border-radius: 0.3rem;
-      border: none;
-      margin-bottom: 0.5rem;
-      background: #3a3a3a;
- 
+    /* Hero Section: totally different from the index’s header */
+    .hero {
+      text-align: center;
+      background: #222;
+      padding: 4rem 2rem;
+      border-bottom: 2px
