@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import { Lock, AlertTriangle } from "lucide-react";
+import Head from "next/head";
 
 const stripePromise = loadStripe("your-stripe-public-key");
 
-export default function Checkout() {
+export default function SecureCheckout() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({ email: "", address: "" });
@@ -26,8 +27,8 @@ export default function Checkout() {
       const { error } = await stripe.redirectToCheckout({
         lineItems: [{ price: "your-price-id", quantity: 1 }],
         mode: "payment",
-        successUrl: "https://your-site.com/success",
-        cancelUrl: "https://your-site.com/cancel",
+        successUrl: "https://your-site.com/checkout/success",
+        cancelUrl: "https://your-site.com/checkout/cancel",
       });
       if (error) throw error;
     } catch (err) {
@@ -37,33 +38,38 @@ export default function Checkout() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
-      <Card className="w-full max-w-md bg-gray-800 shadow-lg rounded-2xl p-6">
-        <CardContent>
-          <h2 className="text-xl font-bold text-center mb-4">Secure Checkout</h2>
-          <div className="space-y-4">
-            <Input name="email" placeholder="Email Address" onChange={handleInputChange} />
-            <Input name="address" placeholder="Shipping Address" onChange={handleInputChange} />
-          </div>
-          {error && (
-            <motion.div 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }}
-              className="text-red-500 flex items-center mt-2"
-            >
-              <AlertTriangle className="w-5 h-5 mr-2" /> {error}
-            </motion.div>
-          )}
-          <div className="mt-6 flex flex-col space-y-3">
-            <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleStripePayment} disabled={loading}>
-              {loading ? "Processing..." : "Pay with Card"}
-            </Button>
-            <PayPalScriptProvider options={{ "client-id": "your-paypal-client-id" }}>
-              <PayPalButtons style={{ layout: "horizontal" }} />
-            </PayPalScriptProvider>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+    <>
+      <Head>
+        <title>Secure Checkout</title>
+      </Head>
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
+        <Card className="w-full max-w-md bg-gray-800 shadow-lg rounded-2xl p-6">
+          <CardContent>
+            <h2 className="text-xl font-bold text-center mb-4">Secure Checkout</h2>
+            <div className="space-y-4">
+              <Input name="email" placeholder="Email Address" onChange={handleInputChange} />
+              <Input name="address" placeholder="Shipping Address" onChange={handleInputChange} />
+            </div>
+            {error && (
+              <motion.div 
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }}
+                className="text-red-500 flex items-center mt-2"
+              >
+                <AlertTriangle className="w-5 h-5 mr-2" /> {error}
+              </motion.div>
+            )}
+            <div className="mt-6 flex flex-col space-y-3">
+              <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleStripePayment} disabled={loading}>
+                {loading ? "Processing..." : "Pay with Card"}
+              </Button>
+              <PayPalScriptProvider options={{ "client-id": "your-paypal-client-id" }}>
+                <PayPalButtons style={{ layout: "horizontal" }} />
+              </PayPalScriptProvider>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </>
   );
 }
