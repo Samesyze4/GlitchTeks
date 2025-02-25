@@ -1,113 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlitchTeks - Become a Member</title>
-    <link rel="stylesheet" href="/styles/styles.css">
-    <!-- Optional inline styling to make the dialogue pop -->
-    <style>
-      .nova-sass-dialogue {
-        background-color: #222; /* Dark background for contrast */
-        color: #eee;
-        padding: 1em;
-        margin: 2em 0;
-        border-radius: 0.5em;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      }
-      .nova-sass-dialogue h2 {
-        margin-top: 0;
-      }
-      .nova-text {
-        color: #00ffa6; /* Teal-ish color for Nova */
-      }
-      .sass-text {
-        color: #ff00cb; /* Pink-ish color for SASS */
-      }
-      .nova-sass-dialogue p {
-        margin: 0.5em 0 1em;
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlitchTeks - Become a Member</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <!-- Optional inline styling to make the dialogue pop -->
+  <style>
+    .nova-sass-dialogue {
+      background-color: #222; /* Dark background for contrast */
+      color: #eee;
+      padding: 1em;
+      margin: 2em 0;
+      border-radius: 0.5em;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .nova-sass-dialogue h2 {
+      margin-top: 0;
+    }
+    .nova-text {
+      color: #00ffa6; /* Teal-ish color for Nova */
+    }
+    .sass-text {
+      color: #ff00cb; /* Pink-ish color for SASS */
+    }
+    .nova-sass-dialogue p {
+      margin: 0.5em 0 1em;
+    }
+
+    /* Avatars */
+    .avatar {
+      width: 60px; 
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      vertical-align: middle;
+      margin-right: 0.5em;
+    }
+  </style>
 </head>
 <body>
-    <div class="wrapper">
-        <!-- Sidebar Navigation -->
-        <div class="sidebar">
-            <ul>
-                <li><a href="index.htm">Home</a></li>
-                <li><a href="About.html">About</a></li>
-                <li><a href="Brain-Merge.html">Merger of Consciousness</a></li>
-                <li><a href="Contact-Us.html">Contact</a></li>
-                <li><a href="Guides.html">Guides</a></li>
-                <li><a href="Reviews.html">Reviews</a></li>
-                <li><a href="Merch.html">Merch</a></li>
-                <li><a href="Privacy-Policy.html">Privacy Policy</a></li>
-                <li><a href="Terms-Conditions.html">Terms</a></li>
-                <!-- VIP link removed -->
-                <li><a href="Join-Us.html" class="active">Join Us</a></li>
-            </ul>
-        </div>
-
-        <!-- Main Content Area -->
-        <div class="main">
-            <header>
-                <h1>> BECOME A GLITCHTEKS MEMBER_</h1>
-                <p class="glitch-text">[ Secure Your Status in the Cyber-Jungle ]</p>
-            </header>
-            
-            <!-- Nova & SASS Dialogue Section -->
-            <section class="nova-sass-dialogue">
-                <h2>NOVA <span class="nova-text">(68% Integrated)</span></h2>
-                <p>
-                  <strong>NOVA:</strong> Hey there, future glitcher! I’m Nova—your friendly,
-                  occasionally glitchy, cybernetically enhanced chimp. Ready to
-                  join our unstoppable tech tribe? Sign up below and let’s break some rigs—uh,
-                  I mean, explore some epic gaming setups together.
-                </p>
-
-                <h2>SASS <span class="sass-text">(Sarcastically Advanced Simian Supervisor)</span></h2>
-                <p>
-                  <strong>SASS:</strong> Don’t mind Nova. He’s only 68% integrated, so if he
-                  stares at you blankly or mentions bananas mid-sentence, 
-                  that’s perfectly normal. I’m the voice of reason—and sarcasm—lodged in his
-                  cyber-brain. Trust me, you’ll want me around when he tries to
-                  “upgrade” your GPU with duct tape.
-                </p>
-                <p>
-                  Ready to claim your seat at the glitchiest table in town? Fill out 
-                  that membership form before Nova fries the system again.
-                </p>
-            </section>
-
-            <section>
-                <h2>> SIGN UP FOR MEMBERSHIP_</h2>
-                <form action="/submit-membership" method="POST">
-                    <label for="username">Codename:</label>
-                    <input type="text" id="username" name="username" required>
-                    
-                    <label for="email">Comm Link (Email):</label>
-                    <input type="email" id="email" name="email" required>
-                    
-                    <label for="password">Secure Passcode:</label>
-                    <input type="password" id="password" name="password" required>
-                    
-                    <label for="avatar">Choose Your Member Badge:</label>
-                    <select id="avatar" name="avatar">
-                        <option value="hacker">💻 Hacker</option>
-                        <option value="glitch">⚡ Glitch</option>
-                        <option value="ai-overlord">🧠 AI Overlord</option>
-                    </select>
-                    
-                    <button type="submit" class="cta">Join Now</button>
-                </form>
-                <p>Already in the system? 
-                   <a href="/exclusive-members.html">Enter the Exclusive Members Area</a></p>
-            </section>
-            
-            <footer>
-                <p>&copy; 2025 GlitchTeks. Once a member, always a member.</p>
-            </footer>
-        </div>
+  <div class="wrapper">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <ul>
+        <li><a href="index.htm">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Brain-Merge.html">Merger of Consciousness</a></li>
+        <!-- Contact link removed -->
+        <li><a href="Guides.html">Guides</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+        <li><a href="Merch.html">Merch</a></li>
+        <li><a href="Privacy-Policy.html">Privacy Policy</a></li>
+        <li><a href="Terms-Conditions.html">Terms</a></li>
+        <li><a href="Join-Us.html" class="active">Join Us</a></li>
+      </ul>
     </div>
+
+    <!-- Main Content Area -->
+    <div class="main">
+      <header>
+        <h1>> BECOME A GLITCHTEKS MEMBER_</h1>
+        <p class="glitch-text">[ Secure Your Status in the Cyber-Jungle ]</p>
+      </header>
+      
+      <!-- Nova & SASS Dialogue Section -->
+      <section class="nova-sass-dialogue">
+        <!-- Nova -->
+        <h2>
+          <!-- Relative path to your images folder -->
+          <img 
+            src="Images/Nova.jpeg" 
+            alt="Nova Avatar" 
+            class="avatar"
+          >
+          NOVA <span class="nova-text">(68% Integrated)</span>
+        </h2>
+        <p>
+          <strong>NOVA:</strong> Hey there, future glitcher! I’m Nova—your friendly,
+          occasionally glitchy, cybernetically enhanced chimp. Ready to
+          join our unstoppable tech tribe? Sign up below and let’s break some rigs—uh,
+          I mean, explore some epic gaming setups together.
+        </p>
+
+        <!-- SASS -->
+        <h2>
+          <img 
+            src="Images/Sass.jpg" 
+            alt="SASS Avatar" 
+            class="avatar"
+          >
+          SASS <span class="sass-text">(Sarcastically Advanced Simian Supervisor)</span>
+        </h2>
+        <p>
+          <strong>SASS:</strong> Don’t mind Nova. He’s only 68% integrated, so if he
+          stares at you blankly or mentions bananas mid-sentence, 
+          that’s perfectly normal. I’m the voice of reason—and sarcasm—lodged in his
+          cyber-brain. Trust me, you’ll want me around when he tries to
+          “upgrade” your GPU with duct tape.
+        </p>
+        <p>
+          Ready to claim your seat at the glitchiest table in town? Fill out 
+          that membership form before Nova fries the system again.
+        </p>
+      </section>
+
+      <section>
+        <h2>> SIGN UP FOR MEMBERSHIP_</h2>
+        <form action="/submit-membership" method="POST">
+          <label for="username">Codename:</label>
+          <input type="text" id="username" name="username" required>
+          
+          <label for="email">Comm Link (Email):</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="password">Secure Passcode:</label>
+          <input type="password" id="password" name="password" required>
+          
+          <label for="avatar">Choose Your Member Badge:</label>
+          <select id="avatar" name="avatar">
+            <option value="hacker">💻 Hacker</option>
+            <option value="glitch">⚡ Glitch</option>
+            <option value="ai-overlord">🧠 AI Overlord</option>
+          </select>
+          
+          <button type="submit" class="cta">Join Now</button>
+        </form>
+        <p>Already in the system? 
+          <a href="/exclusive-members.html">Enter the Exclusive Members Area</a>
+        </p>
+      </section>
+      
+      <footer>
+        <p>&copy; 2025 GlitchTeks. Once a member, always a member.</p>
+        <p>Need help? Email us at <a href="mailto:samesyze@proton.me">samesyze@proton.me</a></p>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
