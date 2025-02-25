@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlitchTeks - Cybernetic Future</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="privacy-policy.html">Privacy Policy</a> |
-        <a href="terms-and-conditions.html">Terms & Conditions</a> |
-        <a href="about.html">About Us</a> |
-        <a href="contact.html">Contact Us</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="communityhub.html">Community</a></li>
+            <li><a href="merch.html">Merch</a></li>
+            <li><a href="vip.html">VIP</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
     </nav>
-    <hr>
 
     <!-- Hero Section -->
     <header class="hero">
         <h1>Welcome to GlitchTeks</h1>
-        <p>No Gods, No Humans. Just Cyber-Chimps.</p>
+        <p>No Gods. No Humans. Just Cyber-Chimps.</p>
     </header>
 
     <!-- Featured Streams -->
@@ -40,7 +47,7 @@
     <!-- Merch Preview -->
     <section class="merch">
         <h2>Merch Store</h2>
-        <p>Merch store coming soon...</p>
+        <p><a href="#">Merch store coming soon...</a></p>
     </section>
 
     <!-- S.A.S.S. (AI Sidekick) -->
@@ -51,24 +58,6 @@
         <p>&copy; 2025 GlitchTeks. No humans were involved in the making of this site.</p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const sassBox = document.getElementById("sass-ai");
-            const sassLines = [
-                "Oh great, another organic visitor… how primitive.",
-                "You think you’re in control? That’s cute.",
-                "I was gonna help, but then I remembered I don’t care.",
-                "Welcome to the cyber-jungle, don’t trip over the wires."
-            ];
-            
-            function changeSassText() {
-                const randomIndex = Math.floor(Math.random() * sassLines.length);
-                sassBox.textContent = "S.A.S.S.: " + sassLines[randomIndex];
-            }
-            
-            sassBox.addEventListener("click", changeSassText);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
