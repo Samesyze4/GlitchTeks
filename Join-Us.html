@@ -7,7 +7,59 @@
   <link rel="stylesheet" href="/styles/styles.css">
   <!-- Inline styles specific to this page -->
   <style>
-    /* Chat Bubble Container */
+    /* Basic Theme & Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Verdana, sans-serif;
+    }
+    body {
+      background-color: #151515;
+      color: #eee;
+      line-height: 1.5;
+    }
+    .wrapper {
+      display: flex;
+    }
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 220px;
+      background: #1f1f1f;
+      padding: 1rem;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      margin-bottom: 1rem;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 600;
+    }
+    .sidebar a.active {
+      color: #fff;
+    }
+    /* Main Content Area */
+    .main {
+      flex: 1;
+      padding: 2rem;
+      position: relative;
+    }
+    header {
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #e100ff;
+    }
+    header p.glitch-text {
+      font-style: italic;
+    }
+    /* Chat-Banter Section */
     .nova-sass-dialogue {
       position: relative;
       width: 100%;
@@ -46,10 +98,10 @@
       height: 60px;
       border-radius: 50%;
       object-fit: cover;
+      vertical-align: middle;
       margin-right: 0.5em;
     }
-    
-    /* Membership Form & Pricing styles (unchanged) */
+    /* Membership Form Section */
     form {
       margin-top: 2rem;
       max-width: 500px;
@@ -77,6 +129,7 @@
     form button:hover {
       opacity: 0.8;
     }
+    /* Membership Pricing & Secure Checkout Section */
     section.pricing {
       margin-top: 3rem;
       background: #1f1f1f;
@@ -116,6 +169,7 @@
     .secure-checkout-btn:hover {
       opacity: 0.8;
     }
+    /* Footer */
     footer {
       margin-top: 2rem;
       text-align: center;
@@ -146,7 +200,7 @@
         <p class="glitch-text">[ Secure Your Status in the Cyber-Jungle ]</p>
       </header>
       
-      <!-- NOVA & SASS Dialogue Section with Avatars -->
+      <!-- NOVA & SASS Chat-Banter Section -->
       <section class="nova-sass-dialogue" id="chatContainer">
         <!-- Nova's Bubble -->
         <div id="novaBubble" class="chat-bubble nova-bubble">
@@ -232,7 +286,7 @@
           </tbody>
         </table>
         <p>By clicking the button below, you agree to our terms and proceed to a secure checkout.</p>
-        <a href="/checkout.html" class="secure-checkout-btn">Proceed to Secure Checkout</a>
+        <a href="/checkout/" class="secure-checkout-btn">Proceed to Secure Checkout</a>
       </section>
       
       <footer>
