@@ -5,6 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GlitchTeks - The CyberChimp Bastion</title>
   <link rel="stylesheet" href="/styles/styles.css"/>
+
+  <!-- Optional Inline Styling for a Unique Look -->
+  <style>
+    /* A distinct gradient header so it differs from the index page */
+    header.bastion-header {
+      background: linear-gradient(135deg, #ff00cb 0%, #00fff9 100%);
+      color: #fff;
+      padding: 2em;
+      text-align: center;
+      border-radius: 0 0 1em 0;
+    }
+
+    /* Dialogue Box styling, similar to membership page but unique color scheme */
+    .bastion-dialogue {
+      background-color: #1c1c1c;
+      color: #eee;
+      padding: 1.5em;
+      margin: 2em 0;
+      border-radius: 0.5em;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+    .bastion-dialogue h3 {
+      color: #00fff9; /* bright aqua for headings */
+      margin-top: 0;
+    }
+    .bastion-dialogue p {
+      margin: 0.5em 0 1em;
+    }
+    .nova {
+      color: #00ffa6; 
+    }
+    .sass {
+      color: #ff00cb;
+    }
+  </style>
 </head>
 <body>
   <div class="wrapper">
@@ -28,10 +63,28 @@
 
     <!-- Main Content Area -->
     <div class="main">
-      <header>
+      <!-- A unique gradient header for the Bastion page -->
+      <header class="bastion-header">
         <h1>The CyberChimp Bastion</h1>
         <p>A fortress of glitchy wonders for members only.</p>
       </header>
+
+      <!-- Optional Nova & SASS cameo to differentiate from the index -->
+      <section class="bastion-dialogue">
+        <h3 class="nova">NOVA (68% Integrated):</h3>
+        <p>
+          Welcome to the Bastion, fellow glitcher! Inside these walls, we share 
+          top-secret tech hacks, run meltdown AMAs, and occasionally fling a banana 
+          or two. Ready to level up?
+        </p>
+
+        <h3 class="sass">SASS (Sarcastically Advanced Simian Supervisor):</h3>
+        <p>
+          Let’s be honest: the only “secret” hack Nova knows is duct-taping 
+          bananas to a motherboard. But sure—step right in. Just wipe your feet 
+          on the doormat of chaos. 
+        </p>
+      </section>
 
       <section>
         <h2>Members-Only Lounge</h2>
