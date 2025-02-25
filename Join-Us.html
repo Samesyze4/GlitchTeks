@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/styles/styles.css">
   <!-- Inline styles specific to this page -->
   <style>
-    /* Chat Bubble Styles */
+    /* Chat Bubble Container */
     .nova-sass-dialogue {
       position: relative;
       width: 100%;
@@ -28,6 +28,8 @@
     .chat-bubble h2 {
       margin-top: 0;
       font-size: 1.1rem;
+      display: flex;
+      align-items: center;
     }
     .chat-bubble p {
       margin: 0.5em 0 1em;
@@ -36,18 +38,18 @@
       border-left: 4px solid #00ffa6;
     }
     .sass-bubble {
-      border-left: 4px solid #ff7ffa;
+      border-left: 4px solid #ff00cb;
     }
+    /* Avatar Styles */
     .avatar {
       width: 60px;
       height: 60px;
       border-radius: 50%;
       object-fit: cover;
-      vertical-align: middle;
       margin-right: 0.5em;
     }
     
-    /* Membership Form */
+    /* Membership Form & Pricing styles (unchanged) */
     form {
       margin-top: 2rem;
       max-width: 500px;
@@ -75,8 +77,6 @@
     form button:hover {
       opacity: 0.8;
     }
-    
-    /* Membership Pricing & Secure Checkout Section */
     section.pricing {
       margin-top: 3rem;
       background: #1f1f1f;
@@ -116,8 +116,6 @@
     .secure-checkout-btn:hover {
       opacity: 0.8;
     }
-    
-    /* Footer */
     footer {
       margin-top: 2rem;
       text-align: center;
@@ -126,13 +124,12 @@
 </head>
 <body>
   <div class="wrapper">
-    <!-- Sidebar Navigation -->
+    <!-- Sidebar Navigation (Contact link removed) -->
     <div class="sidebar">
       <ul>
         <li><a href="index.htm">Home</a></li>
         <li><a href="About.html">About</a></li>
         <li><a href="Brain-Merge.html">Merger of Consciousness</a></li>
-        <!-- Contact link removed -->
         <li><a href="Guides.html">Guides</a></li>
         <li><a href="Reviews.html">Reviews</a></li>
         <li><a href="Merch.html">Merch</a></li>
@@ -149,7 +146,7 @@
         <p class="glitch-text">[ Secure Your Status in the Cyber-Jungle ]</p>
       </header>
       
-      <!-- NOVA & SASS Chat-Banter Section -->
+      <!-- NOVA & SASS Dialogue Section with Avatars -->
       <section class="nova-sass-dialogue" id="chatContainer">
         <!-- Nova's Bubble -->
         <div id="novaBubble" class="chat-bubble nova-bubble">
