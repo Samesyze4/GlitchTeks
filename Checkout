@@ -14,7 +14,7 @@
     <script>
         function proceedToPayment() {
             alert('Redirecting to payment...');
-            window.location.href = 'Checkout';
+            window.location.href = '/Checkout';
         }
     </script>
 </head>
