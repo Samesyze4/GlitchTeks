@@ -5,37 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GlitchTeks - Become a Member</title>
   <link rel="stylesheet" href="/styles/styles.css">
-  <!-- Optional inline styling to make the dialogue pop -->
+  <!-- Inline styles for this page -->
   <style>
-    .nova-sass-dialogue {
-      background-color: #222; /* Dark background for contrast */
+    /* Basic Reset & Theme */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Verdana", sans-serif;
+    }
+    body {
+      background-color: #151515;
+      color: #eee;
+      line-height: 1.5;
+      position: relative;
+      min-height: 100vh;
+    }
+    .wrapper {
+      display: flex;
+    }
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 220px;
+      background: #1f1f1f;
+      padding: 1rem;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      margin-bottom: 1rem;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 600;
+    }
+    .sidebar a.active {
+      color: #fff;
+    }
+    /* Main Content Area */
+    .main {
+      flex: 1;
+      padding: 2rem;
+      position: relative;
+    }
+    header {
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #e100ff;
+    }
+    header p.glitch-text {
+      font-style: italic;
+    }
+    /* Chat-Banter Section */
+    .chat-banter {
+      position: absolute;
+      width: 100%;
+      height: 400px; /* Container height for random positioning */
+    }
+    .chat-bubble {
+      background-color: #222;
       color: #eee;
       padding: 1em;
-      margin: 2em 0;
       border-radius: 0.5em;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      max-width: 300px;
+      position: absolute;
     }
-    .nova-sass-dialogue h2 {
+    .chat-bubble h2 {
       margin-top: 0;
+      font-size: 1.1rem;
     }
-    .nova-text {
-      color: #00ffa6; /* Teal-ish color for Nova */
-    }
-    .sass-text {
-      color: #ff00cb; /* Pink-ish color for SASS */
-    }
-    .nova-sass-dialogue p {
+    .chat-bubble p {
       margin: 0.5em 0 1em;
     }
-
-    /* Avatars */
+    .nova-bubble {
+      border-left: 4px solid #00ffa6;
+    }
+    .sass-bubble {
+      border-left: 4px solid #ff00cb;
+    }
     .avatar {
-      width: 60px; 
+      width: 60px;
       height: 60px;
       border-radius: 50%;
       object-fit: cover;
       vertical-align: middle;
       margin-right: 0.5em;
+    }
+    /* Membership Form Section */
+    form {
+      margin-top: 2rem;
+      max-width: 500px;
+    }
+    form label {
+      display: block;
+      margin: 0.8rem 0 0.2rem;
+    }
+    form input,
+    form select,
+    form button {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 0.3rem;
+      border: none;
+      margin-bottom: 1rem;
+    }
+    form button {
+      background: #e100ff;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+    form button:hover {
+      opacity: 0.8;
+    }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
     }
   </style>
 </head>
@@ -63,48 +155,43 @@
         <h1>> BECOME A GLITCHTEKS MEMBER_</h1>
         <p class="glitch-text">[ Secure Your Status in the Cyber-Jungle ]</p>
       </header>
-      
-      <!-- Nova & SASS Dialogue Section -->
-      <section class="nova-sass-dialogue">
-        <!-- Nova -->
-        <h2>
-          <!-- Relative path to your images folder -->
-          <img 
-            src="Images/Nova.jpeg" 
-            alt="Nova Avatar" 
-            class="avatar"
-          >
-          NOVA <span class="nova-text">(68% Integrated)</span>
-        </h2>
-        <p>
-          <strong>NOVA:</strong> Hey there, future glitcher! I’m Nova—your friendly,
-          occasionally glitchy, cybernetically enhanced chimp. Ready to
-          join our unstoppable tech tribe? Sign up below and let’s break some rigs—uh,
-          I mean, explore some epic gaming setups together.
-        </p>
 
-        <!-- SASS -->
-        <h2>
-          <img 
-            src="Images/Sass.jpg" 
-            alt="SASS Avatar" 
-            class="avatar"
-          >
-          SASS <span class="sass-text">(Sarcastically Advanced Simian Supervisor)</span>
-        </h2>
-        <p>
-          <strong>SASS:</strong> Don’t mind Nova. He’s only 68% integrated, so if he
-          stares at you blankly or mentions bananas mid-sentence, 
-          that’s perfectly normal. I’m the voice of reason—and sarcasm—lodged in his
-          cyber-brain. Trust me, you’ll want me around when he tries to
-          “upgrade” your GPU with duct tape.
-        </p>
-        <p>
-          Ready to claim your seat at the glitchiest table in town? Fill out 
-          that membership form before Nova fries the system again.
-        </p>
+      <!-- Chat-Banter Section with Randomly Positioned Chat Bubbles -->
+      <section class="chat-banter">
+        <!-- Nova's Bubble -->
+        <div id="novaBubble" class="chat-bubble nova-bubble">
+          <h2>
+            <img src="Images/Nova.jpeg" alt="Nova Avatar" class="avatar">
+            NOVA (68% Integrated)
+          </h2>
+          <p>
+            <strong>NOVA:</strong> Hey there, future glitcher! I’m Nova—your friendly,
+            occasionally glitchy, cybernetically enhanced chimp. Ready to join our
+            unstoppable tech tribe? Sign up below and let’s break some rigs—uh,
+            I mean, explore some epic gaming setups together.
+          </p>
+        </div>
+
+        <!-- SASS's Bubble -->
+        <div id="sassBubble" class="chat-bubble sass-bubble">
+          <h2>
+            <img src="Images/Sass.jpg" alt="SASS Avatar" class="avatar">
+            SASS (Sarcastically Advanced Simian Supervisor)
+          </h2>
+          <p>
+            <strong>SASS:</strong> Don’t mind Nova. He’s only 68% integrated, so if he
+            stares at you blankly or mentions bananas mid-sentence, that’s perfectly normal.
+            I’m the voice of reason—and sarcasm—lodged in his cyber-brain. Trust me, you’ll
+            want me around when he tries to “upgrade” your GPU with duct tape.
+          </p>
+          <p>
+            Ready to claim your seat at the glitchiest table in town? Fill out that membership
+            form before Nova fries the system again.
+          </p>
+        </div>
       </section>
 
+      <!-- Membership Form Section -->
       <section>
         <h2>> SIGN UP FOR MEMBERSHIP_</h2>
         <form action="/submit-membership" method="POST">
@@ -119,23 +206,45 @@
           
           <label for="avatar">Choose Your Member Badge:</label>
           <select id="avatar" name="avatar">
-            <option value="hacker">💻 Hacker</option>
-            <option value="glitch">⚡ Glitch</option>
-            <option value="ai-overlord">🧠 AI Overlord</option>
+            <option value="CyberInitiate">CyberInitiate</option>
+            <option value="Cybersentinel">Cybersentinel</option>
+            <option value="CyberLord">CyberLord</option>
           </select>
           
           <button type="submit" class="cta">Join Now</button>
         </form>
-        <p>Already in the system? 
-          <a href="/exclusive-members.html">Enter the Exclusive Members Area</a>
-        </p>
+        <p>Already in the system? <a href="/exclusive-members.html">Enter the Exclusive Members Area</a></p>
       </section>
-      
+
       <footer>
         <p>&copy; 2025 GlitchTeks. Once a member, always a member.</p>
         <p>Need help? Email us at <a href="mailto:samesyze@proton.me">samesyze@proton.me</a></p>
       </footer>
     </div>
   </div>
+
+  <!-- JavaScript to randomly position the chat bubbles -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      function positionRandomly(el) {
+        // Wait for a moment to ensure element dimensions are set
+        let elWidth = el.offsetWidth;
+        let elHeight = el.offsetHeight;
+        let maxLeft = window.innerWidth - elWidth;
+        let maxTop = window.innerHeight - elHeight;
+        el.style.left = Math.floor(Math.random() * maxLeft) + "px";
+        el.style.top = Math.floor(Math.random() * maxTop) + "px";
+      }
+      const novaBubble = document.getElementById("novaBubble");
+      const sassBubble = document.getElementById("sassBubble");
+      
+      // Set them to absolute positioning within the .chat-banter container
+      novaBubble.style.position = "absolute";
+      sassBubble.style.position = "absolute";
+
+      positionRandomly(novaBubble);
+      positionRandomly(sassBubble);
+    });
+  </script>
 </body>
 </html>
