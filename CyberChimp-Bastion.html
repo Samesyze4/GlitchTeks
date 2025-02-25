@@ -4,314 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GlitchTeks - The Digital Jungle</title>
-  <style>
-    /* RESET/BASIC THEME */
-    * {
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box;
-      font-family: "Verdana", sans-serif;
-    }
-    body {
-      background-color: #151515;
-      color: #eee;
-      line-height: 1.5;
-    }
-
-    /* TOP NAVIGATION BAR */
-    .top-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to right, #8000ff, #e100ff);
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    }
-    .top-nav .brand {
-      font-size: 1.6rem;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .top-nav ul {
-      list-style: none;
-      display: flex;
-    }
-    .top-nav li {
-      margin-left: 1.5rem;
-    }
-    .top-nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: opacity 0.2s ease;
-    }
-    .top-nav a:hover {
-      opacity: 0.8;
-    }
-
-    /* MAIN WRAPPER */
-    .container {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    /* HERO/INTRO SECTION */
-    .intro {
-      background: #1f1f1f;
-      border-left: 5px solid #e100ff;
-      padding: 1.5rem;
-      border-radius: 0.4rem;
-      margin-bottom: 2rem;
-    }
-    .intro h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: #e100ff;
-    }
-    .intro p {
-      margin-bottom: 1rem;
-    }
-
-    /* NOVA & SASS DIALOGUE */
-    .dialogue {
-      background: #2a2a2a;
-      padding: 1rem;
-      border-radius: 0.4rem;
-      margin-bottom: 2rem;
-    }
-    .dialogue h3 {
-      color: #e100ff;
-      margin-bottom: 0.2rem;
-    }
-    .dialogue p {
-      margin-bottom: 0.8rem;
-      color: #ccc;
-    }
-    .nova {
-      color: #7fff7f; /* Nova's color */
-    }
-    .sass {
-      color: #ff7ffa; /* SASS's color */
-    }
-
-    /* INSIDER MERCH SECTION */
-    .insider-merch {
-      background: #1f1f1f;
-      padding: 1rem;
-      border-radius: 0.4rem;
-      margin-bottom: 2rem;
-    }
-    .insider-merch h2 {
-      color: #7fff7f;
-      margin-bottom: 1rem;
-    }
-    .insider-merch p {
-      margin-bottom: 0.5rem;
-    }
-    .merch-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .merch-item {
-      background: #333;
-      border-radius: 0.3rem;
-      padding: 1rem;
-      text-align: center;
-    }
-    .merch-item img {
-      max-width: 100%;
-      border-radius: 0.3rem;
-    }
-    .merch-item h4 {
-      margin-top: 0.5rem;
-      margin-bottom: 0.3rem;
-    }
-
-    /* DIRECT CHAT */
-    .direct-chat {
-      background: #2a2a2a;
-      padding: 1rem;
-      border-radius: 0.4rem;
-      margin-bottom: 2rem;
-    }
-    .direct-chat a {
-      display: inline-block;
-      background: #e100ff;
-      color: #fff;
-      text-decoration: none;
-      padding: 0.6rem 1rem;
-      border-radius: 0.3rem;
-      font-weight: 600;
-      margin-top: 0.5rem;
-      transition: opacity 0.2s ease;
-    }
-    .direct-chat a:hover {
-      opacity: 0.8;
-    }
-
-    /* IDEAS & SPONSOR SECTION */
-    .ideas-section {
-      background: #1f1f1f;
-      padding: 1rem;
-      border-radius: 0.4rem;
-      margin-bottom: 2rem;
-    }
-    .ideas-section h2 {
-      color: #ff7ffa;
-      margin-bottom: 1rem;
-    }
-    .ideas-section form {
-      display: flex;
-      flex-direction: column;
-      max-width: 600px;
-    }
-    .ideas-section label {
-      margin: 0.5rem 0 0.2rem;
-    }
-    .ideas-section input, .ideas-section textarea {
-      background: #2a2a2a;
-      border: none;
-      color: #fff;
-      padding: 0.7rem;
-      border-radius: 0.3rem;
-      margin-bottom: 0.8rem;
-    }
-    .ideas-section button {
-      background: #7fff7f;
-      color: #333;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 0.3rem;
-      font-weight: 600;
-      cursor: pointer;
-      align-self: flex-start;
-    }
-    .ideas-section button:hover {
-      opacity: 0.8;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #121212;
-      color: #888;
-      margin-top: 2rem;
-    }
-  </style>
+  <link rel="stylesheet" href="/styles/styles.css"/>
 </head>
 <body>
 
   <!-- TOP NAV (NO SIDEBAR) -->
   <nav class="top-nav">
-    <a href="index.htm" class="brand">GlitchTeks</a>
+    <a href="index.html" class="brand">GlitchTeks</a>
     <ul>
-      <li><a href="index.htm">Home</a></li>
-      <li><a href="Contact-Us.html">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Contact-Privacy.html">Contact</a></li>
       <li><a href="Merch.html">Main Merch</a></li>
     </ul>
   </nav>
 
   <!-- MAIN CONTAINER -->
   <div class="container">
-
-    <!-- INTRO SECTION -->
-    <div class="intro">
+    <section class="intro">
       <h1>Members-Only Insider's Den</h1>
-      <p>
-        Welcome to the hidden corner of GlitchTeks—the place where 
-        only the bravest cyber-chimps gain full access. Grab a seat, 
-        and let the meltdown begin.
-      </p>
-    </div>
+      <p>Welcome to the hidden corner of GlitchTeks—the place where only the bravest cyber-chimps gain full access.</p>
+    </section>
 
-    <!-- NOVA & SASS DIALOGUE -->
-    <div class="dialogue">
+    <section class="dialogue">
       <h3 class="nova">NOVA (68% Integrated):</h3>
-      <p>
-        Hey, glitchers! Nova here—your friendly, half-wired chimp. 
-        This is our exclusive HQ, packed with insider deals, experimental 
-        gear, and banana-coded madness you won’t find anywhere else.
-      </p>
-      
+      <p>Hey, glitchers! Nova here—your friendly, half-wired chimp. This is our exclusive HQ, packed with insider deals and madness.</p>
       <h3 class="sass">SASS (Sarcastically Advanced Simian Supervisor):</h3>
-      <p>
-        *Snort*—Right. Because what we really needed was more chaos. 
-        Don’t blame me if Nova tests his “banana duct-tape mod” on your rig 
-        without warning. But hey, you asked for an exclusive experience. 
-        So here it is.
-      </p>
-    </div>
+      <p>*Snort*—Right. Because what we really needed was more chaos. You asked for an exclusive experience. So here it is.</p>
+    </section>
 
-    <!-- INSIDER MERCH SECTION -->
     <section class="insider-merch">
       <h2>Insider-Only Merch</h2>
       <p>Score some glitchy gear that only members can get.</p>
-      <div class="merch-grid">
-        <div class="merch-item">
-          <img src="https://via.placeholder.com/150/FF0000/FFFFFF?text=Exclusive+Shirt" alt="Exclusive Shirt"/>
-          <h4>GlitchTek Exclusive Tee</h4>
-          <p>$24.99 - Wear it to show off your insane loyalty.</p>
-        </div>
-        <div class="merch-item">
-          <img src="https://via.placeholder.com/150/9000FF/FFFFFF?text=Rare+Mug" alt="Rare Mug"/>
-          <h4>Rare CyberChimp Mug</h4>
-          <p>$14.99 - Perfect for fueling meltdown rants.</p>
-        </div>
-        <div class="merch-item">
-          <img src="https://via.placeholder.com/150/0000FF/FFFFFF?text=Collector+Pin" alt="Collector Pin"/>
-          <h4>Collector's Pin</h4>
-          <p>$9.99 - Flash it to other chimps for instant cred.</p>
-        </div>
-      </div>
     </section>
 
-    <!-- DIRECT CHAT -->
     <section class="direct-chat">
       <h2>Talk Directly With the Streamer</h2>
-      <p>
-        Got a meltdown? An epic game idea? Or just want to chat about 
-        hardware nightmares? Hit the link below to open a direct line 
-        with our streamer—no humans, just chimps.
-      </p>
+      <p>Got a meltdown? An epic game idea? Hit the link below.</p>
       <a href="https://example.com/your-custom-chat" target="_blank">Open Chat</a>
     </section>
 
-    <!-- IDEAS & SPONSOR SECTION -->
     <section class="ideas-section">
       <h2>Submit Your Game/Review Ideas &amp; Sponsor Collabs</h2>
-      <p>
-        We thrive on your madness. Whether it’s a twisted indie game you 
-        want us to break or a sponsor collab you want to propose, this is 
-        where it happens. Fill out the form, and let the meltdown commence.
-      </p>
       <form action="#" method="POST">
-        <label for="idea-type">What’s This About?</label>
-        <select id="idea-type" name="idea-type" required>
-          <option value="">-- Select One --</option>
-          <option value="game-idea">Game Idea/Request</option>
-          <option value="review-idea">Review Topic</option>
-          <option value="sponsor-collab">Sponsor/Collab Proposal</option>
-        </select>
-
         <label for="idea-title">Short Title:</label>
         <input type="text" id="idea-title" name="idea-title" placeholder="e.g., 'Banana Overclocking 101'" required>
-
         <label for="idea-desc">Details:</label>
         <textarea id="idea-desc" name="idea-desc" rows="5" placeholder="Spill your chaotic plan here..." required></textarea>
-
         <button type="submit">Submit Idea</button>
       </form>
     </section>
-
   </div>
 
   <footer>
-    <p>&copy; 2025 GlitchTeks. Chaos is our protocol (members get the best meltdown seats).</p>
+    <p>&copy; 2025 GlitchTeks. Chaos is our protocol.</p>
   </footer>
 
 </body>
