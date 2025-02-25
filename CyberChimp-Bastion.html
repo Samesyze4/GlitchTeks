@@ -3,52 +3,211 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GlitchTeks - Members Only</title>
+  <title>GlitchTeks - Insider's Den</title>
   <style>
-    /* Basic Reset */
+    /* RESET/BASIC THEME */
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+      font-family: "Verdana", sans-serif;
     }
     body {
-      background-color: #131313;
+      background-color: #151515;
       color: #eee;
       line-height: 1.5;
     }
 
-    /* Top Navigation: distinct from the sidebar in index.htm */
-    nav {
+    /* TOP NAVIGATION BAR */
+    .top-nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: linear-gradient(135deg, #ff0040, #8000ff);
+      background: linear-gradient(to right, #8000ff, #e100ff);
       padding: 1rem 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
-    nav .logo {
-      font-size: 1.5rem;
+    .top-nav .brand {
+      font-size: 1.6rem;
       color: #fff;
       text-decoration: none;
       font-weight: bold;
     }
-    nav ul {
+    .top-nav ul {
       list-style: none;
       display: flex;
-      gap: 1rem;
     }
-    nav ul li a {
+    .top-nav li {
+      margin-left: 1.5rem;
+    }
+    .top-nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
       transition: opacity 0.2s ease;
     }
-    nav ul li a:hover {
-      opacity: 0.7;
+    .top-nav a:hover {
+      opacity: 0.8;
     }
 
-    /* Hero Section: totally different from the index’s header */
-    .hero {
+    /* MAIN WRAPPER */
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* HERO/INTRO SECTION */
+    .intro {
+      background: #1f1f1f;
+      border-left: 5px solid #e100ff;
+      padding: 1.5rem;
+      border-radius: 0.4rem;
+      margin-bottom: 2rem;
+    }
+    .intro h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #e100ff;
+    }
+    .intro p {
+      margin-bottom: 1rem;
+    }
+
+    /* NOVA & SASS DIALOGUE */
+    .dialogue {
+      background: #2a2a2a;
+      padding: 1rem;
+      border-radius: 0.4rem;
+      margin-bottom: 2rem;
+    }
+    .dialogue h3 {
+      color: #e100ff;
+      margin-bottom: 0.2rem;
+    }
+    .dialogue p {
+      margin-bottom: 0.8rem;
+      color: #ccc;
+    }
+    .nova {
+      color: #7fff7f; /* Nova's color */
+    }
+    .sass {
+      color: #ff7ffa; /* SASS's color */
+    }
+
+    /* INSIDER MERCH SECTION */
+    .insider-merch {
+      background: #1f1f1f;
+      padding: 1rem;
+      border-radius: 0.4rem;
+      margin-bottom: 2rem;
+    }
+    .insider-merch h2 {
+      color: #7fff7f;
+      margin-bottom: 1rem;
+    }
+    .insider-merch p {
+      margin-bottom: 0.5rem;
+    }
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .merch-item {
+      background: #333;
+      border-radius: 0.3rem;
+      padding: 1rem;
       text-align: center;
-      background: #222;
-      padding: 4rem 2rem;
-      border-bottom: 2px
+    }
+    .merch-item img {
+      max-width: 100%;
+      border-radius: 0.3rem;
+    }
+    .merch-item h4 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    /* DIRECT CHAT */
+    .direct-chat {
+      background: #2a2a2a;
+      padding: 1rem;
+      border-radius: 0.4rem;
+      margin-bottom: 2rem;
+    }
+    .direct-chat a {
+      display: inline-block;
+      background: #e100ff;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.6rem 1rem;
+      border-radius: 0.3rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      transition: opacity 0.2s ease;
+    }
+    .direct-chat a:hover {
+      opacity: 0.8;
+    }
+
+    /* IDEAS & SPONSOR SECTION */
+    .ideas-section {
+      background: #1f1f1f;
+      padding: 1rem;
+      border-radius: 0.4rem;
+      margin-bottom: 2rem;
+    }
+    .ideas-section h2 {
+      color: #ff7ffa;
+      margin-bottom: 1rem;
+    }
+    .ideas-section form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+    }
+    .ideas-section label {
+      margin: 0.5rem 0 0.2rem;
+    }
+    .ideas-section input, .ideas-section textarea {
+      background: #2a2a2a;
+      border: none;
+      color: #fff;
+      padding: 0.7rem;
+      border-radius: 0.3rem;
+      margin-bottom: 0.8rem;
+    }
+    .ideas-section button {
+      background: #7fff7f;
+      color: #333;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 0.3rem;
+      font-weight: 600;
+      cursor: pointer;
+      align-self: flex-start;
+    }
+    .ideas-section button:hover {
+      opacity: 0.8;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #121212;
+      color: #888;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAV (NO SIDEBAR) -->
+  <nav class="top-nav">
+    <a href="index.htm" class="brand">GlitchTeks</a>
+    <ul>
+      <li
