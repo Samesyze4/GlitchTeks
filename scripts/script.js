@@ -1,24 +1,23 @@
-// Randomly position the chat bubbles within the chat container
+// Randomly position the Nova and SASS dialogue lines within the dialogue section
 document.addEventListener("DOMContentLoaded", function() {
-  const chatContainer = document.getElementById("chatContainer");
-  const novaBubble = document.getElementById("novaBubble");
-  const sassBubble = document.getElementById("sassBubble");
-
+  const novaLine = document.querySelector(".nova-line");
+  const sassLine = document.querySelector(".sass-line");
+  
   function positionRandomly(element) {
-    // Get container dimensions
-    const containerRect = chatContainer.getBoundingClientRect();
-    // Get element dimensions
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
     const elemWidth = element.offsetWidth;
     const elemHeight = element.offsetHeight;
-    // Calculate max available positions within container
-    const maxLeft = containerRect.width - elemWidth;
-    const maxTop = containerRect.height - elemHeight;
-    // Set random positions
+    
+    // Leave a 20px margin from the viewport edges
+    const maxLeft = viewportWidth - elemWidth - 20;
+    const maxTop = viewportHeight - elemHeight - 20;
+    
+    element.style.position = "absolute";
     element.style.left = Math.floor(Math.random() * maxLeft) + "px";
     element.style.top = Math.floor(Math.random() * maxTop) + "px";
   }
-
-  // Randomize positions for both chat bubbles
-  positionRandomly(novaBubble);
-  positionRandomly(sassBubble);
+  
+  if(novaLine) positionRandomly(novaLine);
+  if(sassLine) positionRandomly(sassLine);
 });
