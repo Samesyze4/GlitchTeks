@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlitchTeks - The Inner Sanctum</title>
+    <title>GlitchTeks - Enclave Membership Signup</title>
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
@@ -20,57 +20,42 @@
                 <li><a href="/Merch.html">Merch</a></li>
                 <li><a href="/Privacy-Policy.html">Privacy Policy</a></li>
                 <li><a href="/Terms-Conditions.html">Terms</a></li>
-                <li><a href="/Vip.html" class="active">VIP Access</a></li>
+                <li><a href="/Vip.html">VIP Access</a></li>
             </ul>
         </div>
 
         <!-- Main Content Area -->
         <div class="main">
             <header>
-                <h1>> GLITCHTEKS INNER SANCTUM_</h1>
-                <p class="glitch-text">[ WARNING: Exclusive cybernetic perks detected. Proceed with caution. ]</p>
+                <h1>> ENCLAVE MEMBERSHIP SIGNUP_</h1>
+                <p class="glitch-text">[ WARNING: Only the worthy may proceed. ]</p>
             </header>
             
             <section>
-                <h2>> JOIN THE ELITE_</h2>
-                <p>[ ERROR 401: Unauthorized. Access restricted to true glitch warriors. ]</p>
-                <p><a href="/vip-signup.html" class="cta">Apply for Inner Sanctum Membership</a> and gain access to the ultimate cyber-realm.</p>
-            </section>
-
-            <section>
-                <h2>> MEMBERSHIP TIERS_</h2>
-                <ul>
-                    <li><strong>🔰 Glitched Initiate:</strong> Early access to select content & private forum access.</li>
-                    <li><strong>⚡ Cyber Elite:</strong> Exclusive Q&A sessions, beta testing invites, and merch discounts.</li>
-                    <li><strong>🧠 Omniscient AI:</strong> Full system control, deep web secrets, and a direct link to Nova's neural core.</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>> EXCLUSIVE PERKS_</h2>
-                <p>As a member of the Inner Sanctum, you’ll receive:</p>
-                <ul>
-                    <li>🎮 VIP-only gaming events & tournaments.</li>
-                    <li>🛠 Behind-the-scenes tech breakdowns & hacks.</li>
-                    <li>📦 Discounts on limited-edition GlitchTeks merch.</li>
-                    <li>🎤 Private Q&A sessions with Nova (if he’s not glitching out).</li>
-                </ul>
-            </section>
-            
-            <section>
-                <h2>> MEMBERS-ONLY INTERFACE_</h2>
-                <p>Welcome to the **Inner Sanctum**, where members can shape the future of GlitchTeks.</p>
-                <ul>
-                    <li>🎮 <strong>Game Requests:</strong> Suggest what you want to see played next.</li>
-                    <li>🛍️ <strong>Merch Ideas:</strong> Vote on new designs and products.</li>
-                    <li>🤝 <strong>Collaborations:</strong> Recommend partnerships and influencer collabs.</li>
-                    <li>💡 <strong>Feature Requests:</strong> Propose new site or community features.</li>
-                </ul>
-                <p><a href="/vip-dashboard.html" class="cta">Enter the Members-Only Area</a></p>
+                <h2>> CHOOSE YOUR ACCESS LEVEL_</h2>
+                <form action="/submit-signup" method="POST">
+                    <label for="username">Codename:</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="email">Comm Link (Email):</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="tier">Select Your Access Level:</label>
+                    <select id="tier" name="tier">
+                        <option value="glitched-initiate">🔰 Glitched Initiate</option>
+                        <option value="cyber-elite">⚡ Cyber Elite</option>
+                        <option value="omniscient-ai">🧠 Omniscient AI</option>
+                    </select>
+                    
+                    <label for="message">Why Do You Belong Here?</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Convince Nova you're not just another bot..."></textarea>
+                    
+                    <button type="submit" class="cta">Request Access</button>
+                </form>
             </section>
             
             <footer>
-                <p>&copy; 2025 GlitchTeks. Only the most worthy cyber-chimps may enter.</p>
+                <p>&copy; 2025 GlitchTeks. Encryption level: MAXIMUM. Your secrets are safe... probably.</p>
             </footer>
         </div>
     </div>
