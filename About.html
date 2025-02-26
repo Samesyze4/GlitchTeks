@@ -5,46 +5,176 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GlitchTeks - About</title>
   <link rel="stylesheet" href="/styles/styles.css" />
+  <style>
+    /* Inline styles to enforce layout and color scheme */
+    body {
+      background: #111;
+      font-family: Arial, sans-serif;
+      color: #39FF14;
+      margin: 0;
+      padding: 0;
+    }
+    .global-header {
+      text-align: center;
+      background: #111;
+      padding: 20px;
+      border-bottom: 2px solid #BC13FE;
+    }
+    .global-header h1 {
+      color: #39FF14;
+    }
+    .wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100vh;
+      background: #111;
+      padding: 20px;
+      border-right: 2px solid #BC13FE;
+      overflow-y: auto;
+    }
+    .sidebar nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar nav ul li {
+      margin-bottom: 15px;
+    }
+    .sidebar nav ul li a {
+      color: #39FF14;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .sidebar nav ul li a:hover {
+      color: #BC13FE;
+    }
+    .sidebar nav ul li a.active {
+      color: #BC13FE;
+      text-decoration: underline;
+    }
+    .main {
+      margin-left: 220px; /* 200px sidebar + 20px gap */
+      padding: 20px;
+      flex: 1;
+    }
+    .main header {
+      background: linear-gradient(to right, #39FF14, #BC13FE);
+      padding: 1.5rem;
+      color: #111;
+      text-align: center;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .main section {
+      margin-bottom: 20px;
+    }
+    .main section h2 {
+      color: #39FF14;
+    }
+    .main section p {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #111;
+      border-top: 2px solid #BC13FE;
+      color: #39FF14;
+    }
+    /* Additional "About" Banter Section */
+    .about-banter {
+      background: #111;
+      border: 2px solid #BC13FE;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .about-banter h2 {
+      color: #39FF14;
+      text-align: center;
+    }
+    .about-banter p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .about-banter blockquote {
+      margin: 10px 20px;
+      padding-left: 20px;
+      border-left: 3px solid #39FF14;
+      font-style: italic;
+      color: #39FF14;
+    }
+  </style>
 </head>
 <body>
+  <!-- Global Header -->
   <div class="global-header">
-  <h1>GlitchTeks.com</h1>
-</div>
+    <h1>GlitchTeks.com</h1>
+  </div>
 
+  <!-- Wrapper: Contains Sidebar & Main Content -->
   <div class="wrapper">
     <!-- Sidebar Navigation -->
-   <div class="sidebar">
-    <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="About.html">About</a></li>
-  <li><a href="Merch.html">Merch</a></li>
-  <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
-  <li><a href="GlitchBoard.html" class="active">GlitchBoard</a></li>
-  <li><a href="Guides.html">Guides</a></li>
-  <li><a href="Reviews.html">Reviews</a></li>
-  <li><a href="Join-Us.html">Join Us</a></li>
-  <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
-  <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
-</ul>
-
+    <div class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html" class="active">About</a></li>
+          <li><a href="Merch.html">Merch</a></li>
+          <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
+          <li><a href="GlitchBoard.html">GlitchBoard</a></li>
+          <li><a href="Guides.html">Guides</a></li>
+          <li><a href="Reviews.html">Reviews</a></li>
+          <li><a href="Join-Us.html">Join Us</a></li>
+          <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
+          <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </nav>
     </div>
 
     <!-- Main Content Area -->
     <div class="main">
       <header>
         <h1>About GlitchTeks</h1>
-        <p>Discover our origins, mission, and the chaos we bring.</p>
+        <p>Discover our origins, mission, and the digital chaos we bring.</p>
       </header>
 
       <section>
         <h2>Our Story</h2>
         <p>
-          GlitchTeks began as a rogue operation of curious cyber-chimps, united
-          by a single objective: to blow the lid off the gaming and tech world.
-          We believe in total transparency, no-holds-barred reviews, and a
-          collective thirst for digital mayhem.
+          GlitchTeks began as a rogue operation of cyber-chimps, united by a desire to disrupt the status quo in gaming and tech. We smash conventions, blend gears with code, and live by one rule: chaos is our protocol.
         </p>
       </section>
+
+      <!-- New About Banter Section from Nova & SASS -->
+      <section class="about-banter">
+        <h2>The Cyber Adventure</h2>
+        <p>
+          Journey through time and tech with us as we hack reality, break boundaries, and forge our own digital destiny.
+        </p>
+        <blockquote>
+          <p><strong>NOVA:</strong> "I'm Nova—the glitch in the matrix, the spark in your circuit. We don't just adapt to the future; we create it."</p>
+        </blockquote>
+        <blockquote>
+          <p><strong>SASS:</strong> "And I'm SASS—the critical cog in Nova’s machine. Together, we turn chaos into art. Welcome to our cyber adventure."</p>
+        </blockquote>
+        <p>
+          Join us on this steampunk, cybernetic journey through tech and time. Your adventure starts here.
+        </p>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 GlitchTeks. Chaos is our protocol.</p>
+      </footer>
     </div>
   </div>
 </body>
