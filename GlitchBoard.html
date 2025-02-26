@@ -1,10 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GlitchBoard - GlitchTeks.com</title>
-  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/styles.css"/>
+  <style>
+    :root {
+      --neon-green: #39FF14;
+      --neon-purple: #BC13FE;
+      --bg-dark: #111;
+    }
+    /* Global Reset & Body */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: var(--bg-dark);
+      font-family: Arial, sans-serif;
+      color: var(--neon-green);
+    }
+    /* Global Header */
+    .global-header {
+      text-align: center;
+      background: var(--bg-dark);
+      padding: 20px;
+      border-bottom: 2px solid var(--neon-purple);
+    }
+    .global-header h1 {
+      color: var(--neon-green);
+    }
+    /* Wrapper Layout */
+    .wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+    /* Sidebar Navigation */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100vh;
+      background: var(--bg-dark);
+      padding: 20px;
+      overflow-y: auto;
+      border-right: 2px solid var(--neon-purple);
+    }
+    .sidebar nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar nav ul li {
+      margin-bottom: 15px;
+    }
+    .sidebar nav ul li a {
+      color: var(--neon-green);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .sidebar nav ul li a:hover {
+      color: var(--neon-purple);
+    }
+    .sidebar nav ul li a.active {
+      color: var(--neon-purple);
+      text-decoration: underline;
+    }
+    /* Main Content Area */
+    .main {
+      margin-left: 220px; /* 200px sidebar + 20px gap */
+      padding: 20px;
+      flex: 1;
+    }
+    .main header {
+      background: linear-gradient(to right, var(--neon-green), var(--neon-purple));
+      padding: 1.5rem;
+      color: var(--bg-dark);
+      text-align: center;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .main section {
+      margin-bottom: 20px;
+    }
+    .main section h2 {
+      color: var(--neon-green);
+      margin-bottom: 10px;
+    }
+    .main section p {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: var(--bg-dark);
+      border-top: 2px solid var(--neon-purple);
+      color: var(--neon-green);
+    }
+  </style>
 </head>
 <body>
   <!-- Global Header -->
@@ -12,7 +111,7 @@
     <h1>GlitchTeks.com</h1>
   </div>
 
-  <!-- Wrapper: Sidebar and Content -->
+  <!-- Wrapper: Sidebar and Main Content -->
   <div class="wrapper">
     <!-- Sidebar Navigation -->
     <div class="sidebar">
@@ -33,7 +132,7 @@
     </div>
 
     <!-- Main Content Area -->
-    <div class="content">
+    <div class="main">
       <header>
         <h1>CyberChimp-Collactive</h1>
         <p>Where minds unite, and chaos thrives.</p>
@@ -43,11 +142,11 @@
       <section id="digital-revolution">
         <h2>Digital Revolution</h2>
         <div class="media-block">
-          <img src="./images/pic1.png" alt="Digital Mayhem">
+          <img src="images/pic1.png" alt="Digital Mayhem">
           <p>"Ready to dive headfirst into a digital mosh pit of game modding and hardware hacks? Let's merge our brainwaves and spark a hilarious digital revolution!"</p>
         </div>
         <div class="media-block">
-          <img src="./images/pic2.png" alt="Hacking Hijinks">
+          <img src="images/pic2.png" alt="Hacking Hijinks">
           <p>"As if our minds weren't already bursting with epic ideas! It's time to jump into these discussions, collaborate like mad scientists, and maybe even set off a few metaphorical explosions—only in the realm of code, of course!"</p>
         </div>
         <p>"Who needs a normal reality when we can forge entirely new ones with witty banter, offbeat humor, and a dash of creative chaos? Let's get hacking and modding our way to a reality that's as epic as it is unpredictable!"</p>
@@ -65,11 +164,10 @@
         <p>Jump into discussions, collaborate on game modding, or discover the latest hardware hacks. Merging consciousness means forging new realities together.</p>
       </section>
 
-      <!-- Footer -->
       <footer>
         <p>&copy; 2025 GlitchTeks. Chaos is our protocol.</p>
       </footer>
-    </div> <!-- End of .content -->
+    </div> <!-- End of .main -->
   </div> <!-- End of .wrapper -->
 </body>
 </html>
