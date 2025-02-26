@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GlitchTeks - Join Us</title>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    /* Inline tweaks for the Join Us page – merge later into your main CSS if desired */
+    /* Inline tweaks for the Join Us page – merge into your main CSS later if desired */
     .membership-section { 
       max-width: 800px; 
       margin: 20px auto; 
@@ -53,16 +53,17 @@
     .cta-section .cta-button { 
       display: inline-block; 
       padding: 15px 30px; 
-      background: var(--neon-green); 
-      color: #000; 
-      text-decoration: none; 
-      border-radius: 5px; 
-      font-size: 1.2rem;
-      transition: background 0.3s;
+      background: var(--neon-green) !important; 
+      color: #000 !important; 
+      text-decoration: none !important; 
+      border: 2px solid var(--neon-purple) !important; 
+      border-radius: 5px !important; 
+      font-size: 1.2rem !important;
+      transition: background 0.3s, color 0.3s !important;
     }
     .cta-section .cta-button:hover { 
-      background: var(--neon-purple); 
-      color: #000;
+      background: var(--neon-purple) !important;
+      color: #000 !important;
     }
     /* Banter Section */
     .banter-section {
@@ -124,7 +125,7 @@
     <div class="content">
       <header>
         <h1>Join The Journey</h1>
-        <p>Become a member of GlitchTeks and unlock exclusive content, live chats, events, and custom minted badges tailored to your tier.</p>
+        <p>Become a member of GlitchTeks and unlock exclusive content, events, and custom minted badges.</p>
       </header>
 
       <!-- Banter Section for Flavor -->
@@ -138,7 +139,7 @@
         <div class="banter">
           <img src="images/SASS.png" alt="S.A.S.S. the Sarcastic Assinine Simian Supervisor">
           <p class="banter-text">
-            "Oh please, Nova. Only the best join our ranks—if you're serious, prove it."
+            "Oh please, only the best join our ranks—if you're serious, prove it."
           </p>
         </div>
       </section>
@@ -148,7 +149,7 @@
         <!-- Clockwork Initiate (Novice Tier) -->
         <div class="tier" data-tier="novice">
           <h3>Clockwork Initiate</h3>
-          <p>As a Clockwork Initiate, you gain access to member-only blogs, live stream chats, and our community forums. Your journey begins with a unique NFT badge marking your raw entry into our digital jungle.</p>
+          <p>As a Clockwork Initiate, you gain access to member-only blogs, live stream chats, and community forums. Your journey begins with a unique NFT badge marking your raw entry into our digital jungle.</p>
           <p class="price-tag">Price: $9.99/month</p>
           <p><strong>Badge Minting Process:</strong> Our smart contract forges your Bronze NFT badge and secures it on the blockchain.</p>
           <button onclick="window.location.href='secure-checkout.html?tier=novice'">Join The Journey</button>
@@ -157,9 +158,9 @@
         <!-- Brass Mechanist (Silver Tier) -->
         <div class="tier" data-tier="silver">
           <h3>Brass Mechanist</h3>
-          <p>Step up your game! As a Brass Mechanist, you unlock exclusive access to creator content submissions, collaboration requests, and game idea forums—plus all the benefits of the Initiate level.</p>
+          <p>Step up your game! As a Brass Mechanist, you unlock exclusive access to creator content, collaboration requests, and game idea forums—plus all the Initiate perks.</p>
           <p class="price-tag">Price: $19.99/month</p>
-          <p><strong>Badge Minting Process:</strong> Your Silver NFT badge is minted with a polished brass overlay after verification.</p>
+          <p><strong>Badge Minting Process:</strong> Once verified, your Silver NFT badge is minted with a polished brass overlay, marking your elevated status.</p>
           <button onclick="window.location.href='secure-checkout.html?tier=silver'">Join The Journey</button>
         </div>
 
@@ -168,16 +169,16 @@
           <h3>Gearforged Virtuoso</h3>
           <p>For elite operators, the Gold Tier unlocks premium events, priority support, and early access to community projects. Your badge gleams with a rare gold finish, certifying your superior status.</p>
           <p class="price-tag">Price: $29.99/month</p>
-          <p><strong>Badge Minting Process:</strong> Our blockchain crafts a unique Gold NFT badge with a serial number, proving your virtuosity.</p>
+          <p><strong>Badge Minting Process:</strong> Our blockchain crafts a unique Gold NFT badge with a serial number to certify your virtuosity.</p>
           <button onclick="window.location.href='secure-checkout.html?tier=gold'">Join The Journey</button>
         </div>
 
         <!-- Aetheric Cogmaster (Platinum Tier) -->
         <div class="tier" data-tier="platinum">
           <h3>Aetheric Cogmaster</h3>
-          <p>The pinnacle of membership—only the best ascend here. As an Aetheric Cogmaster, you enjoy VIP perks, one-on-one sessions with top streamers, exclusive merchandise (including a legendary Thanksgiving Sweater), and full access to all premium content and community events.</p>
+          <p>The pinnacle of membership—only the best ascend here. As an Aetheric Cogmaster, you receive VIP perks, one-on-one sessions with top streamers, exclusive merchandise (including our legendary Thanksgiving Sweater), and full access to all premium content and community events.</p>
           <p class="price-tag">Price: $49.99/month</p>
-          <p><strong>Badge Minting Process:</strong> A custom smart contract mints your Platinum NFT badge with embedded metadata, certifying your elite status.</p>
+          <p><strong>Badge Minting Process:</strong> A custom smart contract mints your Platinum NFT badge, embedding exclusive metadata that certifies your elite status.</p>
           <button onclick="window.location.href='secure-checkout.html?tier=platinum'">Join The Journey</button>
         </div>
       </section>
@@ -185,7 +186,7 @@
       <!-- Global Call-to-Action -->
       <section class="cta-section">
         <h2>Ready to Begin?</h2>
-        <p>Click below to proceed to secure checkout and start your journey with GlitchTeks!</p>
+        <p>Click below to proceed to secure checkout and start your GlitchTeks journey!</p>
         <a href="secure-checkout.html" class="cta-button">Join The Journey</a>
       </section>
 
