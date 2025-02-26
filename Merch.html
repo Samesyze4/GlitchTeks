@@ -6,13 +6,12 @@
   <title>Glitch Gear - GlitchTeks.com</title>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    /* Apply our two-color scheme */
     :root {
       --neon-green: #39FF14;
       --neon-purple: #BC13FE;
       --bg-dark: #111;
     }
-    /* Global resets & body */
+    /* Global Resets & Body */
     * {
       margin: 0;
       padding: 0;
@@ -33,7 +32,7 @@
     .global-header h1 {
       color: var(--neon-green);
     }
-    /* Wrapper layout */
+    /* Wrapper Layout */
     .wrapper {
       display: flex;
       min-height: 100vh;
@@ -120,4 +119,99 @@
       background: var(--bg-dark);
       border: 1px solid var(--neon-purple);
       padding: 15px;
-      border-rad
+      border-radius: 5px;
+      width: 300px;
+      max-height: 80vh;
+      overflow-y: auto;
+      color: var(--neon-green);
+    }
+    .cart h2 {
+      margin-bottom: 10px;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: var(--bg-dark);
+      border-top: 2px solid var(--neon-purple);
+      color: var(--neon-green);
+    }
+  </style>
+</head>
+<body>
+  <!-- Global Header -->
+  <div class="global-header">
+    <h1>GlitchTeks.com</h1>
+  </div>
+
+  <!-- Wrapper: Contains Sidebar and Main Content -->
+  <div class="wrapper">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Merch.html" class="active">Merch</a></li>
+          <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
+          <li><a href="GlitchBoard.html">GlitchBoard</a></li>
+          <li><a href="Guides.html">Guides</a></li>
+          <li><a href="Reviews.html">Reviews</a></li>
+          <li><a href="Join-Us.html">Join Us</a></li>
+          <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
+          <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+      <header>
+        <h1>My Printful Merch</h1>
+      </header>
+
+      <!-- Merch Section -->
+      <section id="merch-section">
+        <p>Quality products fulfilled by Printful</p>
+        <div id="products-container">
+          <!-- Product cards will be injected here via JavaScript -->
+        </div>
+      </section>
+
+      <!-- Tech Partners / Affiliate Links Section -->
+      <section id="partners">
+        <h2>Tech Partners</h2>
+        <div class="partner-links">
+          <div class="partner">
+            <a href="https://www.amazon.com/?tag=youraffiliateID" target="_blank" rel="noopener noreferrer">Amazon</a>
+          </div>
+          <div class="partner">
+            <a href="https://www.newegg.com/?aff=youraffiliateID" target="_blank" rel="noopener noreferrer">Newegg</a>
+          </div>
+          <div class="partner">
+            <a href="https://www.bestbuy.com/?ref=youraffiliateID" target="_blank" rel="noopener noreferrer">Best Buy</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cart Sidebar -->
+      <div class="cart" id="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+          <!-- Cart items will be rendered here via JavaScript -->
+        </div>
+        <p id="cart-total">Total: $0.00</p>
+        <button onclick="checkout()">Checkout</button>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 My Printful Merch</p>
+      </footer>
+    </div> <!-- End of .content -->
+  </div> <!-- End of .wrapper -->
+
+  <!-- JavaScript File for Store Functionality -->
+  <script src="js/store.js"></script>
+</body>
+</html>
