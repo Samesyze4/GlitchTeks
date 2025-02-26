@@ -5,56 +5,155 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GlitchTeks - Contact and Privacy</title>
   <link rel="stylesheet" href="/styles/styles.css"/>
+  <style>
+    :root {
+      --neon-green: #39FF14;
+      --neon-purple: #BC13FE;
+      --bg-dark: #111;
+    }
+    /* Global Reset & Body */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: var(--bg-dark);
+      font-family: Arial, sans-serif;
+      color: var(--neon-green);
+    }
+    /* Global Header */
+    .global-header {
+      text-align: center;
+      background: var(--bg-dark);
+      padding: 20px;
+      border-bottom: 2px solid var(--neon-purple);
+    }
+    .global-header h1 {
+      color: var(--neon-green);
+    }
+    /* Wrapper & Layout */
+    .wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+    /* Sidebar Navigation */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100vh;
+      background: var(--bg-dark);
+      padding: 20px;
+      overflow-y: auto;
+      border-right: 2px solid var(--neon-purple);
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar ul li {
+      margin-bottom: 15px;
+    }
+    .sidebar ul li a {
+      color: var(--neon-green);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .sidebar ul li a:hover {
+      color: var(--neon-purple);
+    }
+    .sidebar ul li a.active {
+      color: var(--neon-purple);
+      text-decoration: underline;
+    }
+    /* Main Content Area */
+    .main {
+      margin-left: 220px; /* Sidebar (200px) + 20px gap */
+      padding: 20px;
+      flex: 1;
+    }
+    .main header {
+      background: linear-gradient(to right, var(--neon-green), var(--neon-purple));
+      padding: 1.5rem;
+      color: var(--bg-dark);
+      text-align: center;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .main section {
+      margin-bottom: 20px;
+    }
+    .main section h2 {
+      color: var(--neon-green);
+      margin-bottom: 10px;
+    }
+    .main section p {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: var(--bg-dark);
+      border-top: 2px solid var(--neon-purple);
+      color: var(--neon-green);
+    }
+  </style>
 </head>
 <body>
+  <!-- Global Header -->
   <div class="global-header">
-  <h1>GlitchTeks.com</h1>
-</div>
+    <h1>GlitchTeks.com</h1>
+  </div>
 
+  <!-- Wrapper: Contains Sidebar & Main Content -->
   <div class="wrapper">
     <!-- Sidebar Navigation -->
     <div class="sidebar">
-    <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="About.html">About</a></li>
-  <li><a href="Merch.html">Merch</a></li>
-  <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
-  <li><a href="GlitchBoard.html" class="active">GlitchBoard</a></li>
-  <li><a href="Guides.html">Guides</a></li>
-  <li><a href="Reviews.html">Reviews</a></li>
-  <li><a href="Join-Us.html">Join Us</a></li>
-  <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
-  <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
-</ul>
-
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Merch.html">Merch</a></li>
+          <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
+          <li><a href="GlitchBoard.html">GlitchBoard</a></li>
+          <li><a href="Guides.html">Guides</a></li>
+          <li><a href="Reviews.html">Reviews</a></li>
+          <li><a href="Join-Us.html">Join Us</a></li>
+          <li><a href="Contact-Privacy.html" class="active">Contact & Privacy</a></li>
+          <li><a href="Terms-Conditions.html">Terms & Conditions</a></li>
+        </ul>
+      </nav>
     </div>
 
     <!-- Main Content Area -->
     <div class="main">
       <header>
-        <h1>Contact &amp; Privacy</h1>
+        <h1>Contact & Privacy</h1>
         <p>Get in touch—and see how we handle your data—right here.</p>
       </header>
       
-      <!-- Digital Revolution Block -->
+      <!-- Digital Revolution Block (for flavor) -->
       <section id="digital-revolution">
         <div class="media-block">
           <img src="images/pic1.png" alt="Digital Mayhem">
           <p>
-            "Ready to dive headfirst into a digital mosh pit of game modding and hardware hacks? 
-            Let's merge our brainwaves and spark a hilarious digital revolution!"
+            "Ready to dive headfirst into a digital mosh pit of game modding and hardware hacks? Let's merge our brainwaves and spark a hilarious digital revolution!"
           </p>
         </div>
         <div class="media-block">
           <img src="images/pic2.png" alt="Hacking Hijinks">
           <p>
-            "As if our minds weren't already bursting with epic ideas! It's time to jump into these discussions, 
-            collaborate like mad scientists, and maybe even set off a few metaphorical explosions—only in the realm of code, of course!"
+            "As if our minds weren't already bursting with epic ideas! It's time to jump into these discussions, collaborate like mad scientists, and maybe even set off a few metaphorical explosions—only in the realm of code, of course!"
           </p>
         </div>
         <p>
-          "Who needs a normal reality when we can forge entirely new ones with witty banter, offbeat humor, 
-          and a dash of creative chaos? Let's get hacking and modding our way to a reality that's as epic as it is unpredictable!"
+          "Who needs a normal reality when we can forge entirely new ones with witty banter, offbeat humor, and a dash of creative chaos? Let's get hacking and modding our way to a reality that's as epic as it is unpredictable!"
         </p>
       </section>
       
@@ -62,8 +161,8 @@
         <h2>Contact GlitchTeks</h2>
         <p>Got questions? Reach us via:</p>
         <ul>
-          <li><strong>Email:</strong> <a href="mailto:samesyge@proton.me">samesyge@proton.me</a></li>
-          <li><strong>Twitter:</strong> <a href="https://twitter.com/glitchteks" target="_blank">@GlitchTeks</a></li>
+          <li><strong>Email:</strong> <a href="mailto:samesyge@proton.me" style="color: var(--neon-green);">samesyge@proton.me</a></li>
+          <li><strong>Twitter:</strong> <a href="https://twitter.com/glitchteks" target="_blank" style="color: var(--neon-green);">@GlitchTeks</a></li>
         </ul>
       </section>
       
