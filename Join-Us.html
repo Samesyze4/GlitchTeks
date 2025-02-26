@@ -1,39 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #111; color: #fff; text-align: center; }
-        .container { max-width: 600px; margin: 50px auto; padding: 20px; background: #222; border-radius: 10px; }
-        .button { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #28a745; color: #fff; text-decoration: none; border-radius: 5px; }
-        .button:hover { background: #218838; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlitchTeks - Membership Tiers</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <style>
+    /* For this page, we add some inline tweaks if needed */
+    /* (You can remove these if your external CSS already handles layout) */
+    .membership-section { 
+      max-width: 800px; 
+      margin: 20px auto; 
+      padding: 20px; 
+      background: #222; 
+      border-radius: 10px;
+    }
+    .tier {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: #111;
+      border: 1px solid var(--neon-purple);
+      border-radius: 8px;
+    }
+    .tier h3 { 
+      margin-bottom: 10px; 
+    }
+    .tier p { 
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    .tier blockquote { 
+      margin: 10px 0; 
+      padding: 10px; 
+      background: #000; 
+      border-left: 3px solid var(--neon-green); 
+      font-style: italic;
+    }
+    .checkout { text-align: center; margin-top: 30px; }
+    .checkout .button { 
+      display: inline-block; 
+      margin-top: 20px; 
+      padding: 10px 20px; 
+      background: var(--neon-green); 
+      color: #000; 
+      text-decoration: none; 
+      border-radius: 5px; 
+      transition: background 0.3s;
+    }
+    .checkout .button:hover { background: var(--neon-purple); }
+  </style>
 </head>
 <body>
-    <div class="global-header">
-  <h1>GlitchTeks.com</h1>
-</div>
-     <div class="sidebar">
-    <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="About.html">About</a></li>
-  <li><a href="Merch.html">Merch</a></li>
-  <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
-  <li><a href="GlitchBoard.html" class="active">GlitchBoard</a></li>
-  <li><a href="Guides.html">Guides</a></li>
-  <li><a href="Reviews.html">Reviews</a></li>
-  <li><a href="Join-Us.html">Join Us</a></li>
-  <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
-  <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
-</ul>
+  <!-- Global Header (Site Branding) -->
+  <div class="global-header">
+    <h1>GlitchTeks.com</h1>
+  </div>
 
-
-    <div class="container">
-        <h1>Checkout</h1>
-        <p>Review your items and proceed with the purchase.</p>
-        <a href="payment.html" class="button">Proceed to Payment</a>
+  <!-- Wrapper: Contains Sidebar and Main Content -->
+  <div class="wrapper">
+    <!-- Sidebar Navigation (fixed to the left) -->
+    <div class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Merch.html">Merch</a></li>
+          <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
+          <li><a href="GlitchBoard.html">GlitchBoard</a></li>
+          <li><a href="Guides.html">Guides</a></li>
+          <li><a href="Reviews.html">Reviews</a></li>
+          <li><a href="Join-Us.html">Join Us</a></li>
+          <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
+          <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </nav>
     </div>
-</body>
-</html>
+
+    <!-- Main Content Area -->
+    <div class="content">
+      <header>
+        <h1>Membership Tiers & Badge Minting</h1>
+        <p>Join our digital jungle and unlock a custom minted badge for your membership level.</p>
+      </header>
+
+      <section class="membership-section">
+        <!-- Bronze Tier -->
+        <div class="tier bronze">
+          <h3>Bronze Tier: Cyber Initiate</h3>
+          <p>Welcome to the digital jungle! As a Cyber Initiate, you’re taking your first step into our wild community. Your journey starts with a unique NFT badge that represents your digital identity.</p>
+          <p><strong>Badge Minting Process:</strong> Once you join, our smart contract mints your unique Bronze NFT badge and securely stores it on the blockchain.</p>
+          <blockquote>
+            <p><strong>NOVA:</strong> "Welcome, Cyber Initiate! Your journey begins with a badge as humble as it is mighty."</p>
+            <p><strong>SASS:</strong> "Just don’t trip over your own feet, rookie."</p>
+          </blockquote>
+        </div>
+
+        <!-- Silver Tier -->
+        <div class="tier silver">
+          <h3>Silver Tier: Digital Primate</h3>
+          <p>You've proven your skills and now level up! As a Digital Primate, your minted badge glows with a silver overlay, unlocking exclusive perks and early access to content.</p>
+          <p><strong>Badge Minting Process:</strong> After verification, our system mints your Silver NFT badge with a special silver overlay, marking your elevated status.</p>
+          <blockquote>
+            <p><strong>NOVA:</strong> "Ah, Digital Primate! Your badge now shines bright in the cyber jungle."</p>
+            <p><strong>SASS:</strong> "Better watch out—great perks come with even greater responsibilities."</p>
+          </blockquote>
+        </div>
+
+        <!-- Gold Tier -->
+        <div class="tier gold">
+          <h3>Gold Tier: Cyber Simian</h3>
+          <p>For the elite members, the Gold Tier offers premium benefits. Your badge, minted with a rare gold finish, grants you access to exclusive events, premium content, and priority support.</p>
+          <p><strong>Badge Minting Process:</strong> Our blockchain mints a unique Gold NFT badge, complete with a serial number that certifies your premium status.</p>
+          <blockquote>
+            <p><strong>NOVA:</strong> "Behold the Cyber Simian! Your badge speaks volumes of your excellence."</p>
+            <p><strong>SASS:</strong> "Just try not to let it go to your head, champ."</p>
+          </blockquote>
+        </div>
+
+        <!-- Platinum Tier -->
+        <div class="tier platinum">
+          <h3>Platinum Tier: Apex Chimp</h3>
+          <p>The pinnacle of membership—only the best join the ranks of the Apex Chimp. Enjoy VIP perks including one-on-one sessions with our top streamers, exclusive merchandise, and mor
