@@ -1,71 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Join Us - GlitchTeks</title>
+  <title>GlitchTeks - Join Us</title>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    /* Minimal styles to force layout and ensure the CTA button is visible */
-    body {
-      background: #BC13FE;
-      font-family: Arial, sans-serif;
-      color: #39FF14;
-      margin: 0;
-      padding: 0;
+    /* Inline tweaks for the Join Us page – merge into external CSS later if desired */
+    .membership-section { 
+      max-width: 800px; 
+      margin: 20px auto; 
+      padding: 20px; 
+      background: #330033; /* Dark purple background */
+      border-radius: 10px;
     }
-    .global-header {
-      text-align: center;
-      background: #39FF14;
+    .tier {
+      margin-bottom: 40px;
       padding: 20px;
+      background: #111;
+      border: 1px solid var(--neon-purple);
+      border-radius: 8px;
     }
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200px;
-      height: 100%;
-      background: #39FF14;
-      padding: 20px;
+    .tier h3 { 
+      margin-bottom: 10px; 
     }
-    .sidebar nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .tier p { 
+      margin-bottom: 10px;
+      text-align: left;
     }
-    .sidebar nav ul li {
-      margin-bottom: 15px;
+    .price-tag {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--neon-green);
+      margin-bottom: 10px;
     }
-    .sidebar nav ul li a {
-      color: #39FF14;
-      text-decoration: none;
-    }
-    .wrapper {
+    .badge-section {
       display: flex;
-      min-height: 100vh;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
     }
-    .content {
-      margin-left: 220px;
-      padding: 20px;
-      flex: 1;
+    .badge-section img.badge {
+      width: 60px;
+      height: 60px;
+      border: 2px solid var(--neon-green);
+      border-radius: 50%;
     }
-    /* CTA Button - using !important to override any conflicts */
-    .cta-button {
-      display: inline-block !important;
-      padding: 15px 30px !important;
-      background: #39FF14 !important;
-      color: #BC13FE !important;
-      text-decoration: none !important;
-      border: 2px solid #BC13FE !important;
-      border-radius: 5px !important;
+    .mint-button {
+      background: var(--neon-green);
+      color: #000;
+      padding: 5px 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .mint-button:hover {
+      background: var(--neon-purple);
+    }
+    .tier button {
+      background: var(--neon-green);
+      border: none;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .tier button:hover {
+      background: var(--neon-purple);
+    }
+    .cta-section {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .cta-section .cta-button { 
+      display: inline-block; 
+      padding: 15px 30px; 
+      background: var(--neon-green) !important; 
+      color: #000 !important; 
+      text-decoration: none !important; 
+      border: 2px solid var(--neon-purple) !important; 
+      border-radius: 5px !important; 
       font-size: 1.2rem !important;
       transition: background 0.3s, color 0.3s !important;
-      z-index: 9999 !important;
-      margin-top: 20px !important;
     }
-    .cta-button:hover {
-      background: #BC13FE !important;
-      color: #39FF14 !important;
+    .cta-section .cta-button:hover { 
+      background: var(--neon-purple) !important;
+      color: #000 !important;
+    }
+    /* Banter Section */
+    .banter-section {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 20px 0;
+      padding: 10px;
+      background: #222;
+      border: 1px solid var(--neon-purple);
+      border-radius: 8px;
+    }
+    .banter {
+      max-width: 300px;
+      text-align: center;
+    }
+    .banter img {
+      max-width: 100%;
+      border-radius: 50%;
+      animation: fadeIn 2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .banter-text {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--neon-green);
     }
   </style>
 </head>
@@ -75,7 +125,7 @@
     <h1>GlitchTeks.com</h1>
   </div>
 
-  <!-- Sidebar Navigation -->
+  <!-- Sidebar Navigation (fixed to the left) -->
   <div class="sidebar">
     <nav>
       <ul>
@@ -93,7 +143,7 @@
     </nav>
   </div>
 
-  <!-- Main Content Area -->
+  <!-- Main Content Area (offset by sidebar width) -->
   <div class="wrapper" style="margin-left: 220px;">
     <div class="content">
       <header>
@@ -101,9 +151,82 @@
         <p>Become a member of GlitchTeks and unlock exclusive content, events, and custom minted badges tailored to your tier.</p>
       </header>
 
-      <!-- (Membership tiers and banter content would go here) -->
+      <!-- Banter Section for Flavor -->
+      <section class="banter-section">
+        <div class="banter">
+          <img src="images/Nova.png" alt="Nova the Cyber Chimp">
+          <p class="banter-text">
+            "Hey, you lowly meatbag—ready to upgrade your digital DNA? I'm Nova, here to spark your revolution."
+          </p>
+        </div>
+        <div class="banter">
+          <img src="images/SASS.png" alt="S.A.S.S. the Sarcastic Assinine Simian Supervisor">
+          <p class="banter-text">
+            "Oh please, only the best join our ranks—if you're serious, prove it."
+          </p>
+        </div>
+      </section>
 
-      <!-- Call-to-Action Section -->
+      <!-- Membership Tiers Section -->
+      <section class="membership-section">
+        <!-- Clockwork Initiate (Novice Tier) -->
+        <div class="tier" data-tier="novice">
+          <h3>Clockwork Initiate</h3>
+          <p>As a Clockwork Initiate, you gain access to member-only blogs, live stream chats, and community forums. Your journey begins with a unique NFT badge marking your raw entry into our digital jungle.</p>
+          <p class="price-tag">Price: $9.99/month</p>
+          <p><strong>Badge Minting Process:</strong> Our smart contract forges your Bronze NFT badge and secures it on the blockchain.</p>
+          <div class="badge-section">
+            <img src="images/placeholder_clockwork.png" alt="Clockwork Initiate Badge" class="badge">
+            <input type="file" id="upload-novice" name="upload-novice">
+            <a href="mint-novice.html" class="mint-button">Mint Badge</a>
+          </div>
+          <button onclick="window.location.href='secure-checkout.html?tier=novice'">Join The Journey</button>
+        </div>
+
+        <!-- Brass Mechanist (Silver Tier) -->
+        <div class="tier" data-tier="silver">
+          <h3>Brass Mechanist</h3>
+          <p>Step up your game! As a Brass Mechanist, you unlock exclusive access to creator content, collaboration requests, and game idea forums—plus all the Initiate perks.</p>
+          <p class="price-tag">Price: $19.99/month</p>
+          <p><strong>Badge Minting Process:</strong> Once verified, your Silver NFT badge is minted with a polished brass overlay, marking your elevated status.</p>
+          <div class="badge-section">
+            <img src="images/placeholder_brass.png" alt="Brass Mechanist Badge" class="badge">
+            <input type="file" id="upload-silver" name="upload-silver">
+            <a href="mint-silver.html" class="mint-button">Mint Badge</a>
+          </div>
+          <button onclick="window.location.href='secure-checkout.html?tier=silver'">Join The Journey</button>
+        </div>
+
+        <!-- Gearforged Virtuoso (Gold Tier) -->
+        <div class="tier" data-tier="gold">
+          <h3>Gearforged Virtuoso</h3>
+          <p>For elite operators, the Gold Tier unlocks premium events, priority support, and early access to community projects. Your badge gleams with a rare gold finish, certifying your superior status.</p>
+          <p class="price-tag">Price: $29.99/month</p>
+          <p><strong>Badge Minting Process:</strong> Our blockchain crafts a unique Gold NFT badge with a serial number to certify your virtuosity.</p>
+          <div class="badge-section">
+            <img src="images/placeholder_gold.png" alt="Gearforged Virtuoso Badge" class="badge">
+            <input type="file" id="upload-gold" name="upload-gold">
+            <a href="mint-gold.html" class="mint-button">Mint Badge</a>
+          </div>
+          <button onclick="window.location.href='secure-checkout.html?tier=gold'">Join The Journey</button>
+        </div>
+
+        <!-- Aetheric Cogmaster (Platinum Tier) -->
+        <div class="tier" data-tier="platinum">
+          <h3>Aetheric Cogmaster</h3>
+          <p>The pinnacle of membership—only the best ascend here. As an Aetheric Cogmaster, you receive VIP perks, one-on-one sessions with top streamers, exclusive merchandise (including our legendary Thanksgiving Sweater), and full access to all premium content and community events.</p>
+          <p class="price-tag">Price: $49.99/month</p>
+          <p><strong>Badge Minting Process:</strong> A custom smart contract mints your Platinum NFT badge, embedding exclusive metadata that certifies your elite status.</p>
+          <div class="badge-section">
+            <img src="images/placeholder_platinum.png" alt="Aetheric Cogmaster Badge" class="badge">
+            <input type="file" id="upload-platinum" name="upload-platinum">
+            <a href="mint-platinum.html" class="mint-button">Mint Badge</a>
+          </div>
+          <button onclick="window.location.href='secure-checkout.html?tier=platinum'">Join The Journey</button>
+        </div>
+      </section>
+
+      <!-- Global Call-to-Action -->
       <section class="cta-section">
         <h2>Ready to Begin?</h2>
         <p>Click below to proceed to our secure checkout page and start your GlitchTeks journey!</p>
@@ -114,7 +237,7 @@
       <footer>
         <p>&copy; 2025 GlitchTeks. Chaos is our protocol.</p>
       </footer>
-    </div>
-  </div>
+    </div> <!-- End .content -->
+  </div> <!-- End .wrapper -->
 </body>
 </html>
