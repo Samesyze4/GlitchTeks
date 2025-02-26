@@ -6,8 +6,7 @@
   <title>GlitchTeks - Membership Tiers</title>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    /* For this page, we add some inline tweaks if needed */
-    /* (You can remove these if your external CSS already handles layout) */
+    /* Inline tweaks for this page */
     .membership-section { 
       max-width: 800px; 
       margin: 20px auto; 
@@ -29,14 +28,28 @@
       margin-bottom: 10px;
       text-align: left;
     }
-    .tier blockquote { 
-      margin: 10px 0; 
-      padding: 10px; 
-      background: #000; 
-      border-left: 3px solid var(--neon-green); 
-      font-style: italic;
+    .price-tag {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--neon-green);
+      margin-bottom: 10px;
     }
-    .checkout { text-align: center; margin-top: 30px; }
+    .tier button {
+      background: var(--neon-green);
+      border: none;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .tier button:hover {
+      background: var(--neon-purple);
+    }
+    .checkout {
+      text-align: center;
+      margin-top: 30px;
+    }
     .checkout .button { 
       display: inline-block; 
       margin-top: 20px; 
@@ -79,7 +92,7 @@
     <!-- Main Content Area -->
     <div class="content">
       <header>
-        <h1>Membership Tiers & Badge Minting</h1>
+        <h1>Membership Tiers &amp; Badge Minting</h1>
         <p>Join our digital jungle and unlock a custom minted badge for your membership level.</p>
       </header>
 
@@ -88,36 +101,30 @@
         <div class="tier bronze">
           <h3>Bronze Tier: Cyber Initiate</h3>
           <p>Welcome to the digital jungle! As a Cyber Initiate, you’re taking your first step into our wild community. Your journey starts with a unique NFT badge that represents your digital identity.</p>
-          <p><strong>Badge Minting Process:</strong> Once you join, our smart contract mints your unique Bronze NFT badge and securely stores it on the blockchain.</p>
+          <p class="price-tag">Price: $9.99/month</p>
+          <p><strong>Badge Minting Process:</strong> Upon joining, our smart contract mints your unique Bronze NFT badge and securely stores it on the blockchain.</p>
           <blockquote>
             <p><strong>NOVA:</strong> "Welcome, Cyber Initiate! Your journey begins with a badge as humble as it is mighty."</p>
             <p><strong>SASS:</strong> "Just don’t trip over your own feet, rookie."</p>
           </blockquote>
+          <button onclick="window.location.href='payment.html?tier=bronze'">Join Bronze</button>
         </div>
 
         <!-- Silver Tier -->
         <div class="tier silver">
           <h3>Silver Tier: Digital Primate</h3>
           <p>You've proven your skills and now level up! As a Digital Primate, your minted badge glows with a silver overlay, unlocking exclusive perks and early access to content.</p>
+          <p class="price-tag">Price: $19.99/month</p>
           <p><strong>Badge Minting Process:</strong> After verification, our system mints your Silver NFT badge with a special silver overlay, marking your elevated status.</p>
           <blockquote>
             <p><strong>NOVA:</strong> "Ah, Digital Primate! Your badge now shines bright in the cyber jungle."</p>
             <p><strong>SASS:</strong> "Better watch out—great perks come with even greater responsibilities."</p>
           </blockquote>
+          <button onclick="window.location.href='payment.html?tier=silver'">Join Silver</button>
         </div>
 
         <!-- Gold Tier -->
         <div class="tier gold">
           <h3>Gold Tier: Cyber Simian</h3>
           <p>For the elite members, the Gold Tier offers premium benefits. Your badge, minted with a rare gold finish, grants you access to exclusive events, premium content, and priority support.</p>
-          <p><strong>Badge Minting Process:</strong> Our blockchain mints a unique Gold NFT badge, complete with a serial number that certifies your premium status.</p>
-          <blockquote>
-            <p><strong>NOVA:</strong> "Behold the Cyber Simian! Your badge speaks volumes of your excellence."</p>
-            <p><strong>SASS:</strong> "Just try not to let it go to your head, champ."</p>
-          </blockquote>
-        </div>
-
-        <!-- Platinum Tier -->
-        <div class="tier platinum">
-          <h3>Platinum Tier: Apex Chimp</h3>
-          <p>The pinnacle of membership—only the best join the ranks of the Apex Chimp. Enjoy VIP perks including one-on-one sessions with our top streamers, exclusive merchandise, and mor
+          <p class="price-tag">Price: $2
