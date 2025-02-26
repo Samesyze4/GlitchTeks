@@ -1,18 +1,112 @@
+/* Root Variables */
 :root {
   --neon-green: #39FF14;
   --neon-purple: #BC13FE;
 }
 
+/* Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body & Background */
 body {
   background: url("images/circuit-board-bg.png") no-repeat center center fixed;
   background-size: cover;
+  font-family: Arial, sans-serif;
+  color: var(--neon-green);
 }
+
+/* Global Header */
+.global-header {
+  text-align: center;
+  background-color: #111;
+  padding: 1rem;
+  box-shadow: 0 0 10px var(--neon-green);
+}
+
+/* Wrapper: Flex container for sidebar + content */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar (fixed to the left) */
+.sidebar {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #111;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sidebar nav ul,
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar nav ul li,
+.sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.sidebar nav ul li a,
+.sidebar ul li a {
+  color: var(--neon-green);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar ul li a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+}
+
+.sidebar nav ul li a.active,
+.sidebar ul li a.active {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Main Content Area */
+.content {
+  margin-left: 220px;  /* Must be at least as wide as the sidebar plus any gap */
+  padding: 20px;
+  flex: 1;
+}
+
+/* Example header in content */
+.content header {
+  margin-bottom: 1rem;
+}
+
+/* Sections within content */
+.content section {
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111;
+  color: var(--neon-green);
+}
+
+/* -- Monkey Container & Speech Bubbles -- */
 
 /* Container for the two monkey characters */
 .monkey-container {
   position: fixed;
   bottom: 20px;
-  left: 220px;
+  left: 220px; /* Adjust so they don't overlap the sidebar */
   display: flex;
   gap: 20px;
   z-index: 999;
@@ -42,7 +136,7 @@ body {
   pointer-events: none;
 }
 
-/* A little triangle (tail) for the speech bubble */
+/* Triangle (tail) for the speech bubble */
 .speech-bubble::after {
   content: "";
   position: absolute;
@@ -55,7 +149,7 @@ body {
   border-top: 15px solid rgba(0, 0, 0, 0.8);
 }
 
-/* Glowing effect on the bubble border */
+/* Glowing effect on the bubble border when hovered */
 .speech-bubble:hover {
   box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
 }
