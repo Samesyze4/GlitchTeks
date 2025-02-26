@@ -6,7 +6,7 @@
   <title>GlitchTeks - Membership Tiers</title>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    /* Inline tweaks for this page */
+    /* Inline tweaks for this page – merge into your main CSS later if desired */
     .membership-section { 
       max-width: 800px; 
       margin: 20px auto; 
@@ -60,16 +60,47 @@
       border-radius: 5px; 
       transition: background 0.3s;
     }
-    .checkout .button:hover { background: var(--neon-purple); }
+    .checkout .button:hover { 
+      background: var(--neon-purple); 
+    }
+    /* Banter Section */
+    .banter-section {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 20px 0;
+      padding: 10px;
+      background: #222;
+      border: 1px solid var(--neon-purple);
+      border-radius: 8px;
+    }
+    .banter {
+      max-width: 300px;
+      text-align: center;
+    }
+    .banter img {
+      max-width: 100%;
+      border-radius: 50%;
+      animation: fadeIn 2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .banter-text {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--neon-green);
+    }
   </style>
 </head>
 <body>
-  <!-- Global Header (Site Branding) -->
+  <!-- Global Header -->
   <div class="global-header">
     <h1>GlitchTeks.com</h1>
   </div>
 
-  <!-- Wrapper: Contains Sidebar and Main Content -->
+  <!-- Wrapper: Contains Sidebar & Main Content -->
   <div class="wrapper">
     <!-- Sidebar Navigation (fixed to the left) -->
     <div class="sidebar">
@@ -89,42 +120,20 @@
       </nav>
     </div>
 
-    <!-- Main Content Area -->
+    <!-- Main Content Area (offset by sidebar width) -->
     <div class="content">
       <header>
         <h1>Membership Tiers &amp; Badge Minting</h1>
         <p>Join our digital jungle and unlock a custom minted badge for your membership level.</p>
       </header>
 
-      <section class="membership-section">
-        <!-- Bronze Tier -->
-        <div class="tier bronze">
-          <h3>Bronze Tier: Cyber Initiate</h3>
-          <p>Welcome to the digital jungle! As a Cyber Initiate, you’re taking your first step into our wild community. Your journey starts with a unique NFT badge that represents your digital identity.</p>
-          <p class="price-tag">Price: $9.99/month</p>
-          <p><strong>Badge Minting Process:</strong> Upon joining, our smart contract mints your unique Bronze NFT badge and securely stores it on the blockchain.</p>
-          <blockquote>
-            <p><strong>NOVA:</strong> "Welcome, Cyber Initiate! Your journey begins with a badge as humble as it is mighty."</p>
-            <p><strong>SASS:</strong> "Just don’t trip over your own feet, rookie."</p>
-          </blockquote>
-          <button onclick="window.location.href='payment.html?tier=bronze'">Join Bronze</button>
+      <!-- Banter Section -->
+      <section class="banter-section">
+        <div class="banter">
+          <img src="images/Nove.png" alt="Nova the Cyber Chimp">
+          <p class="banter-text">
+            "Alright, glitchers—time to dive into this digital mosh pit of messy game modding and half-cocked hardware hacks. I'm Nova, your barely integrated cyber chimp, and S.A.S.S. is already rolling its eyes. Let's trigger a code revolution, one sarcastic byte at a time."
+          </p>
         </div>
-
-        <!-- Silver Tier -->
-        <div class="tier silver">
-          <h3>Silver Tier: Digital Primate</h3>
-          <p>You've proven your skills and now level up! As a Digital Primate, your minted badge glows with a silver overlay, unlocking exclusive perks and early access to content.</p>
-          <p class="price-tag">Price: $19.99/month</p>
-          <p><strong>Badge Minting Process:</strong> After verification, our system mints your Silver NFT badge with a special silver overlay, marking your elevated status.</p>
-          <blockquote>
-            <p><strong>NOVA:</strong> "Ah, Digital Primate! Your badge now shines bright in the cyber jungle."</p>
-            <p><strong>SASS:</strong> "Better watch out—great perks come with even greater responsibilities."</p>
-          </blockquote>
-          <button onclick="window.location.href='payment.html?tier=silver'">Join Silver</button>
-        </div>
-
-        <!-- Gold Tier -->
-        <div class="tier gold">
-          <h3>Gold Tier: Cyber Simian</h3>
-          <p>For the elite members, the Gold Tier offers premium benefits. Your badge, minted with a rare gold finish, grants you access to exclusive events, premium content, and priority support.</p>
-          <p class="price-tag">Price: $2
+        <div class="banter">
+          <img src="images/SASS.png" alt="S.A.S.S. the Sarcastic Assinine Simian Su
