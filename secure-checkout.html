@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Checkout - GlitchTeks Membership</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <style>
+    /* Inline styles for Secure Checkout Page */
+    .checkout-container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 10px var(--neon-green);
+      color: var(--neon-green);
+      text-align: left;
+    }
+    .checkout-container h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .summary {
+      margin-bottom: 20px;
+      padding: 10px;
+      background: #111;
+      border: 1px solid var(--neon-purple);
+      border-radius: 5px;
+    }
+    .checkout-container form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .checkout-container form input,
+    .checkout-container form select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid var(--neon-purple);
+      background: #333;
+      color: var(--neon-green);
+    }
+    .checkout-container form button {
+      width: 100%;
+      padding: 10px;
+      background: var(--neon-green);
+      border: none;
+      border-radius: 5px;
+      color: #000;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .checkout-container form button:hover {
+      background: var(--neon-purple);
+    }
+  </style>
+</head>
+<body>
+  <!-- Global Header -->
+  <div class="global-header">
+    <h1>GlitchTeks.com</h1>
+  </div>
+
+  <!-- Secure Checkout Container -->
+  <div class="checkout-container">
+    <h1>Secure Checkout</h1>
+    <div class="summary">
+      <p id="membership-summary">Loading membership details...</p>
+    </div>
+    <form id="checkout-form" action="process-payment.html" method="POST">
+      <label for="full-name">Full Name</label>
+      <input type="text" id="full-name" name="full-name" required>
+      
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="card-number">Credit Card Number</label>
+      <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+      
+      <label for="expiry">Expiry Date (MM/YY)</label>
+      <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+      
+      <label for="cvv">CVV</label>
+      <input type="text" id="cvv" name="cvv" placeholder="123" required>
+      
+      <button type="submit">Submit Payment</button>
+    </form>
+  </div>
+
+  <script>
+    // Function to retrieve query parameters
+    function getQueryParam(param) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
+    }
+    
+    // Get the membership tier from the URL (e.g. ?tier=novice)
+    const tier = getQueryParam("tier") || "unknown";
+    const membershipSummary = document.getElementById("membership-summary");
+    
+    // Define membership tier details
+    const tierDetails = {
+      "novice": "Clockwork Initiate - $9.99/month",
+      "silver": "Brass Mechanist - $19.99/month",
+      "gold": "Gearforged Virtuoso - $29.99/month",
+      "platinum": "Aetheric Cogmaster - $49.99/month"
+    };
+    
+    // Update the summary text
+    if (tierDetails[tier])
