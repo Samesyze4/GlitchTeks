@@ -2,92 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GlitchTeks - Home</title>
   <link rel="stylesheet" href="/styles/styles.css" />
+  <style>
+    /* Minimal inline layout styles to force proper alignment */
+    .wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 200px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      background: #111;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .main {
+      margin-left: 220px; /* 200px for sidebar + 20px gap */
+      padding: 20px;
+      flex: 1;
+    }
+  </style>
 </head>
 <body>
+  <!-- Global Header -->
   <div class="global-header">
-  <h1>GlitchTeks.com</h1>
-</div>
+    <h1>GlitchTeks.com</h1>
+  </div>
 
+  <!-- Wrapper: Contains Sidebar and Main Content -->
   <div class="wrapper">
     <!-- Sidebar Navigation -->
     <div class="sidebar">
-    <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="About.html">About</a></li>
-  <li><a href="Merch.html">Merch</a></li>
-  <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
-  <li><a href="GlitchBoard.html" class="active">GlitchBoard</a></li>
-  <li><a href="Guides.html">Guides</a></li>
-  <li><a href="Reviews.html">Reviews</a></li>
-  <li><a href="Join-Us.html">Join Us</a></li>
-  <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
-  <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
-</ul>
-
-    </div>
-
-    <!-- Main Content Area -->
-    <div class="main">
-      <header style="background: linear-gradient(to right, #00ff00, #0000ff); color: #ffffff; padding: 1.5rem;">
-        <h1>Welcome to GlitchTeks</h1>
-        <p>No Gods. No Humans. Just Cyber-Chimps.</p>
-      </header>
-
-      <section>
-        <h2>> THE DIGITAL JUNGLE AWAITS_</h2>
-        <p>
-          Stranded in the cyber wasteland? Welcome home. GlitchTeks is your guide
-          to the world of gaming, tech, and absolute chaos. Whether you're here
-          to learn, contribute, or just bask in the digital anarchy, we’ve got
-          you covered.
-        </p>
-      </section>
-
-      <section>
-        <h2>> WHAT WE OFFER_</h2>
+      <nav>
         <ul>
-          <li>
-            🎮 <a href="Guides.html">Tech &amp; Gaming Guides</a> – Learn, break, and
-            fix.
-          </li>
-          <li>
-            🛠️ <a href="Reviews.html">Unfiltered Reviews</a> – No sugarcoating, just
-            facts.
-          </li>
-          <li>
-            📡 <a href="GlitchBoard.html">Evolution Apemented</a> – Meet other
-            cyber-chimps in our collective mind.
-          </li>
-          <li>
-            💡 <a href="CyberChimp-Bastion.html">The CyberChimp Bastion</a> – A members-only fortress.
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>NOVA (68% Integrated)</h2>
-        <p>
-          Greetings, gearheads! I’m Nova—your semi-glitched, cybernetically
-          enhanced chimp, here to help you scavenge the best in gaming tech and,
-          um... bananas. Wait. No. Tech, definitely tech.
-        </p>
-
-        <h2>SASS (Sarcastically Advanced Simian Supervisor)</h2>
-        <p>
-          *Sigh*—Yes, dear humans, I’m the other 32% lodged in Nova’s brain.
-          Think of me as a built-in critic who keeps him from setting your rig on
-          fire. If you're into top-tier tips, unfiltered reviews, or seeing a
-          chimp meltdown, you’re in the right place.
-        </p>
-      </section>
-
-      <footer style="padding: 0.5rem; text-align: center;">
-        <p>&copy; 2025 GlitchTeks. Chaos is our protocol.</p>
-      </footer>
-    </div>
-  </div>
-</body>
-</html>
+          <li><a href="index.html">Home</a></li>
+          <li><a href
