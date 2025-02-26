@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <title>My Printful Merch</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Link to your CSS file -->
-  <link rel="stylesheet" href="styles/style.css" />
+  <!-- Link to your existing CSS file; adjust the path if necessary -->
+  <link rel="stylesheet" href="style.css" />
   <style>
-    /* Additional custom styles for the merch section */
+    /* Additional custom styles for the merch page */
     #products-container {
       display: flex;
       flex-wrap: wrap;
@@ -19,6 +19,7 @@
       border: 1px solid #444;
       border-radius: 5px;
       padding: 15px;
+      margin: 10px;
       width: 250px;
       box-shadow: 0 2px 5px rgba(0, 255, 255, 0.1);
     }
@@ -32,71 +33,55 @@
       font-size: 1.2em;
       margin-bottom: 10px;
     }
-    .product p.description {
-      font-size: 0.9em;
-      margin-bottom: 10px;
-    }
-    .product p.price {
-      font-weight: bold;
+    .product p {
       margin-bottom: 10px;
     }
     .product button {
       background: #28a745;
       border: none;
       color: #fff;
-      padding: 10px;
-      border-radius: 3px;
+      padding: 10px 15px;
       cursor: pointer;
+      border-radius: 3px;
     }
-    /* Styles for Tech Partners section */
-    #partners {
-      margin-top: 40px;
-      padding: 20px;
-      background: #222;
-      border-radius: 5px;
-    }
-    #partners h2 {
-      margin-bottom: 20px;
-      color: #0ff;
-    }
-    .partner-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .partner {
+    .cart {
+      position: fixed;
+      top: 20px;
+      right: 20px;
       background: #333;
-      padding: 15px;
       border: 1px solid #444;
+      padding: 15px;
       border-radius: 5px;
-      width: 200px;
-      text-align: center;
-    }
-    .partner a {
+      width: 300px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 2px 5px rgba(0, 255, 255, 0.2);
       color: #0ff;
-      text-decoration: none;
-      font-weight: bold;
+    }
+    .cart h2 {
+      margin-top: 0;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .cart button {
+      background: #007BFF;
+      border: none;
+      color: #fff;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 3px;
+      margin-top: 10px;
+      width: 100%;
     }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <!-- Sidebar with working links -->
+    <!-- SIDEBAR -->
     <div class="sidebar">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <!-- Removed the Store link since Merch is your main page -->
-        <li><a href="About.html">About</a></li>
-        <li><a href="Checkout.html">Checkout</a></li>
-        <li><a href="Contact-Privacy.html">Contact/Privacy</a></li>
-        <li><a href="CyberChimp-Bastion.html">CyberChimp Bastion</a></li>
-        <li><a href="GlitchBoard.html">GlitchBoard</a></li>
-        <li><a href="Guides.html">Guides</a></li>
-        <li><a href="Join-Us.html">Join Us</a></li>
-        <li><a href="Merch.html" class="active">Merch</a></li>
-        <li><a href="Reviews.html">Reviews</a></li>
-        <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
-      </ul>
-    </div>
-
-    <!-- Main 
+        <li><a href="Merch.html
