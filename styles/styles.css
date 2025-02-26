@@ -1,226 +1,63 @@
-/* Define neon colors as variables for consistency */
-:root {
-  --neon-green: #39FF14;       /* Bright neon green */
-  --neon-purple: #BF00FF;      /* Bright neon purple */
-  --bg-black: #000;
-  --bg-dark: #111;
-}
-
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Global Styles */
+/* --- NEW BACKGROUND FOR ENTIRE SITE --- */
 body {
-  background: var(--bg-black);
-  color: var(--neon-green);
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
+  /* Keep your existing properties, then add/override background */
+  background: url("images/circuit-board-bg.png") no-repeat center center fixed;
+  background-size: cover; /* Ensure the image covers the whole screen */
+}
+
+/* Container for the two monkey characters */
+.monkey-container {
+  position: fixed; /* They stay in place, even if you scroll */
+  bottom: 20px;    /* Adjust as needed */
+  left: 220px;     /* So they don't overlap the sidebar (which is 180px wide) */
   display: flex;
-}
-
-/* Sidebar Navigation */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 180px;
-  height: 100vh;
-  background-color: var(--bg-dark);
-  padding: 1rem;
-  overflow-y: auto;
-}
-
-.sidebar nav ul,
-.sidebar ul {
-  list-style: none;
-}
-
-.sidebar nav ul li,
-.sidebar ul li {
-  margin-bottom: 1rem;
-}
-
-.sidebar nav ul li a,
-.sidebar ul li a {
-  color: var(--neon-green);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s, text-shadow 0.3s;
-}
-
-.sidebar nav ul li a:hover,
-.sidebar ul li a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
-}
-
-.sidebar nav ul li a.active,
-.sidebar ul li a.active {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* Content Wrapper */
-.content {
-  margin-left: 180px;
-  width: calc(100% - 180px);
-}
-
-/* Hero Section with Flicker Animation */
-.hero {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: var(--neon-purple);
-  color: var(--neon-green);
-  font-size: 2rem;
-  animation: flicker 2s infinite;
-}
-
-/* Flicker Animation for hero background */
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-  }
-  20%, 24%, 55% {
-    opacity: 0.4;
-  }
-}
-
-/* Optional Glitch Effect for headings */
-.glitch {
-  position: relative;
-  color: var(--neon-green);
-  font-size: 2.5rem;
-  animation: glitch 1s linear infinite;
-}
-
-@keyframes glitch {
-  0% { clip: rect(42px, 9999px, 44px, 0); transform: translate(0); }
-  20% { clip: rect(12px, 9999px, 80px, 0); transform: translate(-2px, -2px); }
-  40% { clip: rect(82px, 9999px, 90px, 0); transform: translate(2px, 2px); }
-  60% { clip: rect(22px, 9999px, 60px, 0); transform: translate(-1px, 1px); }
-  80% { clip: rect(52px, 9999px, 70px, 0); transform: translate(1px, -1px); }
-  100% { clip: rect(42px, 9999px, 44px, 0); transform: translate(0); }
-}
-
-/* Main Sections */
-main {
-  padding: 2rem 1rem;
-}
-
-section {
-  margin-bottom: 2rem;
-}
-
-h2 {
-  margin-bottom: 1rem;
-  color: var(--neon-green);
-}
-
-/* Merch Store Product Cards */
-#products-container {
-  display: flex;
-  flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 40px;
+  z-index: 999;    /* Ensure they're on top of most elements */
 }
 
-.product {
-  background: var(--bg-dark);
+/* A generic class for each monkey image */
+.monkey {
+  position: relative;
+  max-width: 200px; /* Scale the monkey images if needed */
+  cursor: pointer;  /* So you can click them if you want to add interactions */
+}
+
+/* Speech bubble styling */
+.speech-bubble {
+  position: absolute;
+  bottom: 120%;
+  left: 0;
+  width: 220px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--neon-green);
+  border-radius: 8px;
   color: var(--neon-green);
-  border: 1px solid var(--neon-purple);
-  border-radius: 5px;
-  padding: 15px;
-  width: 250px;
-  box-shadow: 0 2px 5px rgba(57, 255, 20, 0.5);
-  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  display: none; /* Hidden by default; we’ll show it via JS */
+  pointer-events: none; /* So clicks pass through */
 }
 
-.product:hover {
-  transform: scale(1.05);
-  box-shadow: 0 2px 10px rgba(57, 255, 20, 0.8);
+/* A little triangle (tail) for the speech bubble */
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -15px; /* Adjust so it meets the monkey’s head or side */
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid rgba(0, 0, 0, 0.8);
 }
 
-.product img {
-  max-width: 100%;
-  height: auto;
+/* Glowing effect on the bubble border */
+.speech-bubble:hover {
+  box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
+}
+
+/* Show bubble when a special class is toggled (e.g., .show) */
+.speech-bubble.show {
   display: block;
-  margin-bottom: 10px;
-}
-
-.product h3 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.product p {
-  margin-bottom: 10px;
-}
-
-.product button {
-  background: var(--neon-green);
-  border: none;
-  color: var(--bg-dark);
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 3px;
-  transition: background 0.3s;
-}
-
-.product button:hover {
-  background: var(--neon-purple);
-}
-
-/* Cart Styles */
-.cart {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--bg-dark);
-  border: 1px solid var(--neon-purple);
-  padding: 15px;
-  border-radius: 5px;
-  width: 300px;
-  max-height: 80vh;
-  overflow-y: auto;
-  box-shadow: 0 2px 5px rgba(57, 255, 20, 0.5);
-  color: var(--neon-green);
-}
-
-.cart h2 {
-  margin-top: 0;
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.cart button {
-  background: var(--neon-green);
-  border: none;
-  color: var(--bg-dark);
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 3px;
-  margin-top: 10px;
-  width: 100%;
-  transition: background 0.3s;
-}
-
-.cart button:hover {
-  background: var(--neon-purple);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: var(--bg-dark);
-  color: var(--neon-green);
 }
