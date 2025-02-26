@@ -1,25 +1,28 @@
-/* --- NEW BACKGROUND FOR ENTIRE SITE --- */
+:root {
+  --neon-green: #39FF14;
+  --neon-purple: #BC13FE;
+}
+
 body {
-  /* Keep your existing properties, then add/override background */
   background: url("images/circuit-board-bg.png") no-repeat center center fixed;
-  background-size: cover; /* Ensure the image covers the whole screen */
+  background-size: cover;
 }
 
 /* Container for the two monkey characters */
 .monkey-container {
-  position: fixed; /* They stay in place, even if you scroll */
-  bottom: 20px;    /* Adjust as needed */
-  left: 220px;     /* So they don't overlap the sidebar (which is 180px wide) */
+  position: fixed;
+  bottom: 20px;
+  left: 220px;
   display: flex;
   gap: 20px;
-  z-index: 999;    /* Ensure they're on top of most elements */
+  z-index: 999;
 }
 
 /* A generic class for each monkey image */
 .monkey {
   position: relative;
-  max-width: 200px; /* Scale the monkey images if needed */
-  cursor: pointer;  /* So you can click them if you want to add interactions */
+  max-width: 200px;
+  cursor: pointer;
 }
 
 /* Speech bubble styling */
@@ -35,15 +38,15 @@ body {
   color: var(--neon-green);
   font-size: 0.85rem;
   line-height: 1.3;
-  display: none; /* Hidden by default; we’ll show it via JS */
-  pointer-events: none; /* So clicks pass through */
+  display: none;
+  pointer-events: none;
 }
 
 /* A little triangle (tail) for the speech bubble */
 .speech-bubble::after {
   content: "";
   position: absolute;
-  bottom: -15px; /* Adjust so it meets the monkey’s head or side */
+  bottom: -15px;
   left: 20px;
   width: 0;
   height: 0;
@@ -57,7 +60,7 @@ body {
   box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
 }
 
-/* Show bubble when a special class is toggled (e.g., .show) */
+/* Show bubble when a special class is toggled */
 .speech-bubble.show {
   display: block;
 }
