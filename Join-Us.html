@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GlitchTeks - Membership Tiers</title>
+  <title>GlitchTeks - Members-Only Portal</title>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    /* Inline tweaks for this page – merge into your main CSS later if desired */
+    /* Inline tweaks for this page; can later be merged into your external CSS */
     .membership-section { 
       max-width: 800px; 
       margin: 20px auto; 
@@ -45,6 +45,13 @@
     }
     .tier button:hover {
       background: var(--neon-purple);
+    }
+    .restricted-features {
+      font-style: italic;
+      margin-top: 10px;
+      padding-left: 20px;
+      border-left: 2px solid var(--neon-green);
+      color: var(--neon-green);
     }
     .checkout {
       text-align: center;
@@ -100,40 +107,36 @@
     <h1>GlitchTeks.com</h1>
   </div>
 
-  <!-- Wrapper: Contains Sidebar & Main Content -->
-  <div class="wrapper">
-    <!-- Sidebar Navigation (fixed to the left) -->
-    <div class="sidebar">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="About.html">About</a></li>
-          <li><a href="Merch.html">Merch</a></li>
-          <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
-          <li><a href="GlitchBoard.html">GlitchBoard</a></li>
-          <li><a href="Guides.html">Guides</a></li>
-          <li><a href="Reviews.html">Reviews</a></li>
-          <li><a href="Join-Us.html">Join Us</a></li>
-          <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
-          <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- Main Content Area (offset by sidebar width) -->
-    <div class="content">
-      <header>
-        <h1>Membership Tiers &amp; Badge Minting</h1>
-        <p>Join our digital jungle and unlock a custom minted badge for your membership level.</p>
-      </header>
-
-      <!-- Banter Section -->
-      <section class="banter-section">
-        <div class="banter">
-          <img src="images/Nove.png" alt="Nova the Cyber Chimp">
-          <p class="banter-text">
-            "Alright, glitchers—time to dive into this digital mosh pit of messy game modding and half-cocked hardware hacks. I'm Nova, your barely integrated cyber chimp, and S.A.S.S. is already rolling its eyes. Let's trigger a code revolution, one sarcastic byte at a time."
-          </p>
+  <script>
+    // Simple membership check: look for cookie "membershipTier"
+    function getMembershipTier() {
+      var name = "membershipTier=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+          var c = ca[i].trim();
+          if (c.indexOf(name) === 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+    }
+    var userTier = getMembershipTier();
+    if (!userTier) {
+      document.body.innerHTML = `
+        <div class="error-message" style="background:#111; color:#fff; padding:50px; text-align:center; margin:50px auto; max-width:600px; border-radius:10px; box-shadow:0 0 10px var(--neon-green);">
+          <h1>Access Denied!</h1>
+          <p>Whoa, slow down, meatbag! You ain't a member of GlitchTeks yet. Even our cyber-chimps won't let you in without a proper badge.</p>
+          <p>Please head over to our <a href="Join-Us.html" style="color: var(--neon-purple); text-decoration: underline;">Join Us</a> page to sign up.</p>
         </div>
-        <div class="banter">
-          <img src="images/SASS.png" alt="S.A.S.S. the Sarcastic Assinine Simian Su
+      `;
+      throw new Error("User is not a member.");
+    }
+    // Map membership tiers to levels
+    var tierLevels = { "novice": 1, "silver": 2, "gold": 3, "platinum": 4 };
+    var userTierLevel = tierLevels[userTier] || 0;
+  </script>
+
+  <!-- Wrapper: Contains Sidebar & Main Content -->
+  <div class="wrapper" style="margin-left: 220px;">
+    <!-- Sidebar Navigation (
