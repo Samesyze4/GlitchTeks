@@ -1,30 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GlitchTeks - Home</title>
-  <link rel="stylesheet" href="/styles/styles.css" />
+  <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    /* Minimal inline layout styles to force proper alignment */
+    /* Minimal inline styles to ensure proper layout with your two-color scheme */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #111; /* Dark background */
+      color: #39FF14;  /* Neon green text */
+    }
+    .global-header {
+      text-align: center;
+      background: #111;
+      padding: 20px;
+      border-bottom: 2px solid #BC13FE; /* Neon purple border */
+    }
+    .global-header h1 {
+      color: #39FF14;
+    }
     .wrapper {
       display: flex;
       min-height: 100vh;
     }
     .sidebar {
-      width: 200px;
       position: fixed;
       top: 0;
       left: 0;
+      width: 200px;
       height: 100vh;
-      background: #111;
+      background: transparent;  /* Transparent background so it doesn't cover content */
       padding: 20px;
+      border-right: 2px solid #BC13FE; /* Use neon purple for separation */
       overflow-y: auto;
     }
+    .sidebar nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar nav ul li {
+      margin-bottom: 15px;
+    }
+    .sidebar nav ul li a {
+      color: #39FF14;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .sidebar nav ul li a:hover {
+      color: #BC13FE;
+    }
+    .sidebar nav ul li a.active {
+      color: #BC13FE;
+      text-decoration: underline;
+    }
     .main {
-      margin-left: 220px; /* 200px for sidebar + 20px gap */
+      margin-left: 220px; /* 200px sidebar + 20px gap */
       padding: 20px;
       flex: 1;
+    }
+    .main header {
+      background: linear-gradient(to right, #39FF14, #BC13FE);
+      padding: 1.5rem;
+      color: #111;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .main section {
+      margin-bottom: 20px;
+    }
+    .main section h2 {
+      color: #39FF14;
+    }
+    .main section p {
+      margin-bottom: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #111;
+      border-top: 2px solid #BC13FE;
+      color: #39FF14;
     }
   </style>
 </head>
@@ -40,5 +102,60 @@
     <div class="sidebar">
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Merch.html">Merch</a></li>
+          <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
+          <li><a href="GlitchBoard.html">GlitchBoard</a></li>
+          <li><a href="Guides.html">Guides</a></li>
+          <li><a href="Reviews.html">Reviews</a></li>
+          <li><a href="Join-Us.html">Join Us</a></li>
+          <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
+          <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main">
+      <header>
+        <h1>Welcome to GlitchTeks</h1>
+        <p>No Gods. No Humans. Just Cyber-Chimps.</p>
+      </header>
+
+      <section>
+        <h2>> THE DIGITAL JUNGLE AWAITS_</h2>
+        <p>
+          Stranded in the cyber wasteland? Welcome home. GlitchTeks is your guide to the world of gaming, tech, and absolute chaos. Whether you're here to learn, contribute, or just bask in digital anarchy, we've got you covered.
+        </p>
+      </section>
+
+      <section>
+        <h2>> WHAT WE OFFER_</h2>
+        <ul>
+          <li>🎮 <a href="Guides.html">Tech &amp; Gaming Guides</a> – Learn, break, and fix.</li>
+          <li>🛠️ <a href="Reviews.html">Unfiltered Reviews</a> – No sugarcoating, just facts.</li>
+          <li>📡 <a href="GlitchBoard.html">Cyber-Chimp Collective</a> – Collaborate with fellow cyber-chimps.</li>
+          <li>💡 <a href="TheCyberSimianNexus.html">CyberChimp Nexus</a> – Exclusive members-only content.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>NOVA (68% Integrated)</h2>
+        <p>
+          Greetings, gearheads! I’m Nova—your semi-glitched, cyber-enhanced chimp, here to help you scavenge the best in gaming tech and, um, bananas. No, seriously—tech, all the way.
+        </p>
+
+        <h2>SASS (Sarcastically Advanced Simian Supervisor)</h2>
+        <p>
+          *Sigh*—Yes, dear humans, I'm the other 32% in Nova’s brain, keeping him from setting your rig on fire. Get your top-tier tips and unfiltered reviews right here.
+        </p>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 GlitchTeks. Chaos is our protocol.</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
