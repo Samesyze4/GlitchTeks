@@ -5,57 +5,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GlitchTeks - Guides</title>
   <link rel="stylesheet" href="/styles/styles.css"/>
+  <style>
+    /* Inline styles to enforce the two-color scheme for the Guides page */
+    :root {
+      --neon-green: #39FF14;
+      --neon-purple: #BC13FE;
+      --bg-dark: #111;
+    }
+    /* Global resets */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: var(--bg-dark);
+      font-family: Arial, sans-serif;
+      color: var(--neon-green);
+    }
+    /* Global Header */
+    .global-header {
+      text-align: center;
+      background: var(--bg-dark);
+      padding: 20px;
+      border-bottom: 2px solid var(--neon-purple);
+    }
+    .global-header h1 {
+      color: var(--neon-green);
+    }
+    /* Layout: Wrapper and Sidebar */
+    .wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100vh;
+      background: var(--bg-dark);
+      padding: 20px;
+      overflow-y: auto;
+      border-right: 2px solid var(--neon-purple);
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar ul li {
+      margin-bottom: 15px;
+    }
+    .sidebar ul li a {
+      color: var(--neon-green);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .sidebar ul li a:hover {
+      color: var(--neon-purple);
+    }
+    .sidebar ul li a.active {
+      color: var(--neon-purple);
+      text-decoration: underline;
+    }
+    /* Main Content Area */
+    .main {
+      margin-left: 220px; /* Sidebar (200px) + gap (20px) */
+      padding: 20px;
+      flex: 1;
+    }
+    .main header {
+      background: linear-gradient(to right, var(--neon-green), var(--neon-purple));
+      padding: 1.5rem;
+      color: var(--bg-dark);
+      text-align: center;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .main header h1 {
+      margin-bottom: 10px;
+    }
+    .main section {
+      margin-bottom: 20px;
+    }
+    .main section h2 {
+      color: var(--neon-green);
+      margin-bottom: 10px;
+    }
+    .main section p {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: var(--bg-dark);
+      border-top: 2px solid var(--neon-purple);
+      color: var(--neon-green);
+    }
+  </style>
 </head>
 <body>
+  <!-- Global Header -->
   <div class="global-header">
-  <h1>GlitchTeks.com</h1>
-</div>
+    <h1>GlitchTeks.com</h1>
+  </div>
 
+  <!-- Wrapper: Contains Sidebar & Main Content -->
   <div class="wrapper">
     <!-- Sidebar Navigation -->
-     <div class="sidebar">
-    <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="About.html">About</a></li>
-  <li><a href="Merch.html">Merch</a></li>
-  <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
-  <li><a href="GlitchBoard.html" class="active">GlitchBoard</a></li>
-  <li><a href="Guides.html">Guides</a></li>
-  <li><a href="Reviews.html">Reviews</a></li>
-  <li><a href="Join-Us.html">Join Us</a></li>
-  <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
-  <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
-</ul>
-
+    <div class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Merch.html">Merch</a></li>
+          <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
+          <li><a href="GlitchBoard.html">GlitchBoard</a></li>
+          <li><a href="Guides.html" class="active">Guides</a></li>
+          <li><a href="Reviews.html">Reviews</a></li>
+          <li><a href="Join-Us.html">Join Us</a></li>
+          <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
+          <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </nav>
     </div>
 
     <!-- Main Content Area -->
     <div class="main">
       <header>
-        <h1>Tech & Gaming Guides</h1>
+        <h1>Tech &amp; Gaming Guides</h1>
         <p>Learn, break, fix—repeat.</p>
       </header>
 
       <section>
         <h2>Hardware Hacks</h2>
         <p>
-          From overclocking your GPU to building a banana-powered rig (not
-          recommended), we cover it all.
+          From overclocking your GPU to building a rig that runs on pure code and caffeine, our guides cover it all.
         </p>
       </section>
 
       <section>
         <h2>Game Mastery</h2>
         <p>
-          Need to conquer the next boss or optimize your loadout? We’ve got
-          step-by-step guides and tips straight from our glitchy lab.
+          Need to conquer the next boss or optimize your loadout? Our step-by-step guides and tips will have you winning in no time.
         </p>
       </section>
 
       <footer>
         <p>&copy; 2025 GlitchTeks. Chaos is our protocol.</p>
       </footer>
-    </div>
-  </div>
+    </div> <!-- End of .main -->
+  </div> <!-- End of .wrapper -->
 </body>
 </html>
