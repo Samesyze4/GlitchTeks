@@ -1,12 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GlitchTeks - Join Us</title>
-  <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    /* Inline tweaks for the Join Us page – merge into your main CSS later if desired */
+    /* Root Variables */
+    :root {
+      --neon-green: #39FF14;
+      --neon-purple: #BC13FE;
+    }
+    
+    /* Global Resets */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Body & Background */
+    body {
+      background: url("images/circuit-board-bg.png") no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: var(--neon-green);
+    }
+    
+    /* Global Header */
+    .global-header {
+      text-align: center;
+      background-color: #111;
+      padding: 1rem;
+      box-shadow: 0 0 10px var(--neon-green);
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      width: 200px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      background-color: #111;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .sidebar nav ul {
+      list-style: none;
+    }
+    .sidebar nav ul li {
+      margin-bottom: 1rem;
+    }
+    .sidebar nav ul li a {
+      color: var(--neon-green);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+    .sidebar nav ul li a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+    }
+    .sidebar nav ul li a.active {
+      color: #fff;
+      text-decoration: underline;
+    }
+    
+    /* Wrapper & Content */
+    .wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+    /* Offset main content by sidebar width plus gap */
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+      flex: 1;
+    }
+    
+    /* Membership Section */
     .membership-section { 
       max-width: 800px; 
       margin: 20px auto; 
@@ -46,6 +118,8 @@
     .tier button:hover {
       background: var(--neon-purple);
     }
+    
+    /* CTA Section */
     .cta-section {
       text-align: center;
       margin: 40px 0;
@@ -65,6 +139,7 @@
       background: var(--neon-purple) !important;
       color: #000 !important;
     }
+    
     /* Banter Section */
     .banter-section {
       display: flex;
@@ -94,6 +169,14 @@
       font-size: 0.95rem;
       color: var(--neon-green);
     }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: var(--neon-green);
+    }
   </style>
 </head>
 <body>
@@ -102,7 +185,7 @@
     <h1>GlitchTeks.com</h1>
   </div>
 
-  <!-- Sidebar Navigation (fixed to the left) -->
+  <!-- Sidebar Navigation -->
   <div class="sidebar">
     <nav>
       <ul>
@@ -120,15 +203,15 @@
     </nav>
   </div>
 
-  <!-- Main Content Area (offset by sidebar width) -->
+  <!-- Main Content Area -->
   <div class="wrapper" style="margin-left: 220px;">
     <div class="content">
       <header>
         <h1>Join The Journey</h1>
-        <p>Become a member of GlitchTeks and unlock exclusive content, events, and custom minted badges.</p>
+        <p>Become a member of GlitchTeks and unlock exclusive content, events, and custom minted badges tailored to your tier.</p>
       </header>
 
-      <!-- Banter Section for Flavor -->
+      <!-- Banter Section -->
       <section class="banter-section">
         <div class="banter">
           <img src="images/Nove.png" alt="Nova the Cyber Chimp">
@@ -146,16 +229,16 @@
 
       <!-- Membership Tiers Section -->
       <section class="membership-section">
-        <!-- Clockwork Initiate (Novice Tier) -->
+        <!-- Clockwork Initiate (Novice) -->
         <div class="tier" data-tier="novice">
           <h3>Clockwork Initiate</h3>
-          <p>As a Clockwork Initiate, you gain access to member-only blogs, live stream chats, and community forums. Your journey begins with a unique NFT badge marking your raw entry into our digital jungle.</p>
+          <p>As a Clockwork Initiate, you gain access to member-only blogs, live stream chats, and our community forums. Your journey begins with a unique NFT badge marking your raw entry into our digital jungle.</p>
           <p class="price-tag">Price: $9.99/month</p>
           <p><strong>Badge Minting Process:</strong> Our smart contract forges your Bronze NFT badge and secures it on the blockchain.</p>
           <button onclick="window.location.href='secure-checkout.html?tier=novice'">Join The Journey</button>
         </div>
 
-        <!-- Brass Mechanist (Silver Tier) -->
+        <!-- Brass Mechanist (Silver) -->
         <div class="tier" data-tier="silver">
           <h3>Brass Mechanist</h3>
           <p>Step up your game! As a Brass Mechanist, you unlock exclusive access to creator content, collaboration requests, and game idea forums—plus all the Initiate perks.</p>
@@ -164,7 +247,7 @@
           <button onclick="window.location.href='secure-checkout.html?tier=silver'">Join The Journey</button>
         </div>
 
-        <!-- Gearforged Virtuoso (Gold Tier) -->
+        <!-- Gearforged Virtuoso (Gold) -->
         <div class="tier" data-tier="gold">
           <h3>Gearforged Virtuoso</h3>
           <p>For elite operators, the Gold Tier unlocks premium events, priority support, and early access to community projects. Your badge gleams with a rare gold finish, certifying your superior status.</p>
@@ -173,28 +256,9 @@
           <button onclick="window.location.href='secure-checkout.html?tier=gold'">Join The Journey</button>
         </div>
 
-        <!-- Aetheric Cogmaster (Platinum Tier) -->
+        <!-- Aetheric Cogmaster (Platinum) -->
         <div class="tier" data-tier="platinum">
           <h3>Aetheric Cogmaster</h3>
           <p>The pinnacle of membership—only the best ascend here. As an Aetheric Cogmaster, you receive VIP perks, one-on-one sessions with top streamers, exclusive merchandise (including our legendary Thanksgiving Sweater), and full access to all premium content and community events.</p>
           <p class="price-tag">Price: $49.99/month</p>
-          <p><strong>Badge Minting Process:</strong> A custom smart contract mints your Platinum NFT badge, embedding exclusive metadata that certifies your elite status.</p>
-          <button onclick="window.location.href='secure-checkout.html?tier=platinum'">Join The Journey</button>
-        </div>
-      </section>
-
-      <!-- Global Call-to-Action -->
-      <section class="cta-section">
-        <h2>Ready to Begin?</h2>
-        <p>Click below to proceed to secure checkout and start your GlitchTeks journey!</p>
-        <a href="secure-checkout.html" class="cta-button">Join The Journey</a>
-      </section>
-
-      <!-- Footer -->
-      <footer>
-        <p>&copy; 2025 GlitchTeks. Chaos is our protocol.</p>
-      </footer>
-    </div> <!-- End .content -->
-  </div> <!-- End .wrapper -->
-</body>
-</html>
+          <p><strong>Badge Minting Process:</strong> A custom smart contract mints your Platinum NFT badge, embedding exclusive metadata 
