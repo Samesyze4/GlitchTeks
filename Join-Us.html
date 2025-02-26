@@ -1,110 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GlitchTeks - Join Us</title>
+  <title>Glitch Gear - GlitchTeks.com</title>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    /* Use only our two-color scheme: neon green (#39FF14) and neon purple (#BC13FE), plus dark (#111) */
-    
-    /* Global resets */
+    :root {
+      --neon-green: #39FF14;
+      --neon-purple: #BC13FE;
+      --bg-dark: #111;
+    }
+    /* Global Resets & Body */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
-    /* Body & Background */
     body {
-      background: #111; /* dark background */
+      background: var(--bg-dark);
       font-family: Arial, sans-serif;
-      color: #39FF14; /* neon green text */
+      color: var(--neon-green);
     }
-    
     /* Global Header */
     .global-header {
       text-align: center;
-      background: #111;
+      background: var(--bg-dark);
       padding: 20px;
-      border-bottom: 2px solid #BC13FE; /* neon purple border */
+      border-bottom: 2px solid var(--neon-purple);
     }
     .global-header h1 {
-      color: #39FF14;
+      color: var(--neon-green);
     }
-    
-    /* Sidebar */
+    /* Wrapper Layout */
+    .wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+    /* Sidebar Navigation */
     .sidebar {
       position: fixed;
       top: 0;
       left: 0;
       width: 200px;
       height: 100vh;
-      background: #111;
+      background: var(--bg-dark);
       padding: 20px;
       overflow-y: auto;
-      border-right: 2px solid #BC13FE;
+      border-right: 2px solid var(--neon-purple);
     }
     .sidebar nav ul {
       list-style: none;
+      padding: 0;
+      margin: 0;
     }
     .sidebar nav ul li {
       margin-bottom: 15px;
     }
     .sidebar nav ul li a {
-      color: #39FF14;
+      color: var(--neon-green);
       text-decoration: none;
       font-size: 0.9rem;
       transition: color 0.3s;
     }
     .sidebar nav ul li a:hover {
-      color: #BC13FE;
+      color: var(--neon-purple);
     }
     .sidebar nav ul li a.active {
-      color: #BC13FE;
+      color: var(--neon-purple);
       text-decoration: underline;
     }
-    
-    /* Wrapper & Content */
-    .wrapper {
-      display: flex;
-      min-height: 100vh;
-    }
+    /* Main Content Area */
     .content {
       margin-left: 220px; /* 200px sidebar + 20px gap */
       padding: 20px;
       flex: 1;
     }
-    
-    /* Header in Content */
     .content header {
-      background: linear-gradient(to right, #39FF14, #BC13FE);
+      background: linear-gradient(to right, var(--neon-green), var(--neon-purple));
       padding: 1.5rem;
-      color: #111;
+      color: var(--bg-dark);
       text-align: center;
       border-radius: 5px;
       margin-bottom: 20px;
     }
-    
-    /* Membership Section */
+    /* Merch Section */
+    #merch-section {
+      margin-bottom: 20px;
+    }
+    #merch-section p {
+      margin-bottom: 10px;
+    }
+    /* Tech Partners Section */
+    #partners {
+      margin-top: 20px;
+    }
+    #partners h2 {
+      color: var(--neon-green);
+    }
+    .partner-links {
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+    }
+    .partner a {
+      color: var(--neon-green);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .partner a:hover {
+      color: var(--neon-purple);
+    }
+    /* Cart Sidebar */
+    .cart {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--bg-dark);
+      border: 1px solid var(--neon-purple);
+      padding: 15px;
+      border-radius: 5px;
+      width: 300px;
+      max-height: 80vh;
+      overflow-y: auto;
+      color: var(--neon-green);
+    }
+    .cart h2 {
+      margin-bottom: 10px;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: var(--bg-dark);
+      border-top: 2px solid var(--neon-purple);
+      color: var(--neon-green);
+    }
+    /* Membership Tiers Section (if applicable) */
     .membership-section {
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
-      background: #111;
-      border: 2px solid #BC13FE;
+      background: var(--bg-dark);
+      border: 2px solid var(--neon-purple);
       border-radius: 10px;
     }
     .tier {
       margin-bottom: 40px;
       padding: 20px;
-      background: #111;
-      border: 1px solid #BC13FE;
+      background: var(--bg-dark);
+      border: 1px solid var(--neon-purple);
       border-radius: 8px;
     }
     .tier h3 {
       margin-bottom: 10px;
-      color: #39FF14;
+      color: var(--neon-green);
     }
     .tier p {
       margin-bottom: 10px;
@@ -113,22 +163,21 @@
     .price-tag {
       font-size: 1.2rem;
       font-weight: bold;
-      color: #39FF14;
+      color: var(--neon-green);
       margin-bottom: 10px;
     }
     .tier button {
-      background: #39FF14;
+      background: var(--neon-green);
       border: none;
-      color: #111;
+      color: var(--bg-dark);
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
       transition: background 0.3s;
     }
     .tier button:hover {
-      background: #BC13FE;
+      background: var(--neon-purple);
     }
-    
     /* Badge Section */
     .badge-section {
       display: flex;
@@ -139,22 +188,21 @@
     .badge-section img.badge {
       width: 60px;
       height: 60px;
-      border: 2px solid #39FF14;
+      border: 2px solid var(--neon-green);
       border-radius: 50%;
     }
     .mint-button {
-      background: #39FF14;
-      color: #111;
+      background: var(--neon-green);
+      color: var(--bg-dark);
       padding: 5px 10px;
       text-decoration: none;
       border-radius: 5px;
       transition: background 0.3s;
     }
     .mint-button:hover {
-      background: #BC13FE;
+      background: var(--neon-purple);
     }
-    
-    /* CTA Section */
+    /* Global Call-to-Action Section */
     .cta-section {
       text-align: center;
       margin: 40px 0;
@@ -162,19 +210,18 @@
     .cta-section .cta-button {
       display: inline-block;
       padding: 15px 30px;
-      background: #39FF14 !important;
-      color: #111 !important;
+      background: var(--neon-green) !important;
+      color: var(--bg-dark) !important;
       text-decoration: none !important;
-      border: 2px solid #BC13FE !important;
+      border: 2px solid var(--neon-purple) !important;
       border-radius: 5px !important;
       font-size: 1.2rem !important;
       transition: background 0.3s, color 0.3s !important;
     }
     .cta-section .cta-button:hover {
-      background: #BC13FE !important;
-      color: #111 !important;
+      background: var(--neon-purple) !important;
+      color: var(--bg-dark) !important;
     }
-    
     /* Banter Section */
     .banter-section {
       display: flex;
@@ -182,8 +229,8 @@
       align-items: center;
       margin: 20px 0;
       padding: 10px;
-      background: #111;
-      border: 2px solid #BC13FE;
+      background: var(--bg-dark);
+      border: 2px solid var(--neon-purple);
       border-radius: 8px;
     }
     .banter {
@@ -202,15 +249,7 @@
     .banter-text {
       margin-top: 10px;
       font-size: 0.95rem;
-      color: #39FF14;
-    }
-    
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #111;
-      color: #39FF14;
+      color: var(--neon-green);
     }
   </style>
 </head>
@@ -220,119 +259,81 @@
     <h1>GlitchTeks.com</h1>
   </div>
 
-  <!-- Sidebar Navigation (fixed to the left) -->
-  <div class="sidebar">
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="Merch.html">Merch</a></li>
-        <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
-        <li><a href="GlitchBoard.html">GlitchBoard</a></li>
-        <li><a href="Guides.html">Guides</a></li>
-        <li><a href="Reviews.html">Reviews</a></li>
-        <li><a href="Join-Us.html" class="active">Join Us</a></li>
-        <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
-        <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
-      </ul>
-    </nav>
-  </div>
+  <!-- Wrapper: Contains Sidebar & Main Content -->
+  <div class="wrapper">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Merch.html" class="active">Merch</a></li>
+          <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
+          <li><a href="GlitchBoard.html">GlitchBoard</a></li>
+          <li><a href="Guides.html">Guides</a></li>
+          <li><a href="Reviews.html">Reviews</a></li>
+          <li><a href="Join-Us.html">Join Us</a></li>
+          <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
+          <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </nav>
+    </div>
 
-  <!-- Main Content Area (offset by sidebar width) -->
-  <div class="wrapper" style="margin-left: 220px;">
+    <!-- Main Content Area -->
     <div class="content">
       <header>
-        <h1>Join The Journey</h1>
-        <p>Become a member of GlitchTeks and unlock exclusive content, events, and custom minted badges tailored to your tier.</p>
+        <h1>Glitch Gear</h1>
       </header>
 
-      <!-- Banter Section for Flavor -->
-      <section class="banter-section">
-        <div class="banter">
-          <img src="images/Nova.png" alt="Nova the Cyber Chimp">
-          <p class="banter-text">
-            "Hey, you lowly meatbag—ready to upgrade your digital DNA? I'm Nova, here to spark your revolution."
-          </p>
-        </div>
-        <div class="banter">
-          <img src="images/SASS.png" alt="S.A.S.S. the Sarcastic Assinine Simian Supervisor">
-          <p class="banter-text">
-            "Oh please, only the best join our ranks—if you're serious, prove it."
-          </p>
+      <!-- Merch Section -->
+      <section id="merch-section">
+        <p>Quality products fulfilled by Printful</p>
+        <div id="products-container">
+          <!-- Product cards will be injected here via JavaScript -->
         </div>
       </section>
 
-      <!-- Membership Tiers Section -->
-      <section class="membership-section">
-        <!-- Clockwork Initiate (Novice Tier) -->
-        <div class="tier" data-tier="novice">
-          <h3>Clockwork Initiate</h3>
-          <p>As a Clockwork Initiate, you gain access to member-only blogs, live stream chats, and community forums. Your journey begins with a unique NFT badge marking your raw entry into our digital jungle.</p>
-          <p class="price-tag">Price: $9.99/month</p>
-          <p><strong>Badge Minting Process:</strong> Our smart contract forges your Bronze NFT badge and secures it on the blockchain.</p>
-          <div class="badge-section">
-            <img src="images/placeholder_clockwork.png" alt="Clockwork Initiate Badge" class="badge">
-            <input type="file" id="upload-novice" name="upload-novice">
-            <a href="mint-novice.html" class="mint-button">Mint Badge</a>
+      <!-- Tech Partners / Affiliate Links Section -->
+      <section id="partners">
+        <h2>Tech Partners</h2>
+        <div class="partner-links">
+          <div class="partner">
+            <a href="https://www.amazon.com/?tag=youraffiliateID" target="_blank" rel="noopener noreferrer">Amazon</a>
           </div>
-          <button onclick="window.location.href='secure-checkout.html?tier=novice'">Join The Journey</button>
-        </div>
-
-        <!-- Brass Mechanist (Silver Tier) -->
-        <div class="tier" data-tier="silver">
-          <h3>Brass Mechanist</h3>
-          <p>Step up your game! As a Brass Mechanist, you unlock exclusive access to creator content, collaboration requests, and game idea forums—plus all the Initiate perks.</p>
-          <p class="price-tag">Price: $19.99/month</p>
-          <p><strong>Badge Minting Process:</strong> Once verified, your Silver NFT badge is minted with a polished brass overlay, marking your elevated status.</p>
-          <div class="badge-section">
-            <img src="images/placeholder_brass.png" alt="Brass Mechanist Badge" class="badge">
-            <input type="file" id="upload-silver" name="upload-silver">
-            <a href="mint-silver.html" class="mint-button">Mint Badge</a>
+          <div class="partner">
+            <a href="https://www.newegg.com/?aff=youraffiliateID" target="_blank" rel="noopener noreferrer">Newegg</a>
           </div>
-          <button onclick="window.location.href='secure-checkout.html?tier=silver'">Join The Journey</button>
-        </div>
-
-        <!-- Gearforged Virtuoso (Gold Tier) -->
-        <div class="tier" data-tier="gold">
-          <h3>Gearforged Virtuoso</h3>
-          <p>For elite operators, the Gold Tier unlocks premium events, priority support, and early access to community projects. Your badge gleams with a rare gold finish, certifying your superior status.</p>
-          <p class="price-tag">Price: $29.99/month</p>
-          <p><strong>Badge Minting Process:</strong> Our blockchain crafts a unique Gold NFT badge with a serial number to certify your virtuosity.</p>
-          <div class="badge-section">
-            <img src="images/placeholder_gold.png" alt="Gearforged Virtuoso Badge" class="badge">
-            <input type="file" id="upload-gold" name="upload-gold">
-            <a href="mint-gold.html" class="mint-button">Mint Badge</a>
+          <div class="partner">
+            <a href="https://www.bestbuy.com/?ref=youraffiliateID" target="_blank" rel="noopener noreferrer">Best Buy</a>
           </div>
-          <button onclick="window.location.href='secure-checkout.html?tier=gold'">Join The Journey</button>
-        </div>
-
-        <!-- Aetheric Cogmaster (Platinum Tier) -->
-        <div class="tier" data-tier="platinum">
-          <h3>Aetheric Cogmaster</h3>
-          <p>The pinnacle of membership—only the best ascend here. As an Aetheric Cogmaster, you receive VIP perks, one-on-one sessions with top streamers, exclusive merchandise (including our legendary Thanksgiving Sweater), and full access to all premium content and community events.</p>
-          <p class="price-tag">Price: $49.99/month</p>
-          <p><strong>Badge Minting Process:</strong> A custom smart contract mints your Platinum NFT badge, embedding exclusive metadata that certifies your elite status.</p>
-          <div class="badge-section">
-            <img src="images/placeholder_platinum.png" alt="Aetheric Cogmaster Badge" class="badge">
-            <input type="file" id="upload-platinum" name="upload-platinum">
-            <a href="mint-platinum.html" class="mint-button">Mint Badge</a>
-          </div>
-          <button onclick="window.location.href='secure-checkout.html?tier=platinum'">Join The Journey</button>
         </div>
       </section>
+
+      <!-- Cart Sidebar -->
+      <div class="cart" id="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+          <!-- Cart items will be rendered here via JavaScript -->
+        </div>
+        <p id="cart-total">Total: $0.00</p>
+        <button onclick="checkout()">Checkout</button>
+      </div>
 
       <!-- Global Call-to-Action -->
       <section class="cta-section">
         <h2>Ready to Begin?</h2>
         <p>Click below to proceed to our secure checkout page and start your GlitchTeks journey!</p>
-        <a href="secure-checkout.html" class="cta-button">Join The Journey</a>
+        <a href="secure-checkout.html?tier=novice" class="cta-button">Join The Journey</a>
       </section>
 
       <!-- Footer -->
       <footer>
-        <p>&copy; 2025 GlitchTeks. Chaos is our protocol.</p>
+        <p>&copy; 2025 My Printful Merch</p>
       </footer>
-    </div> <!-- End .content -->
-  </div> <!-- End .wrapper -->
+    </div> <!-- End of .content -->
+  </div> <!-- End of .wrapper -->
+
+  <!-- JavaScript File for Store Functionality -->
+  <script src="js/store.js"></script>
 </body>
 </html>
