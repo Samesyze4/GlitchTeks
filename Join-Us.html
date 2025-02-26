@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GlitchTeks - Members-Only Portal</title>
+  <title>GlitchTeks - Join Us</title>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    /* Inline tweaks for this page; can later be merged into your external CSS */
+    /* Inline tweaks for the Join Us page – merge into your main CSS later if desired */
     .membership-section { 
       max-width: 800px; 
       margin: 20px auto; 
@@ -46,31 +46,24 @@
     .tier button:hover {
       background: var(--neon-purple);
     }
-    .restricted-features {
-      font-style: italic;
-      margin-top: 10px;
-      padding-left: 20px;
-      border-left: 2px solid var(--neon-green);
-      color: var(--neon-green);
-    }
-    .checkout {
+    .cta-section {
       text-align: center;
-      margin-top: 30px;
+      margin: 40px 0;
     }
-    .checkout .button { 
+    .cta-section .cta-button { 
       display: inline-block; 
-      margin-top: 20px; 
-      padding: 10px 20px; 
+      padding: 15px 30px; 
       background: var(--neon-green); 
       color: #000; 
       text-decoration: none; 
       border-radius: 5px; 
+      font-size: 1.2rem;
       transition: background 0.3s;
     }
-    .checkout .button:hover { 
+    .cta-section .cta-button:hover { 
       background: var(--neon-purple); 
     }
-    /* Banter Section */
+    /* Banter Section (optional, for flavor) */
     .banter-section {
       display: flex;
       justify-content: space-around;
@@ -107,36 +100,83 @@
     <h1>GlitchTeks.com</h1>
   </div>
 
-  <script>
-    // Simple membership check: look for cookie "membershipTier"
-    function getMembershipTier() {
-      var name = "membershipTier=";
-      var decodedCookie = decodeURIComponent(document.cookie);
-      var ca = decodedCookie.split(';');
-      for(var i = 0; i < ca.length; i++) {
-          var c = ca[i].trim();
-          if (c.indexOf(name) === 0) {
-              return c.substring(name.length, c.length);
-          }
-      }
-      return "";
-    }
-    var userTier = getMembershipTier();
-    if (!userTier) {
-      document.body.innerHTML = `
-        <div class="error-message" style="background:#111; color:#fff; padding:50px; text-align:center; margin:50px auto; max-width:600px; border-radius:10px; box-shadow:0 0 10px var(--neon-green);">
-          <h1>Access Denied!</h1>
-          <p>Whoa, slow down, meatbag! You ain't a member of GlitchTeks yet. Even our cyber-chimps won't let you in without a proper badge.</p>
-          <p>Please head over to our <a href="Join-Us.html" style="color: var(--neon-purple); text-decoration: underline;">Join Us</a> page to sign up.</p>
-        </div>
-      `;
-      throw new Error("User is not a member.");
-    }
-    // Map membership tiers to levels
-    var tierLevels = { "novice": 1, "silver": 2, "gold": 3, "platinum": 4 };
-    var userTierLevel = tierLevels[userTier] || 0;
-  </script>
+  <!-- Sidebar Navigation (fixed to the left) -->
+  <div class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Merch.html">Merch</a></li>
+        <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
+        <li><a href="GlitchBoard.html">GlitchBoard</a></li>
+        <li><a href="Guides.html">Guides</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+        <li><a href="Join-Us.html" class="active">Join Us</a></li>
+        <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
+        <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </nav>
+  </div>
 
-  <!-- Wrapper: Contains Sidebar & Main Content -->
+  <!-- Main Content Area (offset by sidebar width) -->
   <div class="wrapper" style="margin-left: 220px;">
-    <!-- Sidebar Navigation (
+    <div class="content">
+      <header>
+        <h1>Join The Journey</h1>
+        <p>Become part of our digital revolution. Choose your tier and unlock exclusive access, perks, and custom minted badges.</p>
+      </header>
+
+      <!-- Membership Tiers Section -->
+      <section class="membership-section">
+        <!-- Clockwork Initiate (Novice Tier) -->
+        <div class="tier" data-tier="novice">
+          <h3>Clockwork Initiate</h3>
+          <p>As a Clockwork Initiate, you gain access to member-only blogs, live stream chats, and our community forums. Your journey begins with a unique NFT badge that marks your raw entry into the digital jungle.</p>
+          <p class="price-tag">Price: $9.99/month</p>
+          <p><strong>Badge Minting Process:</strong> Our smart contract forges your Bronze NFT badge and locks it on the blockchain as your initiation token.</p>
+          <button onclick="window.location.href='secure-checkout.html?tier=novice'">Join Clockwork Initiate</button>
+        </div>
+
+        <!-- Brass Mechanist (Silver Tier) -->
+        <div class="tier" data-tier="silver">
+          <h3>Brass Mechanist</h3>
+          <p>Step up your game. As a Brass Mechanist, you enjoy everything from the Initiate level plus exclusive access to creator content submissions, collaboration requests, and game idea forums.</p>
+          <p class="price-tag">Price: $19.99/month</p>
+          <p><strong>Badge Minting Process:</strong> Once verified, your Silver NFT badge is minted with a polished brass overlay, marking your elevated status.</p>
+          <button onclick="window.location.href='secure-checkout.html?tier=silver'">Join Brass Mechanist</button>
+        </div>
+
+        <!-- Gearforged Virtuoso (Gold Tier) -->
+        <div class="tier" data-tier="gold">
+          <h3>Gearforged Virtuoso</h3>
+          <p>For elite operators, the Gold Tier grants premium benefits—access to exclusive events, priority support, and early access to community projects. Your badge shines with a rare gold finish.</p>
+          <p class="price-tag">Price: $29.99/month</p>
+          <p><strong>Badge Minting Process:</strong> Our blockchain crafts a unique Gold NFT badge, complete with a serial number to certify your superior status.</p>
+          <button onclick="window.location.href='secure-checkout.html?tier=gold'">Join Gearforged Virtuoso</button>
+        </div>
+
+        <!-- Aetheric Cogmaster (Platinum Tier) -->
+        <div class="tier" data-tier="platinum">
+          <h3>Aetheric Cogmaster</h3>
+          <p>The pinnacle of membership. As an Aetheric Cogmaster, you receive VIP perks, one-on-one sessions with top streamers, exclusive merchandise (including our legendary Thanksgiving Sweater), and full access to premium areas.</p>
+          <p class="price-tag">Price: $49.99/month</p>
+          <p><strong>Badge Minting Process:</strong> A custom smart contract mints your Platinum NFT badge, embedding exclusive metadata that certifies your elite status in our ecosystem.</p>
+          <button onclick="window.location.href='secure-checkout.html?tier=platinum'">Join Aetheric Cogmaster</button>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="cta-section">
+        <h2>Ready to Join The Journey?</h2>
+        <p>Click below to proceed to our secure checkout page and unlock your custom badge!</p>
+        <a href="secure-checkout.html" class="cta-button">Join The Journey</a>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 GlitchTeks. Chaos is our protocol.</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
