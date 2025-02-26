@@ -3,38 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Members-Only Portal - GlitchTeks.com</title>
+  <title>GlitchTeks - Members-Only Portal</title>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    /* Inline styles for our membership page; these can be merged into your external CSS later */
-    .error-message {
-      background: #111;
-      color: #fff;
-      padding: 50px;
-      text-align: center;
-      margin: 50px auto;
-      max-width: 600px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px var(--neon-green);
-    }
-    .membership-section {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #222;
+    /* Inline tweaks for this page; can later be merged into your external CSS */
+    .membership-section { 
+      max-width: 800px; 
+      margin: 20px auto; 
+      padding: 20px; 
+      background: #222; 
       border-radius: 10px;
     }
-    .tier-content {
+    .tier {
       margin-bottom: 40px;
       padding: 20px;
       background: #111;
       border: 1px solid var(--neon-purple);
       border-radius: 8px;
     }
-    .tier-content h3 {
-      margin-bottom: 10px;
+    .tier h3 { 
+      margin-bottom: 10px; 
     }
-    .tier-content p {
+    .tier p { 
       margin-bottom: 10px;
       text-align: left;
     }
@@ -44,7 +34,7 @@
       color: var(--neon-green);
       margin-bottom: 10px;
     }
-    .tier-content button {
+    .tier button {
       background: var(--neon-green);
       border: none;
       color: #000;
@@ -53,8 +43,61 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-    .tier-content button:hover {
+    .tier button:hover {
       background: var(--neon-purple);
+    }
+    .restricted-features {
+      font-style: italic;
+      margin-top: 10px;
+      padding-left: 20px;
+      border-left: 2px solid var(--neon-green);
+      color: var(--neon-green);
+    }
+    .checkout {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .checkout .button { 
+      display: inline-block; 
+      margin-top: 20px; 
+      padding: 10px 20px; 
+      background: var(--neon-green); 
+      color: #000; 
+      text-decoration: none; 
+      border-radius: 5px; 
+      transition: background 0.3s;
+    }
+    .checkout .button:hover { 
+      background: var(--neon-purple); 
+    }
+    /* Banter Section */
+    .banter-section {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 20px 0;
+      padding: 10px;
+      background: #222;
+      border: 1px solid var(--neon-purple);
+      border-radius: 8px;
+    }
+    .banter {
+      max-width: 300px;
+      text-align: center;
+    }
+    .banter img {
+      max-width: 100%;
+      border-radius: 50%;
+      animation: fadeIn 2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .banter-text {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--neon-green);
     }
   </style>
 </head>
@@ -65,7 +108,7 @@
   </div>
 
   <script>
-    // Simple membership check function that looks for a "membershipTier" cookie.
+    // Simple membership check: look for cookie "membershipTier"
     function getMembershipTier() {
       var name = "membershipTier=";
       var decodedCookie = decodeURIComponent(document.cookie);
@@ -79,10 +122,9 @@
       return "";
     }
     var userTier = getMembershipTier();
-    // If no membershipTier cookie is found, display a humorous error message.
     if (!userTier) {
       document.body.innerHTML = `
-        <div class="error-message">
+        <div class="error-message" style="background:#111; color:#fff; padding:50px; text-align:center; margin:50px auto; max-width:600px; border-radius:10px; box-shadow:0 0 10px var(--neon-green);">
           <h1>Access Denied!</h1>
           <p>Whoa, slow down, meatbag! You ain't a member of GlitchTeks yet. Even our cyber-chimps won't let you in without a proper badge.</p>
           <p>Please head over to our <a href="Join-Us.html" style="color: var(--neon-purple); text-decoration: underline;">Join Us</a> page to sign up.</p>
@@ -90,114 +132,11 @@
       `;
       throw new Error("User is not a member.");
     }
-    
-    // Define a mapping for tier levels.
-    var tierLevels = {
-      "novice": 1,
-      "silver": 2,
-      "gold": 3,
-      "platinum": 4
-    };
+    // Map membership tiers to levels
+    var tierLevels = { "novice": 1, "silver": 2, "gold": 3, "platinum": 4 };
     var userTierLevel = tierLevels[userTier] || 0;
   </script>
 
   <!-- Wrapper: Contains Sidebar & Main Content -->
   <div class="wrapper" style="margin-left: 220px;">
-    <!-- Sidebar Navigation (fixed to the left) -->
-    <div class="sidebar">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="About.html">About</a></li>
-          <li><a href="Merch.html">Merch</a></li>
-          <li><a href="TheCyberSimianNexus.html">CyberChimp Nexus</a></li>
-          <li><a href="GlitchBoard.html" class="active">GlitchBoard</a></li>
-          <li><a href="Guides.html">Guides</a></li>
-          <li><a href="Reviews.html">Reviews</a></li>
-          <li><a href="Join-Us.html">Join Us</a></li>
-          <li><a href="Contact-Privacy.html">Contact &amp; Privacy</a></li>
-          <li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- Main Content Area -->
-    <div class="content">
-      <header>
-        <h1>Member Portal: Tier Access</h1>
-        <p>Welcome to the exclusive GlitchTeks members' area. Your digital badge unlocks your level of access.</p>
-      </header>
-
-      <!-- Membership Tiers Section -->
-      <section class="membership-section">
-        <!-- Bronze Tier: Novice (Accessible if userTierLevel >= 1) -->
-        <div class="tier-content" data-tier="novice">
-          <h3>Bronze Tier: Cyber Initiate</h3>
-          <p>Welcome to the digital jungle! As a Cyber Initiate, you’re taking your first step into our wild community. Your journey starts with a unique NFT badge that represents your digital identity.</p>
-          <p class="price-tag">Price: $9.99/month</p>
-          <p><strong>Badge Minting Process:</strong> Our smart contract mints your unique Bronze NFT badge upon joining, securely storing it on the blockchain.</p>
-          <button onclick="window.location.href='payment.html?tier=bronze'">Join Bronze</button>
-        </div>
-
-        <!-- Silver Tier: Digital Primate (Accessible if userTierLevel >= 2) -->
-        <div class="tier-content" data-tier="silver">
-          <h3>Silver Tier: Digital Primate</h3>
-          <p>You've proven your skills and now level up! As a Digital Primate, your minted badge glows with a silver overlay, unlocking exclusive perks and early access to content.</p>
-          <p class="price-tag">Price: $19.99/month</p>
-          <p><strong>Badge Minting Process:</strong> After verification, your Silver NFT badge is minted with a silver overlay, marking your elevated status.</p>
-          <button onclick="window.location.href='payment.html?tier=silver'">Join Silver</button>
-        </div>
-
-        <!-- Gold Tier: Cyber Simian (Accessible if userTierLevel >= 3) -->
-        <div class="tier-content" data-tier="gold">
-          <h3>Gold Tier: Cyber Simian</h3>
-          <p>For the elite members, the Gold Tier offers premium benefits. Your badge, minted with a rare gold finish, grants you access to exclusive events, premium content, and priority support.</p>
-          <p class="price-tag">Price: $29.99/month</p>
-          <p><strong>Badge Minting Process:</strong> Our blockchain mints a unique Gold NFT badge, complete with a serial number that certifies your premium status.</p>
-          <button onclick="window.location.href='payment.html?tier=gold'">Join Gold</button>
-        </div>
-
-        <!-- Platinum Tier: Apex Chimp (Accessible if userTierLevel >= 4) -->
-        <div class="tier-content" data-tier="platinum">
-          <h3>Platinum Tier: Apex Chimp</h3>
-          <p>The pinnacle of membership—only the best join the ranks of the Apex Chimp. Enjoy VIP perks including one-on-one sessions with our top streamers, exclusive merchandise, and more.</p>
-          <p class="price-tag">Price: $49.99/month</p>
-          <p><strong>Badge Minting Process:</strong> A customized smart contract mints your Platinum NFT badge, embedding exclusive metadata that certifies your elite status in our ecosystem.</p>
-          <button onclick="window.location.href='payment.html?tier=platinum'">Join Platinum</button>
-        </div>
-      </section>
-
-      <!-- Tier Access Script -->
-      <script>
-        // Define tier levels: novice=1, silver=2, gold=3, platinum=4.
-        var tierMap = {
-          "novice": 1,
-          "silver": 2,
-          "gold": 3,
-          "platinum": 4
-        };
-        // Hide any content that requires a higher tier than the user has.
-        document.querySelectorAll(".tier-content").forEach(function(el) {
-          var requiredTier = el.getAttribute("data-tier");
-          var requiredLevel = tierMap[requiredTier] || 0;
-          if (tierMap[userTier] < requiredLevel) {
-            el.style.display = "none";
-          }
-        });
-      </script>
-
-      <!-- Checkout Section (if you want a global purchase option) -->
-      <section class="checkout">
-        <h2>Ready to Join?</h2>
-        <p>Proceed to membership checkout and mint your custom badge today!</p>
-        <a href="payment.html" class="button">Proceed to Payment</a>
-      </section>
-
-      <!-- Footer -->
-      <footer>
-        <p>&copy; 2025 GlitchTeks. Chaos is our protocol.</p>
-      </footer>
-    </div> <!-- End .content -->
-  </div> <!-- End .wrapper -->
-</body>
-</html>
+    <!-- Sidebar Navigation (
