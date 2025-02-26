@@ -57,6 +57,25 @@
     .checkout-container form button:hover {
       background: var(--neon-purple);
     }
+    /* Updated CTA Button */
+    .checkout .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background: var(--neon-green);
+      color: #fff;             /* Changed text color to white */
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border: 2px solid var(--neon-purple);
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+      text-shadow: 0 0 5px #000;
+    }
+    .checkout .button:hover {
+      background: var(--neon-purple);
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -71,44 +90,4 @@
     <div class="summary">
       <p id="membership-summary">Loading membership details...</p>
     </div>
-    <form id="checkout-form" action="process-payment.html" method="POST">
-      <label for="full-name">Full Name</label>
-      <input type="text" id="full-name" name="full-name" required>
-      
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="card-number">Credit Card Number</label>
-      <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
-      
-      <label for="expiry">Expiry Date (MM/YY)</label>
-      <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
-      
-      <label for="cvv">CVV</label>
-      <input type="text" id="cvv" name="cvv" placeholder="123" required>
-      
-      <button type="submit">Submit Payment</button>
-    </form>
-  </div>
-
-  <script>
-    // Function to retrieve query parameters
-    function getQueryParam(param) {
-      const params = new URLSearchParams(window.location.search);
-      return params.get(param);
-    }
-    
-    // Get the membership tier from the URL (e.g. ?tier=novice)
-    const tier = getQueryParam("tier") || "unknown";
-    const membershipSummary = document.getElementById("membership-summary");
-    
-    // Define membership tier details
-    const tierDetails = {
-      "novice": "Clockwork Initiate - $9.99/month",
-      "silver": "Brass Mechanist - $19.99/month",
-      "gold": "Gearforged Virtuoso - $29.99/month",
-      "platinum": "Aetheric Cogmaster - $49.99/month"
-    };
-    
-    // Update the summary text
-    if (tierDetails[tier])
+    <form id="checkout-form" action="process-payment.html" metho
