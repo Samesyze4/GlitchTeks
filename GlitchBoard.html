@@ -72,7 +72,7 @@
     }
     /* Main Content Area */
     .main {
-      margin-left: 220px; /* 200px sidebar + 20px gap */
+      margin-left: 220px;
       padding: 20px;
       flex: 1;
     }
@@ -84,16 +84,17 @@
       border-radius: 5px;
       margin-bottom: 20px;
     }
-    .main section {
-      margin-bottom: 20px;
+    .blog-section {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border: 2px solid var(--neon-purple);
+      border-radius: 5px;
     }
-    .main section h2 {
+    .blog-section h2 {
       color: var(--neon-green);
-      margin-bottom: 10px;
     }
-    .main section p {
-      margin-bottom: 10px;
-      text-align: left;
+    .blog-content {
+      color: #fff;
     }
     /* Footer */
     footer {
@@ -106,14 +107,11 @@
   </style>
 </head>
 <body>
-  <!-- Global Header -->
   <div class="global-header">
     <h1>GlitchTeks.com</h1>
   </div>
 
-  <!-- Wrapper: Sidebar and Main Content -->
   <div class="wrapper">
-    <!-- Sidebar Navigation -->
     <div class="sidebar">
       <nav>
         <ul>
@@ -131,43 +129,34 @@
       </nav>
     </div>
 
-    <!-- Main Content Area -->
     <div class="main">
       <header>
         <h1>CyberChimp-Collactive</h1>
         <p>Where minds unite, and chaos thrives.</p>
       </header>
 
-      <!-- Digital Revolution Section -->
-      <section id="digital-revolution">
-        <h2>Digital Revolution</h2>
-        <div class="media-block">
-          <img src="images/pic1.png" alt="Digital Mayhem">
-          <p>"Ready to dive headfirst into a digital mosh pit of game modding and hardware hacks? Let's merge our brainwaves and spark a hilarious digital revolution!"</p>
+      <section class="blog-section">
+        <h2>Latest Blog Post</h2>
+        <div id="blog-container" class="blog-content">
+          <p>Loading latest blog...</p>
         </div>
-        <div class="media-block">
-          <img src="images/pic2.png" alt="Hacking Hijinks">
-          <p>"As if our minds weren't already bursting with epic ideas! It's time to jump into these discussions, collaborate like mad scientists, and maybe even set off a few metaphorical explosions—only in the realm of code, of course!"</p>
-        </div>
-        <p>"Who needs a normal reality when we can forge entirely new ones with witty banter, offbeat humor, and a dash of creative chaos? Let's get hacking and modding our way to a reality that's as epic as it is unpredictable!"</p>
-      </section>
-
-      <!-- Collective Hive-Mind Section -->
-      <section id="CyberChimp-Nexus">
-        <h2>Collective Hive-Mind</h2>
-        <p>This is the spot for all cyber-chimps to share experiences, tips, and stories. Think of it as a giant banana-coded forum—just watch out for the rogue data packets.</p>
-      </section>
-
-      <!-- Join the Cyber Journey Section -->
-      <section id="Join-The-Journey">
-        <h2>Join the Cyber Journey</h2>
-        <p>Jump into discussions, collaborate on game modding, or discover the latest hardware hacks. Merging consciousness means forging new realities together.</p>
       </section>
 
       <footer>
         <p>&copy; 2025 GlitchTeks. Chaos is our protocol.</p>
       </footer>
-    </div> <!-- End of .main -->
-  </div> <!-- End of .wrapper -->
+    </div>
+  </div>
+
+  <script>
+    fetch("/blog/active_blog.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("blog-container").innerHTML = data;
+      })
+      .catch(error => {
+        document.getElementById("blog-container").innerHTML = "<p>Failed to load blog post.</p>";
+      });
+  </script>
 </body>
 </html>
