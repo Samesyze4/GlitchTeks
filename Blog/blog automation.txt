@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Automation Reference</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #39FF14;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border: 2px solid #BC13FE;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #BC13FE;
+        }
+        h2 {
+            color: #39FF14;
+        }
+        pre {
+            background: #222;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Blog Automation Reference</h1>
+        
+        <h2>1️⃣ active_blog.html</h2>
+        <p><strong>Purpose:</strong> Stores the latest blog post and is dynamically loaded into the community page.</p>
+        <pre>
+        /blog/active_blog.html
+        </pre>
+        
+        <h2>2️⃣ GitHub Action Script (blog_automation.yml)</h2>
+        <p><strong>Purpose:</strong> Automates blog updates by pulling new content, archiving old posts, and pushing updates.</p>
+        <pre>
+        .github/workflows/blog_automation.yml
+        </pre>
+        
+        <h2>3️⃣ Blog Generation Script (generate_blog.py)</h2>
+        <p><strong>Purpose:</strong> Generates new blog content while avoiding duplicate topics.</p>
+        <pre>
+        /scripts/generate_blog.py
+        </pre>
+        
+        <h2>4️⃣ Archive Management Script (organize_archives.py)</h2>
+        <p><strong>Purpose:</strong> Moves old blog posts into an archive and structures them for lookup.</p>
+        <pre>
+        /scripts/organize_archives.py
+        </pre>
+        
+        <h2>5️⃣ Community Page Blog Loader (GlitchBoard.html)</h2>
+        <p><strong>Purpose:</strong> Dynamically fetches and displays the latest blog post on the community page.</p>
+        <pre>
+        fetch("/blog/active_blog.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("blog-container").innerHTML = data;
+          })
+          .catch(error => {
+            document.getElementById("blog-container").innerHTML = "<p>Failed to load blog post.</p>";
+          });
+        </pre>
+    </div>
+</body>
+</html>
