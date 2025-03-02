@@ -28,7 +28,7 @@ def get_previous_posts():
     return previous_topics
 
 def generate_blog_post():
-    """Create a new blog post avoiding recent topics."""
+    """Create a new blog post avoiding recent topics and adding cyberpunk styling."""
     previous_topics = get_previous_posts()
     available_topics = [topic for topic in TOPICS if topic not in previous_topics]
     
@@ -38,9 +38,36 @@ def generate_blog_post():
     
     topic = random.choice(available_topics)
     content = f"""
-    <h1>{topic}</h1>
-    <p><em>Published on {datetime.now().strftime('%Y-%m-%d')}</em></p>
-    <p>This is a placeholder blog post about {topic}. More content to come...</p>
+    <!DOCTYPE html>
+    <html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>🛠️ Nova's Glitch Blog</title>
+        <style>
+            body {{ background: black; color: #00ffcc; font-family: 'Courier New', monospace; text-shadow: 2px 2px 5px rgba(0, 255, 204, 0.8); }}
+            .glitch {{ position: relative; display: inline-block; font-size: 1.5em; animation: glitch-text 0.1s infinite; }}
+            @keyframes glitch-text {{
+                0% {{ transform: translate(1px, 1px); }}
+                25% {{ transform: translate(-1px, -1px); }}
+                50% {{ transform: translate(1px, -1px); }}
+                75% {{ transform: translate(-1px, 1px); }}
+                100% {{ transform: translate(0, 0); }}
+            }}
+            .image-container {{ text-align: center; margin: 20px 0; }}
+            .image-container img {{ width: 80%; max-width: 600px; filter: contrast(150%) brightness(120%) hue-rotate(180deg); }}
+        </style>
+    </head>
+    <body>
+        <h1 class='glitch'>💾 SYSTEM UPDATE: {topic}</h1>
+        <div class='image-container'>
+            <img src='glitchy-image.jpg' alt='AI-generated glitch art'>
+        </div>
+        <p>🔥 Breaking Tech: {topic} is shaking up the industry. Here's what you need to know.</p>
+        <p>🛠️ Learn more from trusted sources: <a href='https://www.theverge.com/' target='_blank'>The Verge</a> | <a href='https://www.nasa.gov/' target='_blank'>NASA</a></p>
+        <p><em>🚨 WARNING: This blog is a reference, not a replacement for your own research. If you base life decisions on a cybernetic chimp’s blog, you might need a firmware update. 🚨</em></p>
+    </body>
+    </html>
     """
     
     # Archive previous active blog
