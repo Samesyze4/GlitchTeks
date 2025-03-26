@@ -1,64 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛠️ Nova's Glitch Blog</title>
-    <style>
-        body {
-            background: black;
-            color: #00ffcc;
-            font-family: 'Courier New', monospace;
-            text-shadow: 2px 2px 5px rgba(0, 255, 204, 0.8);
-            animation: glitch-bg 3s infinite alternate;
-        }
-        @keyframes glitch-bg {
-            0% { background-color: black; }
-            100% { background-color: #111; }
-        }
-        .glitch {
-            position: relative;
-            display: inline-block;
-            font-size: 1.5em;
-            animation: glitch-text 0.1s infinite;
-        }
-        @keyframes glitch-text {
-            0% { transform: translate(1px, 1px); }
-            25% { transform: translate(-1px, -1px); }
-            50% { transform: translate(1px, -1px); }
-            75% { transform: translate(-1px, 1px); }
-            100% { transform: translate(0, 0); }
-        }
-        .image-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .image-container img {
-            width: 80%;
-            max-width: 600px;
-            filter: contrast(150%) brightness(120%) hue-rotate(180deg);
-        }
-        .source-links {
-            margin-top: 20px;
-            font-size: 0.9em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🛠️ Nova's Glitch Blog</title>
+  <style>
+    body {
+      background: black;
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+      text-shadow: 2px 2px 5px rgba(0, 255, 204, 0.8);
+      animation: glitch-bg 3s infinite alternate;
+      margin: 0;
+      padding: 0;
+    }
+    @keyframes glitch-bg {
+      0% { background-color: black; }
+      100% { background-color: #111; }
+    }
+    .glitch {
+      position: relative;
+      display: inline-block;
+      font-size: 1.5em;
+      animation: glitch-text 0.1s infinite;
+    }
+    @keyframes glitch-text {
+      0% { transform: translate(1px, 1px); }
+      25% { transform: translate(-1px, -1px); }
+      50% { transform: translate(1px, -1px); }
+      75% { transform: translate(-1px, 1px); }
+      100% { transform: translate(0, 0); }
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header, footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .blog-post {
+      border-bottom: 1px solid #00ffcc;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+    .blog-post:last-child {
+      border-bottom: none;
+    }
+    .blog-post h2 {
+      margin-top: 0;
+    }
+    .image-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .image-container img {
+      width: 80%;
+      max-width: 600px;
+      filter: contrast(150%) brightness(120%) hue-rotate(180deg);
+    }
+    .source-links {
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <h1 class="glitch">💾 SYSTEM UPDATE: Nova's Latest Tech Ramblings</h1>
+  <div class="container">
+    <header>
+      <h1 class="glitch">🛠️ Nova's Glitch Blog</h1>
+    </header>
     
-    <div class="image-container">
+    <article class="blog-post">
+      <h2 class="glitch">💾 SYSTEM UPDATE: Nova's Latest Tech Ramblings</h2>
+      <div class="image-container">
         <img src="glitchy-image.jpg" alt="AI-generated glitch art">
-    </div>
+      </div>
+      <p>🔥 Breaking Tech: Did you know <strong>AI-driven cybernetic assistants</strong> are now being tested for space missions? NASA is looking into <a href="https://www.nasa.gov/" target="_blank">AI copilots</a> to aid astronauts on long-duration flights. Will this put Nova out of a job? Stay tuned. 🛸</p>
+      <div class="source-links">
+        <p>🔗 Verify the info: <a href="https://www.nasa.gov/" target="_blank">NASA</a></p>
+      </div>
+    </article>
     
-    <p>🔥 Breaking Tech: Did you know <strong>AI-driven cybernetic assistants</strong> are now being tested for space missions? NASA is looking into <a href="https://www.nasa.gov/" target="_blank">AI copilots</a> to aid astronauts on long-duration flights. Will this put Nova out of a job? Stay tuned. 🛸</p>
+    <article class="blog-post">
+      <h2 class="glitch">🛠️ Quantum Quandaries</h2>
+      <p>🧩 The latest <a href="https://www.theverge.com/" target="_blank">Verge report</a> suggests that quantum computing breakthroughs could render traditional encryption methods obsolete. How will this affect cybersecurity? Stay tuned for more updates.</p>
+      <div class="source-links">
+        <p>🔗 Source: <a href="https://www.theverge.com/" target="_blank">The Verge</a></p>
+      </div>
+    </article>
     
-    <p>🛠️ In other news, the latest <a href="https://www.theverge.com/" target="_blank">Verge report</a> hints that quantum computing breakthroughs might make traditional encryption obsolete sooner than we thought. Better start memorizing your passwords now. Or don't. 🤖</p>
+    <article class="blog-post">
+      <h2 class="glitch">🔌 Digital Dystopia or Utopia?</h2>
+      <p>💡 As tech evolves, so does the debate on digital privacy and freedom. Join us as we explore the intersection of technology, society, and the future of digital rights.</p>
+      <div class="source-links">
+        <p>🔗 More info: <a href="https://example.com" target="_blank">Example Source</a></p>
+      </div>
+    </article>
     
-    <div class="source-links">
-        <p>🔗 Verify the info yourself: <a href="https://www.nasa.gov/" target="_blank">NASA</a> | <a href="https://www.theverge.com/" target="_blank">The Verge</a></p>
-    </div>
-    
-    <p><em>🚨 WARNING: This blog is a reference, not a replacement for your own research. If you base life decisions on a cybernetic chimp’s blog, you might need a firmware update. 🚨</em></p>
+    <footer>
+      <p><em>🚨 WARNING: This blog is a reference, not a replacement for your own research. If you base life decisions on a cybernetic chimp’s blog, you might need a firmware update. 🚨</em></p>
+    </footer>
+  </div>
 </body>
 </html>
