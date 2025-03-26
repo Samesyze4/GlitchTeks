@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🛠️ Nova's Glitch Blog</title>
+  <title>🛠️ Nova's Glitch Blog - Posts</title>
   <style>
     body {
       background: black;
@@ -17,19 +17,6 @@
     @keyframes glitch-bg {
       0% { background-color: black; }
       100% { background-color: #111; }
-    }
-    .glitch {
-      position: relative;
-      display: inline-block;
-      font-size: 1.5em;
-      animation: glitch-text 0.1s infinite;
-    }
-    @keyframes glitch-text {
-      0% { transform: translate(1px, 1px); }
-      25% { transform: translate(-1px, -1px); }
-      50% { transform: translate(1px, -1px); }
-      75% { transform: translate(-1px, 1px); }
-      100% { transform: translate(0, 0); }
     }
     .container {
       max-width: 800px;
@@ -51,15 +38,6 @@
     .blog-post h2 {
       margin-top: 0;
     }
-    .image-container {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .image-container img {
-      width: 80%;
-      max-width: 600px;
-      filter: contrast(150%) brightness(120%) hue-rotate(180deg);
-    }
     .source-links {
       margin-top: 10px;
       font-size: 0.9em;
@@ -71,6 +49,18 @@
     a:hover {
       text-decoration: underline;
     }
+    .glitch {
+      position: relative;
+      display: inline-block;
+      animation: glitch-text 0.1s infinite;
+    }
+    @keyframes glitch-text {
+      0% { transform: translate(1px, 1px); }
+      25% { transform: translate(-1px, -1px); }
+      50% { transform: translate(1px, -1px); }
+      75% { transform: translate(-1px, 1px); }
+      100% { transform: translate(0, 0); }
+    }
   </style>
 </head>
 <body>
@@ -80,29 +70,26 @@
     </header>
     
     <article class="blog-post">
-      <h2 class="glitch">💾 SYSTEM UPDATE: Nova's Latest Tech Ramblings</h2>
-      <div class="image-container">
-        <img src="glitchy-image.jpg" alt="AI-generated glitch art">
-      </div>
-      <p>🔥 Breaking Tech: Did you know <strong>AI-driven cybernetic assistants</strong> are now being tested for space missions? NASA is looking into <a href="https://www.nasa.gov/" target="_blank">AI copilots</a> to aid astronauts on long-duration flights. Will this put Nova out of a job? Stay tuned. 🛸</p>
+      <h2 class="glitch">Tech Ramblings: The Future of AI</h2>
+      <p>Exploring how AI-driven assistants are being tested for space missions and beyond. Get insights into upcoming tech innovations and what they mean for the future.</p>
       <div class="source-links">
-        <p>🔗 Verify the info: <a href="https://www.nasa.gov/" target="_blank">NASA</a></p>
+        <a href="https://www.nasa.gov/" target="_blank">NASA</a>
+      </div>
+    </article>
+
+    <article class="blog-post">
+      <h2 class="glitch">Quantum Computing & Encryption</h2>
+      <p>Breaking down the latest quantum computing breakthroughs and discussing how they could change traditional encryption methods. Stay ahead of the curve!</p>
+      <div class="source-links">
+        <a href="https://www.theverge.com/" target="_blank">The Verge</a>
       </div>
     </article>
     
     <article class="blog-post">
-      <h2 class="glitch">🛠️ Quantum Quandaries</h2>
-      <p>🧩 The latest <a href="https://www.theverge.com/" target="_blank">Verge report</a> suggests that quantum computing breakthroughs could render traditional encryption methods obsolete. How will this affect cybersecurity? Stay tuned for more updates.</p>
+      <h2 class="glitch">Digital Privacy in the Age of Tech</h2>
+      <p>A deep dive into digital privacy issues in an ever-connected world. Learn about the balance between technological advancement and safeguarding personal data.</p>
       <div class="source-links">
-        <p>🔗 Source: <a href="https://www.theverge.com/" target="_blank">The Verge</a></p>
-      </div>
-    </article>
-    
-    <article class="blog-post">
-      <h2 class="glitch">🔌 Digital Dystopia or Utopia?</h2>
-      <p>💡 As tech evolves, so does the debate on digital privacy and freedom. Join us as we explore the intersection of technology, society, and the future of digital rights.</p>
-      <div class="source-links">
-        <p>🔗 More info: <a href="https://example.com" target="_blank">Example Source</a></p>
+        <a href="https://example.com" target="_blank">More Info</a>
       </div>
     </article>
     
