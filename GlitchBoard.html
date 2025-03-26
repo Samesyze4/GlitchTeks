@@ -76,7 +76,6 @@
       padding: 20px;
       flex: 1;
     }
-    /* Remove homepage-specific header and replace with a clean blog header */
     .main header {
       background: linear-gradient(to right, var(--neon-green), var(--neon-purple));
       padding: 1.5rem;
@@ -85,18 +84,19 @@
       border-radius: 5px;
       margin-bottom: 20px;
     }
-    /* Center the blog section */
+    /* Blog Section Styles */
     .blog-section {
       background: rgba(0, 0, 0, 0.8);
       padding: 20px;
       border: 2px solid var(--neon-purple);
       border-radius: 5px;
-      margin: 0 auto;
+      margin: 20px auto;
       max-width: 800px;
     }
     .blog-section h2 {
       color: var(--neon-green);
       text-align: center;
+      margin-bottom: 10px;
     }
     .blog-content {
       color: #fff;
@@ -140,10 +140,25 @@
         <h1>GlitchBoard</h1>
       </header>
 
+      <!-- New Blog Sections -->
       <section class="blog-section">
-        <h2>Latest Blog Post</h2>
-        <div id="blog-container" class="blog-content">
-          <p>Loading latest blog...</p>
+        <h2>Newest Tech: GPUs</h2>
+        <div class="blog-content">
+          <p>Latest breakthroughs in GPU technology are reshaping both gaming and professional visualization. Explore the cutting-edge innovations pushing performance boundaries.</p>
+        </div>
+      </section>
+
+      <section class="blog-section">
+        <h2>Cool Gadgets</h2>
+        <div class="blog-content">
+          <p>Discover the coolest gadgets on the market—from smart devices to futuristic wearables that seamlessly combine technology and design for everyday life.</p>
+        </div>
+      </section>
+
+      <section class="blog-section">
+        <h2>Gaming</h2>
+        <div class="blog-content">
+          <p>Dive into the gaming universe where high-performance rigs, immersive experiences, and community-driven insights redefine how we play and compete.</p>
         </div>
       </section>
 
@@ -152,16 +167,5 @@
       </footer>
     </div>
   </div>
-
-  <script>
-    fetch("/blog/active_blog.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("blog-container").innerHTML = data;
-      })
-      .catch(error => {
-        document.getElementById("blog-container").innerHTML = "<p>Failed to load blog post.</p>";
-      });
-  </script>
 </body>
 </html>
