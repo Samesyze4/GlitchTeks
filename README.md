@@ -1,2 +1,0 @@
-# GlitchTeks
-website
