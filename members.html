@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlitchTeks - Members</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="sidebar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="communityhub.html">Community</a></li>
+        <li><a href="contact-us.html">Contact</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-conditions.html">Terms</a></li>
+        <li><a href="members.html" class="active">Members</a></li>
+      </ul>
+    </div>
+    <div class="main">
+      <header>
+        <h1>> MEMBERS PORTAL_</h1>
+        <p class="glitch-text">[ Restricted Access. Authenticating... ]</p>
+      </header>
+      <section id="auth-section">
+        <div id="login-form">
+          <h2>Login to Access Your Tier</h2>
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <button onclick="login()">Login</button>
+          <p>or</p>
+          <button onclick="signup()">Sign Up</button>
+        </div>
+      </section>
+
+      <section id="tier-content" style="display:none;">
+        <h2>Welcome, <span id="user-email"></span></h2>
+
+        <div class="tier" id="primal-spark">
+          <h3>🐒 Primal Spark</h3>
+          <p>Access to community hub, early streams, basic downloads.</p>
+        </div>
+
+        <div class="tier" id="synth-ascendant">
+          <h3>🛠️ Synth Ascendant</h3>
+          <p>Exclusive guides, secret Discord zones, beta previews.</p>
+        </div>
+
+        <div class="tier" id="architect-of-ruin">
+          <h3>👁️ Architect of Ruin</h3>
+          <p>15% merch discount, hidden lore, dev logs, secret content.</p>
+        </div>
+
+        <button onclick="logout()">Logout</button>
+      </section>
+      <footer>
+        <p>&copy; 2025 GlitchTeks. Powered by storm energy and banana chips.</p>
+      </footer>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
