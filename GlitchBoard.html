@@ -76,6 +76,7 @@
       padding: 20px;
       flex: 1;
     }
+    /* Remove homepage-specific header and replace with a clean blog header */
     .main header {
       background: linear-gradient(to right, var(--neon-green), var(--neon-purple));
       padding: 1.5rem;
@@ -84,14 +85,18 @@
       border-radius: 5px;
       margin-bottom: 20px;
     }
+    /* Center the blog section */
     .blog-section {
       background: rgba(0, 0, 0, 0.8);
       padding: 20px;
       border: 2px solid var(--neon-purple);
       border-radius: 5px;
+      margin: 0 auto;
+      max-width: 800px;
     }
     .blog-section h2 {
       color: var(--neon-green);
+      text-align: center;
     }
     .blog-content {
       color: #fff;
@@ -103,6 +108,7 @@
       background: var(--bg-dark);
       border-top: 2px solid var(--neon-purple);
       color: var(--neon-green);
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -131,8 +137,7 @@
 
     <div class="main">
       <header>
-        <h1>CyberChimp-Collactive</h1>
-        <p>Where minds unite, and chaos thrives.</p>
+        <h1>GlitchBoard</h1>
       </header>
 
       <section class="blog-section">
